@@ -5,12 +5,12 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyDu4ddv3xFQJJZ1I1JYMIBGxhUafdfOK30',
-    authDomain: 'duxproject-f928a.firebaseapp.com',
-    databaseURL: 'https://duxproject-f928a.firebaseio.com',
-    projectId: 'duxproject-f928a',
-    storageBucket: 'duxproject-f928a.appspot.com',
-    messagingSenderId: '624166495350'
+    apiKey: '',
+    authDomain: '',
+    databaseURL: '',
+    projectId: '',
+    storageBucket: '',
+    messagingSenderId: ''
 
   }
 };
