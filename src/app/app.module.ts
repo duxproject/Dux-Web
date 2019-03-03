@@ -9,10 +9,12 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { BanerComponent } from './components/baner/baner.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
+    BanerComponent,
   ],
   imports: [
     BrowserModule,
