@@ -1,0 +1,11 @@
+.navbar
+{
+    background-color: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: aliceblue;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+}
