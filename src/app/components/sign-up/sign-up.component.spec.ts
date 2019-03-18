@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BanerComponent } from './baner.component';
+import { SignUpComponent } from './sign-up.component';
 
-describe('BanerComponent', () => {
-  let component: BanerComponent;
-  let fixture: ComponentFixture<BanerComponent>;
+describe('SignUpComponent', () => {
+  let component: SignUpComponent;
+  let fixture: ComponentFixture<SignUpComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BanerComponent ]
+      declarations: [ SignUpComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BanerComponent);
+    fixture = TestBed.createComponent(SignUpComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
