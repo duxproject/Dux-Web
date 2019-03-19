@@ -1,3 +1,4 @@
+
 <div class="displayTable">
   <div class="displayTableCell">
 
@@ -15,6 +16,9 @@
       <div class="formGroup">
         <input type="button" class="btn btnPrimary" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">
       </div>
+      <div class="forgotPassword">
+        <span routerLink="/forgot-password">Forgot Password?</span>
+      </div>
 
       <div class="formGroup">
         <span class="or"><span class="orInner">Or</span></span>
@@ -27,9 +31,11 @@
           Log in with Google
         </button>
       </div>
+      
+      <hr>
 
-      <div class="forgotPassword">
-        <span routerLink="/forgot-password">Forgot Password?</span>
+      <div class="">
+        <a class="btn btn-danger" href="/">Cancel</a>
       </div>
     </div>
 
