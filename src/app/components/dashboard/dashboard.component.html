@@ -1,50 +1,67 @@
-<!-- Sidebar navigation -->
-<div class="container-fluid">
-  <div class="row">
+<div class="wrapper">
+  <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
-    <nav class="col-md-2 d-md-block bg-light sidebar">
-      <div class="sidebar-sticky">
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link active">
-              <i class="fas fa-user"></i>User Profile
+        Tip 2: you can also add an image using data-image tag
+    -->
+      <div class="logo">
+        <a href="#" class="simple-text logo-normal">
+          DUX
+        </a>
+      </div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li class="nav-item active  ">
+            <a class="nav-link" href="./dashboard">
+              <i class="material-icons">dashboard</i>
+              <p>Dashboard</p>
             </a>
           </li>
-          <!-- Calling SignOut() Api from AuthService -->
+          <li class="nav-item ">
+            <a class="nav-link" href="./userprofile">
+              <i class="material-icons">person</i>
+              <p>User Profile</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./tables.html">
+              <i class="material-icons">content_paste</i>
+              <p>Table List</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./typography.html">
+              <i class="material-icons">library_books</i>
+              <p>Typography</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./icons.html">
+              <i class="material-icons">bubble_chart</i>
+              <p>Icons</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./map.html">
+              <i class="material-icons">location_ons</i>
+              <p>Maps</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./notifications.html">
+              <i class="material-icons">notifications</i>
+              <p>Notifications</p>
+            </a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" (click)="authService.SignOut()">
-              <i class="fas fa-sign-out-alt"></i>Log out
+              <i class="material-icons">logout</i>Log out
             </a>
           </li>
         </ul>
       </div>
-    </nav>
-
-    <!-- Main content -->
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-      <div class="inner-adjust">
-
-        <div class="pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">User Profile</h1>
-        </div>
-        <!-- Show user data when logged in -->
-        <div class="row" *ngIf="authService.userData as user">
-          <div class="col-md-12">
-            <div class="media">
-              <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}"
-                alt="{{user.displayName}}">
-              <div class="media-body">
-                <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
-                <p>User ID: <strong>{{user.uid}}</strong></p>
-                <p>Email: <strong>{{user.email}}</strong></p>
-                <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </main>
-
   </div>
 </div>
+
+
