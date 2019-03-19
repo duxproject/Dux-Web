@@ -14,6 +14,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { UserprofileComponent } from './components/userprofile/userprofile.component';
 
 // Firebase services + enviorment module
 import { AngularFireModule } from "@angular/fire";
@@ -23,6 +24,8 @@ import { environment } from '../environments/environment';
 
 // Auth service
 import { AuthService } from "./shared/services/auth.service";
+import { LandingComponent } from './components/landing/landing.component';
+
 
 
 @NgModule({
@@ -32,7 +35,9 @@ import { AuthService } from "./shared/services/auth.service";
     SignUpComponent,
     DashboardComponent,
     ForgotPasswordComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    UserprofileComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,
