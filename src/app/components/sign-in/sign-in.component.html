@@ -1,5 +1,7 @@
 
-<div class="displayTable">
+
+
+<div class="displayTable" [ngStyle]="{'background-image': getUrl()}">
   <div class="displayTableCell">
 
     <div class="authBlock">
@@ -31,8 +33,6 @@
           Log in with Google
         </button>
       </div>
-      
-      <hr>
 
       <div class="">
         <a class="btn btn-danger" href="/">Cancel</a>
