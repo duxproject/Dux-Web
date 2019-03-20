@@ -25,6 +25,7 @@ import { environment } from '../environments/environment';
 // Auth service
 import { AuthService } from "./shared/services/auth.service";
 import { LandingComponent } from './components/landing/landing.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 
@@ -37,7 +38,8 @@ import { LandingComponent } from './components/landing/landing.component';
     ForgotPasswordComponent,
     VerifyEmailComponent,
     UserprofileComponent,
-    LandingComponent
+    LandingComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

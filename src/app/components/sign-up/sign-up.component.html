@@ -1,4 +1,4 @@
-<div class="displayTable">
+<div class="displayTable" [ngStyle]="{'background-image': getUrl()}">
   <div class="displayTableCell">
 
     <div class="authBlock">
@@ -26,6 +26,10 @@
           <i class="fab fa-google-plus-g"></i>
           Continue with Google
         </button>
+      </div>
+
+      <div class="">
+        <a class="btn btn-danger" href="/">Cancel</a>
       </div>
       
     </div>
