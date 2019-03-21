@@ -26,6 +26,8 @@ import { environment } from '../environments/environment';
 import { AuthService } from "./shared/services/auth.service";
 import { LandingComponent } from './components/landing/landing.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { GuideRequestsComponent } from './components/guide-requests/guide-requests.component';
+import { GuidesComponent } from './components/guides/guides.component';
 
 
 
@@ -39,7 +41,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     VerifyEmailComponent,
     UserprofileComponent,
     LandingComponent,
-    NavbarComponent
+    NavbarComponent,
+    GuideRequestsComponent,
+    GuidesComponent
   ],
   imports: [
     BrowserModule,

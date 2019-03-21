@@ -6,6 +6,8 @@ import { LandingComponent } from '../../components/landing/landing.component';
 import { SignInComponent } from '../../components/sign-in/sign-in.component';
 import { SignUpComponent } from '../../components/sign-up/sign-up.component';
 import { DashboardComponent } from '../../components/dashboard/dashboard.component';
+import { GuideRequestsComponent } from '../../components/guide-requests/guide-requests.component';
+import { GuidesComponent } from '../../components/guides/guides.component';
 import { UserprofileComponent } from '../../components/userprofile/userprofile.component';
 import { ForgotPasswordComponent } from '../../components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from '../../components/verify-email/verify-email.component';
@@ -21,6 +23,8 @@ const routes: Routes = [
   { path: 'sign-in', component: SignInComponent, canActivate: [SecureInnerPagesGuard]},
   { path: 'register-user', component: SignUpComponent, canActivate: [SecureInnerPagesGuard]},
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'guide-request', component: GuideRequestsComponent, canActivate: [AuthGuard] },
+  { path: 'guides', component: GuidesComponent, canActivate: [AuthGuard] },
   { path: 'userprofile', component: UserprofileComponent, canActivate: [AuthGuard] },
   { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [SecureInnerPagesGuard] },
   { path: 'verify-email-address', component: VerifyEmailComponent, canActivate: [SecureInnerPagesGuard] }
