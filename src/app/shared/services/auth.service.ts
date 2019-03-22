@@ -41,7 +41,7 @@ export class AuthService {
         });
         this.SetUserData(result.user);
       }).catch((error) => {
-        window.alert(error.message)
+        window.alert('Ooops!  You are not an admin.');
       })
   }
 
@@ -54,7 +54,7 @@ export class AuthService {
         this.SendVerificationMail();
         this.SetUserData(result.user);
       }).catch((error) => {
-        window.alert(error.message)
+        window.alert('Please Enter Valid Details.')
       })
   }
 
