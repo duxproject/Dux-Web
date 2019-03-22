@@ -1,6 +1,19 @@
-<div class="backgr" [ngStyle]="{'background-image': getUrl()}">
+<div class="bac container-fluid slide" style="background-repeat: no-repeat;" [ngStyle]="{'background-image': getUrl()}">
     <app-navbar></app-navbar>
     <div class="col-lg-12 al">
-        <a class="btn btn-success" href="/register-user">Let's Get Started</a>
+            <button type="button">Click Me!</button>
     </div>
 </div>
+
+<div class="two container-fluid" type="button" style="background-repeat: no-repeat;" [ngStyle]="{'background-image': getUrl2()}">
+
+</div>
+
+
+<script>
+    $("button").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".two").offset().top},
+        'slow');
+});
+</script>  

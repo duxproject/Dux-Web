@@ -1,7 +1,10 @@
+.bac{
+    height: 100%;
+}
+
 .al {
     text-align: center;
     margin-top: 20%;
-    padding-bottom: 241px;
 }
 
 .btn {
@@ -9,6 +12,11 @@
     padding: 10px 40px 50px 40px;
     background-color: transparent;
     color: tomato;
+}
+
+.two{
+    height: 100%;
+    background-size: 1380px 700px;
 }
 
 
