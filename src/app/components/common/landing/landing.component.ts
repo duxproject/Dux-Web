@@ -12,11 +12,11 @@ export class LandingComponent implements OnInit {
 
   ngOnInit() {
 
-    $("button").click(function() {
+    $(".btn1").click(function() {
       $('html,body').animate({
           scrollTop: $(".two").offset().top},
           'slow');
-  });
+    });
   }
   getUrl()
   {
