@@ -5,12 +5,12 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: '',
-    authDomain: '',
-    databaseURL: '',
-    projectId: '',
-    storageBucket: '',
-    messagingSenderId: ''
+    apiKey: "AIzaSyCoJOBggfFA9enabEEUKL7WCp95c7XcIiM",
+    authDomain: "duxwa-43352.firebaseapp.com",
+    databaseURL: "https://duxwa-43352.firebaseio.com",
+    projectId: "duxwa-43352",
+    storageBucket: "duxwa-43352.appspot.com",
+    messagingSenderId: "595463211675"
 
   }
 };
