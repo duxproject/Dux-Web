@@ -25,7 +25,9 @@ import { ViewRatesComponent } from '../../components/tourist/view-rates/view-rat
 import { LocationComponent } from '../../components/admin/location/location.component';
 
 // Import canActivate guard services
-import { AuthGuard } from "../../shared/guard/auth.guard";
+import { AdminGuard } from "../../shared/guard/admin.guard";
+import { GuideGuard } from "../../shared/guard/guide.guard";
+import { TouristGuard } from "../../shared/guard/tourist.guard";
 import { SecureInnerPagesGuard } from "../../shared/guard/secure-inner-pages.guard";
 
 // Include route guard in routes array
@@ -39,27 +41,27 @@ const routes: Routes = [
   { path: 'verify-email-address', component: VerifyEmailComponent, canActivate: [SecureInnerPagesGuard] },
  
   //admin routes
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-  { path: 'guide-request', component: GuideRequestsComponent, canActivate: [AuthGuard] },
-  { path: 'guides', component: GuidesComponent, canActivate: [AuthGuard] },
-  { path: 'userprofile', component: UserprofileComponent, canActivate: [AuthGuard] },
-  { path: 'add-locations', component: LocationComponent, canActivate: [AuthGuard] },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AdminGuard] },
+  { path: 'guide-request', component: GuideRequestsComponent, canActivate: [AdminGuard] },
+  { path: 'guides', component: GuidesComponent, canActivate: [AdminGuard] },
+  { path: 'userprofile', component: UserprofileComponent, canActivate: [AdminGuard] },
+  { path: 'add-locations', component: LocationComponent, canActivate: [AdminGuard] },
   
   
   //guide routes
-  { path: 'add-package', component: AddPackagesComponent },
-  { path: 'manage-package', component: ManagePackagesComponent },
-  { path: 'rates', component: AddRatesComponent },
-  { path: 'tour-request', component: TourRequestsComponent },
-  { path: 'view-ratings', component: ViewRatingComponent },
+  { path: 'add-package', component: AddPackagesComponent, canActivate: [GuideGuard] },
+  { path: 'manage-package', component: ManagePackagesComponent, canActivate: [GuideGuard] },
+  { path: 'rates', component: AddRatesComponent, canActivate: [GuideGuard] },
+  { path: 'tour-request', component: TourRequestsComponent, canActivate: [GuideGuard] },
+  { path: 'view-ratings', component: ViewRatingComponent, canActivate: [GuideGuard] },
   
   //tourist routes
-  { path: 'map', component: MapComponent },
-  { path: 'travel-plan', component: TravelPlanComponent },
-  { path: 'view-guide-profile', component: ViewGuideProfileComponent },
-  { path: 'view-packages', component: ViewPackagesComponent },
-  { path: 'view-places', component: ViewPlacesComponent },
-  { path: 'view-rates', component: ViewRatesComponent }
+  { path: 'map', component: MapComponent, canActivate: [TouristGuard] },
+  { path: 'travel-plan', component: TravelPlanComponent, canActivate: [TouristGuard] },
+  { path: 'view-guide-profile', component: ViewGuideProfileComponent, canActivate: [TouristGuard] },
+  { path: 'view-packages', component: ViewPackagesComponent, canActivate: [TouristGuard] },
+  { path: 'view-places', component: ViewPlacesComponent, canActivate: [TouristGuard] },
+  { path: 'view-rates', component: ViewRatesComponent, canActivate: [TouristGuard] }
   
 ];
 
