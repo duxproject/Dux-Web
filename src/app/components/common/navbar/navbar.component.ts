@@ -12,8 +12,8 @@ export class NavbarComponent implements OnInit {
   constructor(public authService: AuthService) { }
 
   isLogged(): boolean {
-    const user$ = JSON.parse(localStorage.getItem('user$'));
-    return (user$ !== null && user$.emailVerified !== false) ? true : false;
+    const user = JSON.parse(localStorage.getItem('user'));
+    return (user !== null && user.emailVerified !== false) ? true : false;
   }
 
   ngOnInit() {

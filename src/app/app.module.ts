@@ -40,6 +40,9 @@ import { ViewGuideProfileComponent } from './components/tourist/view-guide-profi
 import { ViewPlacesComponent } from './components/tourist/view-places/view-places.component';
 import { MapComponent } from './components/tourist/map/map.component';
 import { TravelPlanComponent } from './components/tourist/travel-plan/travel-plan.component';
+import { SignUpGuideComponent } from './components/auth/sign-up-guide/sign-up-guide.component';
+import { SignUpAdminComponent } from './components/auth/sign-up-admin/sign-up-admin.component';
+import { SignUpScComponent } from './components/auth/sign-up-sc/sign-up-sc.component';
 
 
 
@@ -67,7 +70,10 @@ import { TravelPlanComponent } from './components/tourist/travel-plan/travel-pla
     ViewGuideProfileComponent,
     ViewPlacesComponent,
     MapComponent,
-    TravelPlanComponent
+    TravelPlanComponent,
+    SignUpGuideComponent,
+    SignUpAdminComponent,
+    SignUpScComponent
   ],
   imports: [
     BrowserModule,

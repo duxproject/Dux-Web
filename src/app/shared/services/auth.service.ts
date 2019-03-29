@@ -39,8 +39,9 @@ export class AuthService {
       .then((result) => {
         this.ngZone.run(() => {
           this.router.navigate(['dashboard']);
+          var email = email;
+        localStorage.setItem('user', JSON.stringify(email));
         });
-        this.SetUserData(result.user);
       }).catch((error) => {
         window.alert('Ooops!  You are not an admin.');
       })
@@ -54,6 +55,30 @@ export class AuthService {
         up and returns promise */
         this.SendVerificationMail();
         this.SetUserData(result.user);
+      }).catch((error) => {
+        window.alert('Please Enter Valid Details.')
+      })
+  }
+
+  SignUpGuide(email, password) {
+    return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+      .then((result) => {
+        /* Call the SendVerificaitonMail() function when new user sign 
+        up and returns promise */
+        this.SetUserDataGuide(result.user);
+        window.alert('Wait until conformation.');
+      }).catch((error) => {
+        window.alert('Please Enter Valid Details.')
+      })
+  }
+
+  SignUpAdmin(email, password) {
+    return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+      .then((result) => {
+        /* Call the SendVerificaitonMail() function when new user sign 
+        up and returns promise */
+        this.SetUserDataAdmin(result.user);
+        window.alert('Wait until conformation.');
       }).catch((error) => {
         window.alert('Please Enter Valid Details.')
       })
@@ -88,13 +113,65 @@ export class AuthService {
     return this.AuthLogin(new auth.GoogleAuthProvider());
   }
 
+  GoogleSignUp() {
+    return this.AuthSignUp(new auth.GoogleAuthProvider());
+  }
+
+  GoogleSignUpGuide() {
+    return this.AuthSignUpGuide(new auth.GoogleAuthProvider());
+  }
+
+  GoogleSignUpAdmin() {
+    return this.AuthSignUpAdmin(new auth.GoogleAuthProvider());
+  }
+
   // Auth logic to run auth providers
   AuthLogin(provider) {
     return this.afAuth.auth.signInWithPopup(provider)
     .then((result) => {
        this.ngZone.run(() => {
           this.router.navigate(['/']);
+          localStorage.setItem('user', JSON.stringify(result.user));
         })
+    }).catch((error) => {
+      window.alert(error)
+    })
+  }
+
+  AuthSignUp(provider) {
+    return this.afAuth.auth.signInWithPopup(provider)
+    .then((result) => {
+       this.ngZone.run(() => {
+          this.router.navigate(['/']);
+          localStorage.setItem('user', JSON.stringify(result.user));
+        })
+        this.SetUserData(result.user);
+    }).catch((error) => {
+      window.alert(error)
+    })
+  }
+
+  AuthSignUpGuide(provider) {
+    return this.afAuth.auth.signInWithPopup(provider)
+    .then((result) => {
+       this.ngZone.run(() => {
+          this.router.navigate(['/']);
+          localStorage.setItem('user', JSON.stringify(result.user));
+        })
+        this.SetUserDataGuide(result.user);
+    }).catch((error) => {
+      window.alert(error)
+    })
+  }
+
+  AuthSignUpAdmin(provider) {
+    return this.afAuth.auth.signInWithPopup(provider)
+    .then((result) => {
+       this.ngZone.run(() => {
+          this.router.navigate(['/']);
+          localStorage.setItem('user', JSON.stringify(result.user));
+        })
+        this.SetUserDataAdmin(result.user);
     }).catch((error) => {
       window.alert(error)
     })
@@ -113,6 +190,41 @@ export class AuthService {
       emailVerified: user.emailVerified,
       roles: {
         tourist: true
+      }
+    }
+    return userRef.set(data, {
+      merge: true
+    })
+  }
+
+
+  SetUserDataGuide(user) {
+    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
+    const data = {
+      uid: user.uid,
+      email: user.email,
+      displayName: user.displayName,
+      photoURL: user.photoURL,
+      emailVerified: user.emailVerified,
+      roles: {
+        guide: true
+      }
+    }
+    return userRef.set(data, {
+      merge: true
+    })
+  }
+
+  SetUserDataAdmin(user) {
+    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
+    const data = {
+      uid: user.uid,
+      email: user.email,
+      displayName: user.displayName,
+      photoURL: user.photoURL,
+      emailVerified: user.emailVerified,
+      roles: {
+        admin: true
       }
     }
     return userRef.set(data, {
