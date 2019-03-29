@@ -21,6 +21,7 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
+import { UserService } from "./shared/services/user.service";
 
 // Auth service
 import { AuthService } from "./shared/services/auth.service";
@@ -40,6 +41,9 @@ import { ViewGuideProfileComponent } from './components/tourist/view-guide-profi
 import { ViewPlacesComponent } from './components/tourist/view-places/view-places.component';
 import { MapComponent } from './components/tourist/map/map.component';
 import { TravelPlanComponent } from './components/tourist/travel-plan/travel-plan.component';
+import { SignUpGuideComponent } from './components/auth/sign-up-guide/sign-up-guide.component';
+import { SignUpAdminComponent } from './components/auth/sign-up-admin/sign-up-admin.component';
+import { SignUpScComponent } from './components/auth/sign-up-sc/sign-up-sc.component';
 
 
 
@@ -67,7 +71,10 @@ import { TravelPlanComponent } from './components/tourist/travel-plan/travel-pla
     ViewGuideProfileComponent,
     ViewPlacesComponent,
     MapComponent,
-    TravelPlanComponent
+    TravelPlanComponent,
+    SignUpGuideComponent,
+    SignUpAdminComponent,
+    SignUpScComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +84,10 @@ import { TravelPlanComponent } from './components/tourist/travel-plan/travel-pla
     AngularFirestoreModule,
     ReactiveFormsModule
   ],
-  providers: [AuthService],
+  providers: [
+    AuthService,
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 

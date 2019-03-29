@@ -1,0 +1,32 @@
+<div class="displayTable" [ngStyle]="{'background-image': getUrl()}">
+  <div class="displayTableCell">
+
+    <div class="authBlock">
+      <h5>How do you want<br>to continue!</h5>
+      <br>
+
+      <div class="">
+          <!-- Continue as Guide -->
+        <div class="formGroup col-md-6">
+          <a class="btn btn-primary" href="register-tourist">Tourist</a>
+        </div>
+
+        <!-- Continue as Guide -->
+        <div class="formGroup col-md-6">
+          <a class="btn btn-default" href="/register-guide">Guide</a>
+        </div>
+      </div>
+      <hr>
+
+      <div class="">
+        <a class="btn btn-danger" href="/">Cancel</a>
+      </div>
+      
+    </div>
+
+    <div class="redirectToLogin">
+      <span>Already have an account? <span class="redirect" routerLink="/sign-in">Log In</span></span>
+    </div>
+  </div>
+
+</div>

@@ -4,6 +4,9 @@ import { Routes, RouterModule } from '@angular/router';
 // Required components for which route services to be activated
 import { LandingComponent } from '../../components/common/landing/landing.component';
 import { SignInComponent } from '../../components/auth/sign-in/sign-in.component';
+import { SignUpScComponent} from '../../components/auth/sign-up-sc/sign-up-sc.component';
+import { SignUpAdminComponent } from '../../components/auth/sign-up-admin/sign-up-admin.component';
+import { SignUpGuideComponent } from '../../components/auth/sign-up-guide/sign-up-guide.component';
 import { SignUpComponent } from '../../components/auth/sign-up/sign-up.component';
 import { DashboardComponent } from '../../components/admin/dashboard/dashboard.component';
 import { GuideRequestsComponent } from '../../components/admin/guide-requests/guide-requests.component';
@@ -36,7 +39,10 @@ const routes: Routes = [
   //auth routes
   { path: '', redirectTo: '/sign-in', pathMatch: 'full'},
   { path: 'sign-in', component: SignInComponent, canActivate: [SecureInnerPagesGuard]},
-  { path: 'register-user', component: SignUpComponent, canActivate: [SecureInnerPagesGuard]},
+  { path: 'register-guide', component: SignUpGuideComponent, canActivate: [SecureInnerPagesGuard]},
+  { path: 'register-admin', component: SignUpAdminComponent, canActivate: [SecureInnerPagesGuard]},
+  { path: 'register-tourist', component: SignUpComponent, canActivate: [SecureInnerPagesGuard]},
+  { path: 'register-user', component: SignUpScComponent, canActivate: [SecureInnerPagesGuard]},
   { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [SecureInnerPagesGuard] },
   { path: 'verify-email-address', component: VerifyEmailComponent, canActivate: [SecureInnerPagesGuard] },
  
@@ -45,7 +51,7 @@ const routes: Routes = [
   { path: 'guide-request', component: GuideRequestsComponent, canActivate: [AdminGuard] },
   { path: 'guides', component: GuidesComponent, canActivate: [AdminGuard] },
   { path: 'userprofile', component: UserprofileComponent, canActivate: [AdminGuard] },
-  { path: 'add-locations', component: LocationComponent, canActivate: [AdminGuard] },
+  { path: 'locations', component: LocationComponent, canActivate: [AdminGuard] },
   
   
   //guide routes
