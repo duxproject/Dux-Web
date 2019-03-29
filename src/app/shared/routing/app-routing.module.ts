@@ -51,7 +51,7 @@ const routes: Routes = [
   { path: 'guide-request', component: GuideRequestsComponent, canActivate: [AdminGuard] },
   { path: 'guides', component: GuidesComponent, canActivate: [AdminGuard] },
   { path: 'userprofile', component: UserprofileComponent, canActivate: [AdminGuard] },
-  { path: 'add-locations', component: LocationComponent, canActivate: [AdminGuard] },
+  { path: 'locations', component: LocationComponent, canActivate: [AdminGuard] },
   
   
   //guide routes

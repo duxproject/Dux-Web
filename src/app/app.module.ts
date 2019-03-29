@@ -21,6 +21,7 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
+import { UserService } from "./shared/services/user.service";
 
 // Auth service
 import { AuthService } from "./shared/services/auth.service";
@@ -83,7 +84,10 @@ import { SignUpScComponent } from './components/auth/sign-up-sc/sign-up-sc.compo
     AngularFirestoreModule,
     ReactiveFormsModule
   ],
-  providers: [AuthService],
+  providers: [
+    AuthService,
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 
