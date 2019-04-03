@@ -26,6 +26,7 @@ import { ViewPackagesComponent } from '../../components/tourist/view-packages/vi
 import { ViewPlacesComponent } from '../../components/tourist/view-places/view-places.component';
 import { ViewRatesComponent } from '../../components/tourist/view-rates/view-rates.component';
 import { LocationComponent } from '../../components/admin/location/location.component';
+import { AdminRequestsComponent } from '../../components/admin/admin-requests/admin-requests.component';
 
 // Import canActivate guard services
 import { AdminGuard } from "../../shared/guard/admin.guard";
@@ -49,6 +50,7 @@ const routes: Routes = [
   //admin routes
   { path: 'dashboard', component: DashboardComponent, canActivate: [AdminGuard] },
   { path: 'guide-request', component: GuideRequestsComponent, canActivate: [AdminGuard] },
+  { path: 'admin-request', component: AdminRequestsComponent, canActivate: [AdminGuard] },
   { path: 'guides', component: GuidesComponent, canActivate: [AdminGuard] },
   { path: 'userprofile', component: UserprofileComponent, canActivate: [AdminGuard] },
   { path: 'locations', component: LocationComponent, canActivate: [AdminGuard] },

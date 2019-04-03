@@ -46,6 +46,7 @@ import { SignUpAdminComponent } from './components/auth/sign-up-admin/sign-up-ad
 import { SignUpScComponent } from './components/auth/sign-up-sc/sign-up-sc.component';
 import { PackageListComponent } from './components/tourist/package-list/package-list.component';
 import { RateListComponent } from './components/tourist/rate-list/rate-list.component';
+import { AdminRequestsComponent } from './components/admin/admin-requests/admin-requests.component';
 
 
 
@@ -78,7 +79,8 @@ import { RateListComponent } from './components/tourist/rate-list/rate-list.comp
     SignUpAdminComponent,
     SignUpScComponent,
     PackageListComponent,
-    RateListComponent
+    RateListComponent,
+    AdminRequestsComponent
   ],
   imports: [
     BrowserModule,
