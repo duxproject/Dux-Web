@@ -51,7 +51,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" (click)="authService.SignOut()">
+            <a class="nav-link" (click)="AuthService.SignOut()">
               <i class="material-icons">logout</i>Log out
             </a>
           </li>
@@ -84,14 +84,14 @@
                       </thead>
                       <tbody *ngIf="users?.length > 0; else noUsers">
                         <tr *ngFor="let user of users">
-                          <td *ngIf="user.roles.guide == true && user.roles.tourist == false && user.roles.admin == false">
+                          <td *ngIf="user.roles.guide == true && user.emailVerified == false">
                             {{user.displayName}}
                           </td>
-                          <td *ngIf="user.roles.guide == true && user.roles.tourist == false && user.roles.admin == false">
+                          <td *ngIf="user.roles.guide == true && user.emailVerified == false">
                             {{user.email}} 
                           </td>
-                          <td *ngIf="user.roles.guide == false && user.roles.tourist == false && user.roles.admin == false">
-                            <button (click)="AuthService.SetUserDataGuide(user)">Confirm</button>
+                          <td *ngIf="user.roles.guide == true && user.emailVerified == false">
+                            <button class="btn btn-success" (click)="AuthService.AcceptUserDataGuide(user)">Confirm</button>
                           </td>
                         </tr>
                       </tbody>

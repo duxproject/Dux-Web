@@ -160,7 +160,6 @@ export class AuthService {
     .then((result) => {
        this.ngZone.run(() => {
           this.router.navigate(['/']);
-          localStorage.setItem('user', JSON.stringify(result.user));
         })
         this.SetUserDataGuide(result.user);
     }).catch((error) => {
@@ -173,7 +172,6 @@ export class AuthService {
     .then((result) => {
        this.ngZone.run(() => {
           this.router.navigate(['/']);
-          localStorage.setItem('user', JSON.stringify(result.user));
         })
         this.SetUserDataAdmin(result.user);
     }).catch((error) => {
@@ -209,7 +207,24 @@ export class AuthService {
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
-      emailVerified: user.emailVerified,
+      emailVerified: false,
+      roles: {
+        guide: true
+      }
+    }
+    return userRef.set(data, {
+      merge: true
+    })
+  }
+
+  AcceptUserDataGuide(user) {
+    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
+    const data = {
+      uid: user.uid,
+      email: user.email,
+      displayName: user.displayName,
+      photoURL: user.photoURL,
+      emailVerified: true,
       roles: {
         guide: true
       }
@@ -226,7 +241,24 @@ export class AuthService {
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
-      emailVerified: user.emailVerified,
+      emailVerified: false,
+      roles: {
+        admin: true
+      }
+    }
+    return userRef.set(data, {
+      merge: true
+    })
+  }
+
+  AcceptUserDataAdmin(user) {
+    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
+    const data = {
+      uid: user.uid,
+      email: user.email,
+      displayName: user.displayName,
+      photoURL: user.photoURL,
+      emailVerified: true,
       roles: {
         admin: true
       }
