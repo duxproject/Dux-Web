@@ -14,6 +14,13 @@ export class NavbarComponent implements OnInit {
   isLogged(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
     return (user !== null && user.emailVerified !== false) ? true : false;
+
+  }
+
+  isAdmin(): boolean {
+    const user = JSON.parse(localStorage.getItem('user'));
+    return (user !== null && user.roles.admin == true) ? true : false;
+
   }
 
   ngOnInit() {

@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../../shared/services/user.service';
-import { User } from '../../../shared/services/user';
+
+import { UserService } from '../../../shared/services/user/user.service';
+import { User } from '../../../shared/services/user/user';
 
 @Component({
   selector: 'app-guides',
   templateUrl: './guides.component.html',
-  styleUrls: ['./guides.component.css']
+  styleUrls: ['../../../../assets/css/material-dashboard.css?v=2.1.1']
 })
 export class GuidesComponent implements OnInit {
   users: User[];
@@ -18,5 +19,7 @@ export class GuidesComponent implements OnInit {
       this.users = users;
     });
   }
+
+
 
 }

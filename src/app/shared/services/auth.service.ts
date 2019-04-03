@@ -1,5 +1,5 @@
 import { Injectable, NgZone } from '@angular/core';
-import { User } from "../services/user";
+import { User } from "./user/user"
 import { auth } from 'firebase/app';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
@@ -45,6 +45,10 @@ export class AuthService {
       }).catch((error) => {
         window.alert('Ooops!  You are not an admin.');
       })
+  }
+
+  getUser() {
+    return this.user;
   }
 
   // Sign up with email/password
@@ -144,6 +148,7 @@ export class AuthService {
        this.ngZone.run(() => {
           this.router.navigate(['/']);
           localStorage.setItem('user', JSON.stringify(result.user));
+
         })
         this.SetUserData(result.user);
     }).catch((error) => {
@@ -156,7 +161,6 @@ export class AuthService {
     .then((result) => {
        this.ngZone.run(() => {
           this.router.navigate(['/']);
-          localStorage.setItem('user', JSON.stringify(result.user));
         })
         this.SetUserDataGuide(result.user);
     }).catch((error) => {
@@ -169,8 +173,8 @@ export class AuthService {
     .then((result) => {
        this.ngZone.run(() => {
           this.router.navigate(['/']);
-          localStorage.setItem('user', JSON.stringify(result.user));
         })
+
         this.SetUserDataAdmin(result.user);
     }).catch((error) => {
       window.alert(error)
@@ -205,7 +209,26 @@ export class AuthService {
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
-      emailVerified: user.emailVerified,
+
+      emailVerified: false,
+      roles: {
+        guide: true
+      }
+    }
+    return userRef.set(data, {
+      merge: true
+    })
+  }
+
+  AcceptUserDataGuide(user) {
+    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
+    const data = {
+      uid: user.uid,
+      email: user.email,
+      displayName: user.displayName,
+      photoURL: user.photoURL,
+      emailVerified: true,
+
       roles: {
         guide: true
       }
@@ -222,7 +245,25 @@ export class AuthService {
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
-      emailVerified: user.emailVerified,
+      emailVerified: false,
+      roles: {
+        admin: true
+      }
+    }
+    return userRef.set(data, {
+      merge: true
+    })
+  }
+
+  AcceptUserDataAdmin(user) {
+    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
+    const data = {
+      uid: user.uid,
+      email: user.email,
+      displayName: user.displayName,
+      photoURL: user.photoURL,
+      emailVerified: true,
+
       roles: {
         admin: true
       }
