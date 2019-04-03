@@ -148,6 +148,7 @@ export class AuthService {
        this.ngZone.run(() => {
           this.router.navigate(['/']);
           localStorage.setItem('user', JSON.stringify(result.user));
+
         })
         this.SetUserData(result.user);
     }).catch((error) => {
@@ -173,6 +174,7 @@ export class AuthService {
        this.ngZone.run(() => {
           this.router.navigate(['/']);
         })
+
         this.SetUserDataAdmin(result.user);
     }).catch((error) => {
       window.alert(error)
@@ -207,6 +209,7 @@ export class AuthService {
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
+
       emailVerified: false,
       roles: {
         guide: true
@@ -225,6 +228,7 @@ export class AuthService {
       displayName: user.displayName,
       photoURL: user.photoURL,
       emailVerified: true,
+
       roles: {
         guide: true
       }
@@ -259,6 +263,7 @@ export class AuthService {
       displayName: user.displayName,
       photoURL: user.photoURL,
       emailVerified: true,
+
       roles: {
         admin: true
       }

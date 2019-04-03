@@ -21,6 +21,7 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
+
 import { UserService } from "./shared/services/user/user.service";
 
 // Auth service
@@ -47,6 +48,7 @@ import { SignUpScComponent } from './components/auth/sign-up-sc/sign-up-sc.compo
 import { PackageListComponent } from './components/tourist/package-list/package-list.component';
 import { RateListComponent } from './components/tourist/rate-list/rate-list.component';
 import { AdminRequestsComponent } from './components/admin/admin-requests/admin-requests.component';
+
 
 
 
@@ -81,6 +83,7 @@ import { AdminRequestsComponent } from './components/admin/admin-requests/admin-
     PackageListComponent,
     RateListComponent,
     AdminRequestsComponent
+
   ],
   imports: [
     BrowserModule,

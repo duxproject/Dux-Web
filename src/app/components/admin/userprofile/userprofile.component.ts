@@ -29,6 +29,7 @@ export class UserprofileComponent implements OnInit {
     this.authService.getUser().subscribe( user => {
       this.user = user;
     });
+
    }
 
 }
