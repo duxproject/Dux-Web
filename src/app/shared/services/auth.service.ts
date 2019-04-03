@@ -1,5 +1,5 @@
 import { Injectable, NgZone } from '@angular/core';
-import { User } from "../services/user";
+import { User } from "./user/user"
 import { auth } from 'firebase/app';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
@@ -45,6 +45,10 @@ export class AuthService {
       }).catch((error) => {
         window.alert('Ooops!  You are not an admin.');
       })
+  }
+
+  getUser() {
+    return this.user;
   }
 
   // Sign up with email/password

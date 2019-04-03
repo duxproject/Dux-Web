@@ -1,7 +1,7 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { AuthService } from "../../../shared/services/auth.service";
 import { Router } from "@angular/router";
-import { User } from "../../../shared/services/user";
+import { User } from "../../../shared/services/user/user";
 
 
 @Component({
@@ -10,6 +10,7 @@ import { User } from "../../../shared/services/user";
   styleUrls: ['./userprofile.component.css']
 })
 export class UserprofileComponent implements OnInit {
+  user: User;
 
   constructor(
     public authService: AuthService,
@@ -25,7 +26,9 @@ export class UserprofileComponent implements OnInit {
   
 
   ngOnInit() {  
-    
+    this.authService.getUser().subscribe( user => {
+      this.user = user;
+    });
    }
 
 }

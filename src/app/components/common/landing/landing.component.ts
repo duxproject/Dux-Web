@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import { AuthService } from "../../../shared/services/auth.service";
 
 @Component({
   selector: 'app-landing',
@@ -8,7 +9,7 @@ import * as $ from 'jquery';
 })
 export class LandingComponent implements OnInit {
 
-  constructor() { }
+  constructor(public authService: AuthService) { }
 
   ngOnInit() {
 
@@ -25,6 +26,11 @@ export class LandingComponent implements OnInit {
   getUrl2()
   {
     return "url('http://wallsdesk.com/wp-content/uploads/2016/10/Sri-Lanka-4K.jpg')";
+  }
+
+  isLogged(): boolean {
+    const user = JSON.parse(localStorage.getItem('user'));
+    return (user !== null && user.emailVerified !== false) ? true : false;
   }
 
   
