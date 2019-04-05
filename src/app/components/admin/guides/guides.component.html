@@ -32,6 +32,12 @@
               <p>Guide Request List</p>
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./admin-request">
+              <i class="material-icons">content_paste</i>
+              <p>Admin Request List</p>
+            </a>
+          </li>
           <li class="nav-item active">
             <a class="nav-link" href="./guides">
               <i class="material-icons">library_books</i>
@@ -41,7 +47,8 @@
           <li class="nav-item ">
             <a class="nav-link" href="./locations">
               <i class="material-icons">location_ons</i>
-              <p>Maps</p>
+
+              <p>Locations</p>
             </a>
           </li>
           <li class="nav-item ">
@@ -79,19 +86,26 @@
                           Email
                         </th>
                         <th>
-                          Email Verified
+
+                          Ratings
+                        </th>
+                        <th>
+                          Remove Guide
                         </th>
                       </thead>
                       <tbody *ngIf="users?.length > 0; else noUsers">
                         <tr *ngFor="let user of users">
-                          <td *ngIf="user.roles.guide == true">
+                          <td *ngIf="user.roles.guide == true && user.emailVerified == true">
                             {{user.displayName}}
                           </td>
-                          <td *ngIf="user.roles.guide == true">
+                          <td *ngIf="user.roles.guide == true && user.emailVerified == true">
                             {{user.email}} 
                           </td>
-                          <td *ngIf="user.roles.guide == true">
-                            {{user.emailVerified}}
+                          <td *ngIf="user.roles.guide == true && user.emailVerified == true">
+                            None
+                          </td>
+                          <td *ngIf="user.roles.guide == true && user.emailVerified == true">
+                            <button class="btn btn-danger" (click)="AuthService.RemoveUserDataGuide(user)">Remove</button>
                           </td>
                         </tr>
                       </tbody>

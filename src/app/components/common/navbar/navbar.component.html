@@ -8,6 +8,7 @@
             <li><a class="navd" href="/services">SERVICES</a></li>
             <li><a class="navd" *ngIf="!isLogged()" href="/sign-in">SIGN IN</a> </li>
             <li><a class="navd" *ngIf="isLogged()" (click)="authService.SignOut()">LOGOUT</a></li>
+            <li><a class="navd" href="/dashboard">DASHBOARD</a></li>
 
         </ul>
     </div>
