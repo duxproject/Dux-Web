@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule }   from '@angular/forms';
 
 // Reactive Form
 import { ReactiveFormsModule } from "@angular/forms";
@@ -9,6 +10,7 @@ import { AppRoutingModule } from './shared/routing/app-routing.module';
 
 // App components
 import { AppComponent } from './app.component';
+
 import { SignInComponent } from './components/auth/sign-in/sign-in.component';
 import { SignUpComponent } from './components/auth/sign-up/sign-up.component';
 import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
@@ -25,6 +27,8 @@ import { UserService } from "./shared/services/user/user.service";
 
 // Auth service
 import { AuthService } from "./shared/services/auth.service";
+
+
 import { LandingComponent } from './components/common/landing/landing.component';
 import { NavbarComponent } from './components/common/navbar/navbar.component';
 import { GuideRequestsComponent } from './components/admin/guide-requests/guide-requests.component';
@@ -48,6 +52,9 @@ import { PackageListComponent } from './components/tourist/package-list/package-
 import { RateListComponent } from './components/tourist/rate-list/rate-list.component';
 import { AdminRequestsComponent } from './components/admin/admin-requests/admin-requests.component';
 
+import { LocationService } from './shared/services/location/location.service';
+import { PackageService } from './shared/services/package/package.service';
+import { AddLocationComponent } from './components/admin/add-location/add-location.component';
 
 
 @NgModule({
@@ -80,7 +87,8 @@ import { AdminRequestsComponent } from './components/admin/admin-requests/admin-
     SignUpScComponent,
     PackageListComponent,
     RateListComponent,
-    AdminRequestsComponent
+    AdminRequestsComponent,
+    AddLocationComponent
   ],
   imports: [
     BrowserModule,
@@ -88,11 +96,14 @@ import { AdminRequestsComponent } from './components/admin/admin-requests/admin-
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     AuthService,
-    UserService
+    UserService,
+    PackageService,
+    LocationService
   ],
   bootstrap: [AppComponent]
 })

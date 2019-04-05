@@ -38,12 +38,12 @@ export class AuthService {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then((result) => {
         this.ngZone.run(() => {
-          this.router.navigate(['dashboard']);
+          this.router.navigate(['/']);
           var email = email;
-        localStorage.setItem('user', JSON.stringify(email));
+          localStorage.setItem('user', JSON.stringify(result.user));
         });
       }).catch((error) => {
-        window.alert('Ooops!  You are not an admin.');
+        window.alert('Ooops!');
       })
   }
 
@@ -227,6 +227,23 @@ export class AuthService {
       emailVerified: true,
       roles: {
         guide: true
+      }
+    }
+    return userRef.set(data, {
+      merge: true
+    })
+  }
+
+  RemoveUserDataGuide(user) {
+    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
+    const data = {
+      uid: user.uid,
+      email: user.email,
+      displayName: user.displayName,
+      photoURL: user.photoURL,
+      emailVerified: false,
+      roles: {
+        guide: false
       }
     }
     return userRef.set(data, {

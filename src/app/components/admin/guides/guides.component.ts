@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../../shared/services/user/user.service';
 import { User } from '../../../shared/services/user/user';
+import { AuthService } from '../../../shared/services/auth.service';
 
 @Component({
   selector: 'app-guides',
@@ -10,8 +11,7 @@ import { User } from '../../../shared/services/user/user';
 export class GuidesComponent implements OnInit {
   users: User[];
 
-
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private AuthService: AuthService) { }
 
   ngOnInit() {
     this.userService.getUser().subscribe( users => {
