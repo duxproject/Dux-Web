@@ -23,6 +23,7 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
+
 import { UserService } from "./shared/services/user/user.service";
 
 // Auth service
@@ -55,6 +56,7 @@ import { AdminRequestsComponent } from './components/admin/admin-requests/admin-
 import { LocationService } from './shared/services/location/location.service';
 import { PackageService } from './shared/services/package/package.service';
 import { AddLocationComponent } from './components/admin/add-location/add-location.component';
+
 
 
 @NgModule({
