@@ -3,10 +3,10 @@ import { UserService } from '../../../shared/services/user/user.service';
 import { User } from '../../../shared/services/user/user';
 import { AuthService } from '../../../shared/services/auth.service';
 
-
 @Component({
   selector: 'app-admin-requests',
   templateUrl: './admin-requests.component.html',
+
   styleUrls: ['../../../../assets/css/material-dashboard.css?v=2.1.1']
 })
 export class AdminRequestsComponent implements OnInit {

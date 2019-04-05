@@ -57,7 +57,6 @@ export class LocationComponent implements OnInit {
               'Vavniya'];
 
 
-
   ngOnInit() {
     this.locationService.getLocation().subscribe( locations => {
       this.locations = locations;
