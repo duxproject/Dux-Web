@@ -57,6 +57,7 @@ import { PackageService } from './shared/services/package/package.service';
 import { WrongRouteComponent } from './components/common/wrong-route/wrong-route.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -89,6 +90,7 @@ import { WrongRouteComponent } from './components/common/wrong-route/wrong-route
     RateListComponent,
     AdminRequestsComponent,
     WrongRouteComponent
+
   ],
   imports: [
     BrowserModule,
