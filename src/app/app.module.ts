@@ -54,6 +54,7 @@ import { RateListComponent } from './components/tourist/rate-list/rate-list.comp
 import { AdminRequestsComponent } from './components/admin/admin-requests/admin-requests.component';
 import { LocationService } from './shared/services/location/location.service';
 import { PackageService } from './shared/services/package/package.service';
+import { WrongRouteComponent } from './components/common/wrong-route/wrong-route.component';
 
 
 
@@ -87,7 +88,9 @@ import { PackageService } from './shared/services/package/package.service';
     SignUpScComponent,
     PackageListComponent,
     RateListComponent,
-    AdminRequestsComponent
+    AdminRequestsComponent,
+    WrongRouteComponent
+
   ],
   imports: [
     BrowserModule,

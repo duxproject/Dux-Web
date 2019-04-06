@@ -12,7 +12,8 @@ import { User } from '../services/user/user';
 export class AdminGuard implements CanActivate {
   
   constructor(
-    private auth: AuthService
+    private auth: AuthService,
+    public router: Router
   ){ }
 
   canActivate(
@@ -24,7 +25,8 @@ export class AdminGuard implements CanActivate {
       map(data => data && data.roles.admin ? true : false),
       tap(isAdmin => {
         if (!isAdmin) {
-          console.log('Admins Only')
+          console.log('Admins Only');
+          this.router.navigate(['./wrong-route']);
         }
       })
     );

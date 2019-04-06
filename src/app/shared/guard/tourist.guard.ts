@@ -12,7 +12,8 @@ import { User } from '../services/user/user';
 export class TouristGuard implements CanActivate {
   
   constructor(
-    private auth: AuthService
+    private auth: AuthService,
+    public router: Router
   ){ }
 
   canActivate(
@@ -24,7 +25,8 @@ export class TouristGuard implements CanActivate {
       map(data => data && data.roles.tourist ? true : false),
       tap(isTourist => {
         if (!isTourist) {
-          console.log('Tourists Only')
+          console.log('Tourists Only');
+          this.router.navigate(['./wrong-route']);
         }
       })
     );
