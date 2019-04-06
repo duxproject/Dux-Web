@@ -12,7 +12,8 @@ import { User } from '../services/user/user';
 export class GuideGuard implements CanActivate {
   
   constructor(
-    private auth: AuthService
+    private auth: AuthService,
+    public router: Router
   ){ }
 
   canActivate(
@@ -24,7 +25,8 @@ export class GuideGuard implements CanActivate {
       map(data => data && data.roles.guide ? true : false),
       tap(isGuide => {
         if (!isGuide) {
-          console.log('Guides Only')
+          console.log('Guides Only');
+          this.router.navigate(['./wrong-route']);
         }
       })
     );
