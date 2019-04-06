@@ -48,6 +48,7 @@ import { SignUpScComponent } from './components/auth/sign-up-sc/sign-up-sc.compo
 import { PackageListComponent } from './components/tourist/package-list/package-list.component';
 import { RateListComponent } from './components/tourist/rate-list/rate-list.component';
 import { AdminRequestsComponent } from './components/admin/admin-requests/admin-requests.component';
+import { TourDashboardComponent } from './components/tourist/tour-dashboard/tour-dashboard.component';
 
 
 
@@ -82,7 +83,8 @@ import { AdminRequestsComponent } from './components/admin/admin-requests/admin-
     SignUpScComponent,
     PackageListComponent,
     RateListComponent,
-    AdminRequestsComponent
+    AdminRequestsComponent,
+    TourDashboardComponent
 
   ],
   imports: [

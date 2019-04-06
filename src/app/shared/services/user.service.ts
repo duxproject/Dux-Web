@@ -1,5 +1,5 @@
 import { Injectable, NgZone } from '@angular/core';
-import { User } from "../services/user";
+import { User } from "./user/user";
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';

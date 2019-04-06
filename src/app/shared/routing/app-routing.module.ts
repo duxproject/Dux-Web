@@ -27,6 +27,7 @@ import { ViewPlacesComponent } from '../../components/tourist/view-places/view-p
 import { ViewRatesComponent } from '../../components/tourist/view-rates/view-rates.component';
 import { LocationComponent } from '../../components/admin/location/location.component';
 import { AdminRequestsComponent } from '../../components/admin/admin-requests/admin-requests.component';
+import {TourDashboardComponent} from '../../components/tourist/tour-dashboard/tour-dashboard.component';
 
 // Import canActivate guard services
 import { AdminGuard } from "../../shared/guard/admin.guard";
@@ -64,6 +65,7 @@ const routes: Routes = [
   { path: 'view-ratings', component: ViewRatingComponent, canActivate: [GuideGuard] },
   
   //tourist routes
+  { path: 'tour-dashboard', component: TourDashboardComponent, canActivate: [TouristGuard]},
   { path: 'map', component: MapComponent, canActivate: [TouristGuard] },
   { path: 'travel-plan', component: TravelPlanComponent, canActivate: [TouristGuard] },
   { path: 'view-guide-profile', component: ViewGuideProfileComponent, canActivate: [TouristGuard] },
