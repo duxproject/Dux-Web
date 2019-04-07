@@ -154,6 +154,24 @@
                             <input type="text" placeholder="description" [(ngModel)]="location.description" name = "description">
                           </div>
                         </div>
+                        <div class="container">
+                            <div id="map" class="map"></div>
+                            <div id="mouse-position"></div>
+                        </div>
+                        <div class="container row">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="bmd-label-floating">Latitude</label>
+                              <input type="text" placeholder="Latitude" [(ngModel)]="location.loc.latitude" name = "Latitude" disabled>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="bmd-label-floating">Longitude</label>
+                              <p></p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                       <input type="submit" value="Submit" class="btn btn-success">
                     </form>
@@ -162,7 +180,7 @@
               </div>
             </div>
           </div>
-
+        
       </div>
     </div>
   </div>

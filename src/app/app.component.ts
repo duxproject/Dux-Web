@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+declare var ol: any;
 import * as $ from 'jquery';
 
 @Component({
@@ -12,4 +12,6 @@ export class AppComponent {
   ngOnInit() {
     $('body').addClass('df');
     }
+
+    
 }
