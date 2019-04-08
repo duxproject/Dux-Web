@@ -1,0 +1,7 @@
+<div class="bac container-fluid slide" style="background-repeat: no-repeat;" [ngStyle]="{'background-image': getUrl()}">
+    <app-navbar></app-navbar>
+    <div class="col-lg-12 al">
+        <a class="btn btn1" *ngIf="!isLogged()" href="/register-user">Let's Get Started</a>
+        <h3 style="color:rgba(7, 129, 150, 0.596); font-size: 60px;" *ngIf="isLogged()"><strong><b>We Guide you<br>to<br>Your Guide</b></strong></h3>
+    </div>
+</div>

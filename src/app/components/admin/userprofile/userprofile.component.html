@@ -1,0 +1,85 @@
+<div class="wrapper ">
+    <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+      <div class="logo">
+        <a href="#" class="simple-text logo-normal">
+          DUX
+        </a>
+      </div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="./dashboard">
+              <i class="material-icons">dashboard</i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="./userprofile">
+              <i class="material-icons">person</i>
+              <p>User Profile</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./guide-request">
+              <i class="material-icons">content_paste</i>
+              <p>Guide Request List</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./guides">
+              <i class="material-icons">library_books</i>
+              <p>Guides</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./locations">
+              <i class="material-icons">location_ons</i>
+              <p>Maps</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="#">
+              <i class="material-icons">notifications</i>
+              <p>Notifications</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="authService.SignOut()">
+              <i class="material-icons">logout</i>Log out
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+<div class="container">
+  <!-- Main content -->
+  <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+    <div class="inner-adjust">
+
+      <div class="pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">User Profile</h1>
+      </div>
+      <!-- Show user data when logged in -->
+
+      <div class="row" >
+
+        <div class="col-md-12">
+          <div class="media">
+            <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}"
+              alt="{{user.displayName}}">
+            <div class="media-body">
+              <h1><strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
+              <p>Email: <strong>{{user.email}}</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+    
+

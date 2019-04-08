@@ -1,0 +1,10 @@
+.btn-primary {
+    background-color: blueviolet;
+}
+.btn-danger {
+    background-color: rgba(236, 90, 90, 0.877);
+}
+
+.btn-default {
+    background-color: springgreen;
+}

@@ -1,0 +1,14 @@
+<nav class="transparent" >
+    <ul class="container">
+        <li class=""> <a class="navd" href="/"> <b>DUX-WEB</b></a></li>
+    </ul>
+    <div class="container">
+        <ul class="pull-right">
+            <li><a class="navd" href="/about">ABOUT US</a></li>
+            <li><a class="navd" href="/services">SERVICES</a></li>
+            <li><a class="navd" *ngIf="!isLogged()" href="/sign-in">SIGN IN</a> </li>
+            <li><a class="navd" *ngIf="isLogged()" (click)="authService.SignOut()">LOGOUT</a></li>
+
+        </ul>
+    </div>
+</nav>
