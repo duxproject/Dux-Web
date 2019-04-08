@@ -1,3 +1,187 @@
-<p>
-  location works!
-</p>
+
+
+  <div class="wrapper ">
+    <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+        Tip 2: you can also add an image using data-image tag
+    -->
+      <div class="logo">
+        <a href="/" class="simple-text logo-normal">
+          Dux-Web(Admin)
+        </a>
+      </div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="./dashboard">
+              <i class="material-icons">dashboard</i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./userprofile">
+              <i class="material-icons">person</i>
+              <p>User Profile</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./guide-request">
+              <i class="material-icons">content_paste</i>
+              <p>Guide Request List</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./admin-request">
+              <i class="material-icons">content_paste</i>
+              <p>Admin Request List</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./guides">
+              <i class="material-icons">library_books</i>
+              <p>Guides</p>
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="./locations">
+              <i class="material-icons">location_ons</i>
+              <p>locations</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="#">
+              <i class="material-icons">notifications</i>
+              <p>Notifications</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="authService.SignOut()">
+              <i class="material-icons">logout</i>Log out
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title ">Location List</h4>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead class=" text-primary">
+                        <th>
+                          ID
+                        </th>
+                        <th>
+                          District
+                        </th>
+                        <th>
+                          Location Name
+                        </th>
+                        <th>
+                          Description
+                        </th>
+                        <th>
+                          verified
+                        </th>
+
+
+                      </thead>
+                      <tbody *ngIf="locations?.length > 0; else noLocations">
+                        <tr *ngFor="let location of locations">
+                          <td *ngIf="location.verified != false">
+                            {{location.id}}
+                          </td>
+                          <td *ngIf="location.verified != false">
+                            {{location.district}}
+                          </td>
+                          <td *ngIf="location.verified != false">
+                            {{location.locationName}}
+                          </td>
+                          <td *ngIf="location.verified != false">
+                            {{location.description}}
+                          </td>
+                          <td *ngIf="location.verified != false">
+                            <a class="btn btn-danger" (click)="locationService.removeLocation(location)"> Remove</a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header card-header-primary">
+                    <h4 class="card-title ">Add Location</h4>
+                  </div>
+                  <div class="card-body">
+                    <form (ngSubmit)="onSubmit()">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Name of the Location</label>
+                            <input type="text" placeholder="locationName" [(ngModel)]="location.locationName" name = "locationName">
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class=" form-group">
+                            <label for="district">District</label>
+                            <select [(ngModel)]="location.district" [ngModelOptions]="{standalone: true}" class="form-control" id="district" required placeholder="District" >
+                              <option *ngFor="let dis of district" [value]="dis">{{dis}} </option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Description</label>
+                            <input type="text" placeholder="description" [(ngModel)]="location.description" name = "description">
+                          </div>
+                        </div>
+                        <div class="container">
+                            <div id="map" class="map"></div>
+                            <div id="mouse-position"></div>
+                        </div>
+                        <div class="container row">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="bmd-label-floating">Latitude</label>
+                              <input type="text" placeholder="Latitude" [(ngModel)]="location.loc.latitude" name = "Latitude" disabled>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="bmd-label-floating">Longitude</label>
+                              <p></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <input type="submit" value="Submit" class="btn btn-success">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+  

@@ -28,6 +28,7 @@ import { ViewRatesComponent } from '../../components/tourist/view-rates/view-rat
 import { LocationComponent } from '../../components/admin/location/location.component';
 import { AdminRequestsComponent } from '../../components/admin/admin-requests/admin-requests.component';
 import {TourDashboardComponent} from '../../components/tourist/tour-dashboard/tour-dashboard.component';
+import { WrongRouteComponent } from '../../components/common/wrong-route/wrong-route.component';
 
 // Import canActivate guard services
 import { AdminGuard } from "../../shared/guard/admin.guard";
@@ -38,6 +39,7 @@ import { SecureInnerPagesGuard } from "../../shared/guard/secure-inner-pages.gua
 // Include route guard in routes array
 const routes: Routes = [
   { path: '', component: LandingComponent},
+  { path: 'wrong-route', component: WrongRouteComponent},
   //auth routes
   { path: '', redirectTo: '/sign-in', pathMatch: 'full'},
   { path: 'sign-in', component: SignInComponent, canActivate: [SecureInnerPagesGuard]},
