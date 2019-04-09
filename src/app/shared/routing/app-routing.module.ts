@@ -27,6 +27,7 @@ import { ViewPlacesComponent } from '../../components/tourist/view-places/view-p
 import { ViewRatesComponent } from '../../components/tourist/view-rates/view-rates.component';
 import { LocationComponent } from '../../components/admin/location/location.component';
 import { AdminRequestsComponent } from '../../components/admin/admin-requests/admin-requests.component';
+import {TourDashboardComponent} from '../../components/tourist/tour-dashboard/tour-dashboard.component';
 import { WrongRouteComponent } from '../../components/common/wrong-route/wrong-route.component';
 import { GuideDashboardComponent } from '../../components/guide/guide-dashboard/guide-dashboard.component';
 
@@ -68,6 +69,7 @@ const routes: Routes = [
   { path: 'guide-dashboard', component: GuideDashboardComponent,canActivate:[GuideGuard]},
   
   //tourist routes
+  { path: 'tour-dashboard', component: TourDashboardComponent, canActivate: [TouristGuard]},
   { path: 'map', component: MapComponent, canActivate: [TouristGuard] },
   { path: 'travel-plan', component: TravelPlanComponent, canActivate: [TouristGuard] },
   { path: 'view-guide-profile', component: ViewGuideProfileComponent, canActivate: [TouristGuard] },

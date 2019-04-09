@@ -22,7 +22,7 @@ export class GuideGuard implements CanActivate {
     
     return this.auth.user.pipe (
       take(1),
-      map(data => data && data.roles.guide ? true : false),
+      map(data => data && data.roles.guide && data.emailVerified? true : false),
       tap(isGuide => {
         if (!isGuide) {
           console.log('Guides Only');

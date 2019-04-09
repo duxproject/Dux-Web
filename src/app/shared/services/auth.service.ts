@@ -148,7 +148,6 @@ export class AuthService {
        this.ngZone.run(() => {
           this.router.navigate(['/']);
           localStorage.setItem('user', JSON.stringify(result.user));
-
         })
         this.SetUserData(result.user);
     }).catch((error) => {
@@ -191,7 +190,7 @@ export class AuthService {
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
-      emailVerified: user.emailVerified,
+      emailVerified: true,
       roles: {
         tourist: true
       }
@@ -209,7 +208,6 @@ export class AuthService {
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
-
       emailVerified: false,
       roles: {
         guide: true

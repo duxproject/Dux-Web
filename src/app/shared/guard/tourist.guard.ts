@@ -22,7 +22,7 @@ export class TouristGuard implements CanActivate {
     
     return this.auth.user.pipe (
       take(1),
-      map(data => data && data.roles.tourist ? true : false),
+      map(data => data && data.roles.tourist && data.emailVerified ? true : false),
       tap(isTourist => {
         if (!isTourist) {
           console.log('Tourists Only');

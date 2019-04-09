@@ -22,7 +22,7 @@ export class AdminGuard implements CanActivate {
     
     return this.auth.user.pipe (
       take(1),
-      map(data => data && data.roles.admin ? true : false),
+      map(data => data && data.roles.admin && data.emailVerified ? true : false),
       tap(isAdmin => {
         if (!isAdmin) {
           console.log('Admins Only');

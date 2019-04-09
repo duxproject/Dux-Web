@@ -52,6 +52,8 @@ import { SignUpScComponent } from './components/auth/sign-up-sc/sign-up-sc.compo
 import { PackageListComponent } from './components/tourist/package-list/package-list.component';
 import { RateListComponent } from './components/tourist/rate-list/rate-list.component';
 import { AdminRequestsComponent } from './components/admin/admin-requests/admin-requests.component';
+import { TourDashboardComponent } from './components/tourist/tour-dashboard/tour-dashboard.component';
+
 import { LocationService } from './shared/services/location/location.service';
 import { PackageService } from './shared/services/package/package.service';
 import { WrongRouteComponent } from './components/common/wrong-route/wrong-route.component';
@@ -90,8 +92,9 @@ import { GuideDashboardComponent } from './components/guide/guide-dashboard/guid
     PackageListComponent,
     RateListComponent,
     AdminRequestsComponent,
-    WrongRouteComponent,
-    GuideDashboardComponent
+    GuideDashboardComponent,
+    TourDashboardComponent,
+    WrongRouteComponent
 
   ],
   imports: [
