@@ -58,6 +58,7 @@ import { LocationService } from './shared/services/location/location.service';
 import { PackageService } from './shared/services/package/package.service';
 import { WrongRouteComponent } from './components/common/wrong-route/wrong-route.component';
 import { GuideDashboardComponent } from './components/guide/guide-dashboard/guide-dashboard.component';
+import { TouristsComponent } from './components/admin/tourists/tourists.component';
 
 
 
@@ -94,7 +95,8 @@ import { GuideDashboardComponent } from './components/guide/guide-dashboard/guid
     AdminRequestsComponent,
     GuideDashboardComponent,
     TourDashboardComponent,
-    WrongRouteComponent
+    WrongRouteComponent,
+    TouristsComponent
 
   ],
   imports: [
