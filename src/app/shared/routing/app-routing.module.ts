@@ -28,6 +28,7 @@ import { ViewRatesComponent } from '../../components/tourist/view-rates/view-rat
 import { LocationComponent } from '../../components/admin/location/location.component';
 import { AdminRequestsComponent } from '../../components/admin/admin-requests/admin-requests.component';
 import { WrongRouteComponent } from '../../components/common/wrong-route/wrong-route.component';
+import { GuideDashboardComponent } from '../../components/guide/guide-dashboard/guide-dashboard.component';
 
 // Import canActivate guard services
 import { AdminGuard } from "../../shared/guard/admin.guard";
@@ -64,6 +65,7 @@ const routes: Routes = [
   { path: 'rates', component: AddRatesComponent, canActivate: [GuideGuard] },
   { path: 'tour-request', component: TourRequestsComponent, canActivate: [GuideGuard] },
   { path: 'view-ratings', component: ViewRatingComponent, canActivate: [GuideGuard] },
+  { path: 'guide-dashboard', component: GuideDashboardComponent,canActivate:[GuideGuard]},
   
   //tourist routes
   { path: 'map', component: MapComponent, canActivate: [TouristGuard] },
