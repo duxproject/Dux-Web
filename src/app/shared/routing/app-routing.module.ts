@@ -30,6 +30,7 @@ import { AdminRequestsComponent } from '../../components/admin/admin-requests/ad
 import {TourDashboardComponent} from '../../components/tourist/tour-dashboard/tour-dashboard.component';
 import { WrongRouteComponent } from '../../components/common/wrong-route/wrong-route.component';
 import { GuideDashboardComponent } from '../../components/guide/guide-dashboard/guide-dashboard.component';
+import { TouristsComponent } from '../../components/admin/tourists/tourists.component';
 
 // Import canActivate guard services
 import { AdminGuard } from "../../shared/guard/admin.guard";
@@ -58,6 +59,7 @@ const routes: Routes = [
   { path: 'guides', component: GuidesComponent, canActivate: [AdminGuard] },
   { path: 'userprofile', component: UserprofileComponent, canActivate: [AdminGuard] },
   { path: 'locations', component: LocationComponent, canActivate: [AdminGuard] },
+  { path: 'tourists', component: TouristsComponent, canActivate:[AdminGuard] },
   
   
   //guide routes
