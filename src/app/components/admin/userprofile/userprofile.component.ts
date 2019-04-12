@@ -18,11 +18,7 @@ export class UserprofileComponent implements OnInit {
     public ngZone: NgZone
   ) { }
 
-  getItem(): string{
-    const user = JSON.parse(localStorage.getItem('user'));
-    
-    return user;
-  }
+  
   
 
   ngOnInit() {  

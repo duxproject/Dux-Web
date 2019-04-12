@@ -39,11 +39,10 @@ export class AuthService {
       .then((result) => {
         this.ngZone.run(() => {
           this.router.navigate(['/']);
-          var email = email;
           localStorage.setItem('user', JSON.stringify(result.user));
         });
       }).catch((error) => {
-        window.alert('Ooops!');
+        window.alert('Ooops! something went wrong');
       })
   }
 
@@ -146,7 +145,7 @@ export class AuthService {
     return this.afAuth.auth.signInWithPopup(provider)
     .then((result) => {
        this.ngZone.run(() => {
-          this.router.navigate(['/']);
+          this.router.navigate(['./sign-in']);
           localStorage.setItem('user', JSON.stringify(result.user));
         })
         this.SetUserData(result.user);
@@ -159,7 +158,7 @@ export class AuthService {
     return this.afAuth.auth.signInWithPopup(provider)
     .then((result) => {
        this.ngZone.run(() => {
-          this.router.navigate(['/']);
+          this.router.navigate(['./sign-in']);
         })
         this.SetUserDataGuide(result.user);
     }).catch((error) => {
@@ -171,7 +170,7 @@ export class AuthService {
     return this.afAuth.auth.signInWithPopup(provider)
     .then((result) => {
        this.ngZone.run(() => {
-          this.router.navigate(['/']);
+          this.router.navigate(['./sign-in']);
         })
 
         this.SetUserDataAdmin(result.user);

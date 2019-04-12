@@ -65,7 +65,12 @@
       </div>
     </div>
     <div class="main-panel">
-      
+      <div>
+          <a class="btn1 nav-link float-right">
+            <i class="material-icons">add</i>
+            <p>Add Location</p>
+          </a>
+      </div>
       <div class="content">
         <div class="container-fluid">
           <div class="row">
@@ -73,25 +78,19 @@
               <div class="card">
                 <div class="card-header card-header-primary">
                   <h4 class="card-title ">Location List</h4>
+                  
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table">
                       <thead class=" text-primary">
                         <th>
-                          ID
+                          Location Name
                         </th>
                         <th>
                           District
                         </th>
                         <th>
-                          Location Name
-                        </th>
-                        <th>
-                          Description
-                        </th>
-                        <th>
-                          verified
                         </th>
 
 
@@ -99,16 +98,10 @@
                       <tbody *ngIf="locations?.length > 0; else noLocations">
                         <tr *ngFor="let location of locations">
                           <td *ngIf="location.verified != false">
-                            {{location.id}}
-                          </td>
-                          <td *ngIf="location.verified != false">
-                            {{location.district}}
-                          </td>
-                          <td *ngIf="location.verified != false">
                             {{location.locationName}}
                           </td>
                           <td *ngIf="location.verified != false">
-                            {{location.description}}
+                            {{location.district}}
                           </td>
                           <td *ngIf="location.verified != false">
                             <a class="btn btn-danger" (click)="locationService.removeLocation(location)"> Remove</a>
@@ -123,7 +116,7 @@
           </div>
         </div>
 
-        <div class="content">
+        <div id="addloc" class="content">
           <div class="container-fluid">
             <div class="row">
               <div class="col-md-12">
@@ -137,7 +130,7 @@
                         <div class="col-md-12">
                           <div class="form-group">
                             <label class="bmd-label-floating">Name of the Location</label>
-                            <input type="text" placeholder="locationName" [(ngModel)]="location.locationName" name = "locationName">
+                            <input type="text" placeholder="locationName" [(ngModel)]="location.locationName" name = "locationName" required> 
                           </div>
                         </div>
                         <div class="col-md-12">
@@ -151,7 +144,7 @@
                         <div class="col-md-12">
                           <div class="form-group">
                             <label class="bmd-label-floating">Description</label>
-                            <input type="text" placeholder="description" [(ngModel)]="location.description" name = "description">
+                            <input type="text" placeholder="description" [(ngModel)]="location.description" name = "description" required>
                           </div>
                         </div>
                         <div class="container">
@@ -162,13 +155,13 @@
                           <div class="col-md-6">
                             <div class="form-group">
                               <label class="bmd-label-floating">Latitude</label>
-                              <input type="text" placeholder="Latitude" [(ngModel)]="location.loc.latitude" name = "Latitude" disabled>
+                              <input type="text" placeholder="latitude" [(ngModel)]="location.loc.latitude" value="{{getlat()}}" name="langitude" required>
                             </div>
                           </div>
                           <div class="col-md-6">
-                            <div class="form-group">
+                            <div class="form-group" >
                               <label class="bmd-label-floating">Longitude</label>
-                              <p></p>
+                              <input type="text" placeholder="longitude" [(ngModel)]="location.loc.longitude" value="{{getlong()}}" name="langitude" required>
                             </div>
                           </div>
                         </div>

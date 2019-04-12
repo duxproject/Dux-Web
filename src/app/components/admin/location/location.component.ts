@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../shared/services/auth.service';
 import { Location } from '../../../shared/services/location/location';
 import { LocationService } from '../../../shared/services/location/location.service';
+import * as $ from 'jquery';
 declare var ol: any;
 
 @Component({
@@ -10,8 +11,8 @@ declare var ol: any;
   styleUrls: ['../../../../assets/css/material-dashboard.css?v=2.1.1']
 })
 export class LocationComponent implements OnInit {
-  latitude: number = 6.9264;
-  longitude: number = 79.9091;
+  latitude: number = 6;
+  longitude: number = 80;
 
   map: any;
 
@@ -28,8 +29,8 @@ export class LocationComponent implements OnInit {
     photoUrl5: '',
     videoUrl: '',
     loc: {
-      longitude: 0,
-      latitude: 0
+      longitude:  '',
+      latitude: ''
     },
     verified: true
   };
@@ -106,27 +107,32 @@ export class LocationComponent implements OnInit {
       localStorage.setItem('long', JSON.stringify(lon));
     });
 
+    $(".btn1").click(function() {
+      $('html,body').animate({
+          scrollTop: $(".addloc").offset().top},
+          'slow');
+    });
+
     
   }
 
-  get getlat(): number {
+  getlat(): string {
     const lat = JSON.parse(localStorage.getItem('lat'));
     return lat;
   }
 
-  get getlong(): number {
+  getlong(): string {
     const long = JSON.parse(localStorage.getItem('long'));
     return long;
   }
-
 
   onSubmit() {
     if (this.location.locationName !== '' && this.location.description !== '') {
       this.locationService.addLocation(this.location);
       this.location.locationName = '';
       this.location.description = '';
-      this.location.loc.latitude = parseInt(localStorage.getItem('lat'));
-      this.location.loc.longitude = parseInt(localStorage.getItem('long'));
+      this.location.loc.latitude = '';
+      this.location.loc.longitude = '';
     }
 }
 

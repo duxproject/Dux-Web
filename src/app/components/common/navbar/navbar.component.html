@@ -7,8 +7,10 @@
             <li><a class="navd" href="/about">ABOUT US</a></li>
             <li><a class="navd" href="/services">SERVICES</a></li>
             <li><a class="navd" *ngIf="!isLogged()" href="/sign-in">SIGN IN</a> </li>
+            <li><a class="navd" *ngIf="isLogged() && user.roles.admin==true" href="/dashboard">DASHBOARD</a></li>
+            <li><a class="navd" *ngIf="isLogged() && user.roles.tourist==true" href="/tour-dashboard">DASHBOARD</a></li>
+            <li><a class="navd" *ngIf="isLogged() && user.roles.guide==true" href="/guide-dashboard">DASHBOARD</a></li>
             <li><a class="navd" *ngIf="isLogged()" (click)="authService.SignOut()">LOGOUT</a></li>
-            <li><a class="navd" href="/dashboard">DASHBOARD</a></li>
 
         </ul>
     </div>

@@ -1,6 +1,6 @@
 export interface GeoPoint{
-    latitude?: number;
-    longitude?: number;
+    latitude?: string;
+    longitude?: string;
 }
 
 export interface Location {

@@ -46,12 +46,14 @@ export class LocationService {
       videoURL: location.videoUrl,
       verified: false,
       loc: {
-        latitude: 0,
-        longitude: 0
+        latitude: location.loc.latitude,
+        longitude: location.loc.longitude
       }
     }
     return locationRef.set(data, {
       merge: true
     })
   }
+
+  
 }
