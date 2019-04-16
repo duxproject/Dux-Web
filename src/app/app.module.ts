@@ -1,6 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
+import { HttpClientModule } from "@angular/common/http";
+import { NgModule } from "@angular/core";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MatButtonModule } from "@angular/material/button";
+import { MatInputModule } from "@angular/material/input";
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatTooltipModule } from "@angular/material/tooltip";
+import { MatIconModule } from "@angular/material/icon";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
+
+import { NavigatorComponent } from "../app/components/common/navigator/navigator.component";
+import { MapoComponent } from "./components/admin/map/map.component";
+
+import { GeocodingService } from "../app/components/common/geocoding.service";
+
+import "leaflet";
 
 // Reactive Form
 import { ReactiveFormsModule } from "@angular/forms";
@@ -59,7 +74,9 @@ import { PackageService } from './shared/services/package/package.service';
 import { WrongRouteComponent } from './components/common/wrong-route/wrong-route.component';
 import { GuideDashboardComponent } from './components/guide/guide-dashboard/guide-dashboard.component';
 import { TouristsComponent } from './components/admin/tourists/tourists.component';
+import { LocationListComponent } from './components/admin/location-list/location-list.component';
 
+import 'hammerjs';
 
 
 @NgModule({
@@ -96,7 +113,10 @@ import { TouristsComponent } from './components/admin/tourists/tourists.componen
     GuideDashboardComponent,
     TourDashboardComponent,
     WrongRouteComponent,
-    TouristsComponent
+    TouristsComponent,
+    LocationListComponent,
+    NavigatorComponent,
+    MapoComponent
 
   ],
   imports: [
@@ -106,13 +126,22 @@ import { TouristsComponent } from './components/admin/tourists/tourists.componen
     AngularFireAuthModule,
     AngularFirestoreModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatInputModule,
+    MatIconModule,
+    MatTooltipModule,
+    MatSnackBarModule
   ],
   providers: [
     AuthService,
     UserService,
     PackageService,
-    LocationService
+    LocationService,
+    GeocodingService
   ],
   bootstrap: [AppComponent]
 })

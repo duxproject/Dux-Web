@@ -24,13 +24,13 @@
             <p>User Profile</p>
           </a>
         </li>
-        <li class="nav-item ">
+        <li class="nav-item">
           <a class="nav-link" href="./guide-request">
             <i class="material-icons">content_paste</i>
             <p>Guide Request List</p>
           </a>
         </li>
-        <li class="nav-item ">
+        <li class="nav-item">
           <a class="nav-link" href="./admin-request">
             <i class="material-icons">content_paste</i>
             <p>Admin Request List</p>
@@ -42,22 +42,22 @@
             <p>Guides</p>
           </a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="./tourists">
             <i class="material-icons">library_books</i>
             <p>Tourists</p>
           </a>
         </li>
-        <li class="nav-item ">
+        <li class="nav-item">
           <a class="nav-link" href="./locations">
             <i class="material-icons">location_ons</i>
             <p>Add Locations</p>
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="./locations-list">
             <i class="material-icons">location_ons</i>
-            <p>locations</p>
+            <p>Locations</p>
           </a>
         </li>
         <li class="nav-item">
@@ -69,47 +69,41 @@
     </div>
   </div>
   <div class="main-panel">
-    
     <div class="content">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
             <div class="card">
               <div class="card-header card-header-primary">
-                <h4 class="card-title ">Tourists List</h4>
+                <h4 class="card-title ">Location List</h4>
+                
               </div>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table">
                     <thead class=" text-primary">
                       <th>
-                        Name
+                        Location Name
                       </th>
                       <th>
-                        Email
+                        District
                       </th>
                       <th>
+                      </th>
 
-                        Ratings
-                      </th>
-                      <!-- <th>
-                        Remove Guide
-                      </th> -->
+
                     </thead>
-                    <tbody *ngIf="users?.length > 0; else noUsers">
-                      <tr *ngFor="let user of users">
-                        <td *ngIf="user.roles.tourist == true && user.emailVerified == true">
-                          {{user.displayName}}
+                    <tbody *ngIf="locations?.length > 0; else noLocations">
+                      <tr *ngFor="let location of locations">
+                        <td *ngIf="location.verified != false">
+                          {{location.locationName}}
                         </td>
-                        <td *ngIf="user.roles.tourist == true && user.emailVerified == true">
-                          {{user.email}} 
+                        <td *ngIf="location.verified != false">
+                          {{location.district}}
                         </td>
-                        <td *ngIf="user.roles.tourist == true && user.emailVerified == true">
-                          None
+                        <td *ngIf="location.verified != false">
+                          <a class="btn btn-danger" (click)="locationService.removeLocation(location)"> Remove</a>
                         </td>
-                        <!-- <td *ngIf="user.roles.tourist == true && user.emailVerified == true">
-                          <button class="btn btn-danger" (click)="AuthService.RemoveUserDataGuide(user)">Remove</button>
-                        </td> -->
                       </tr>
                     </tbody>
                   </table>

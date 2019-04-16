@@ -27,7 +27,7 @@ import { ViewPlacesComponent } from '../../components/tourist/view-places/view-p
 import { ViewRatesComponent } from '../../components/tourist/view-rates/view-rates.component';
 import { LocationComponent } from '../../components/admin/location/location.component';
 import { AdminRequestsComponent } from '../../components/admin/admin-requests/admin-requests.component';
-import {TourDashboardComponent} from '../../components/tourist/tour-dashboard/tour-dashboard.component';
+import { TourDashboardComponent } from '../../components/tourist/tour-dashboard/tour-dashboard.component';
 import { WrongRouteComponent } from '../../components/common/wrong-route/wrong-route.component';
 import { GuideDashboardComponent } from '../../components/guide/guide-dashboard/guide-dashboard.component';
 import { TouristsComponent } from '../../components/admin/tourists/tourists.component';
@@ -37,6 +37,8 @@ import { AdminGuard } from "../../shared/guard/admin.guard";
 import { GuideGuard } from "../../shared/guard/guide.guard";
 import { TouristGuard } from "../../shared/guard/tourist.guard";
 import { SecureInnerPagesGuard } from "../../shared/guard/secure-inner-pages.guard";
+import { LocationListComponent } from 'src/app/components/admin/location-list/location-list.component';
+//import { MapoComponent } from 'src/app/components/common/map/map.component';
 
 // Include route guard in routes array
 const routes: Routes = [
@@ -60,6 +62,7 @@ const routes: Routes = [
   { path: 'userprofile', component: UserprofileComponent, canActivate: [AdminGuard] },
   { path: 'locations', component: LocationComponent, canActivate: [AdminGuard] },
   { path: 'tourists', component: TouristsComponent, canActivate:[AdminGuard] },
+  { path: 'locations-list', component: LocationListComponent, canActivate:[AdminGuard] },
   
   
   //guide routes
