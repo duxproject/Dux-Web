@@ -14475,6 +14475,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   top: 0;
   bottom: 0;
   left: 0;
+  overflow-y: scroll;
   z-index: 2;
   width: 260px;
   background: #fff;
