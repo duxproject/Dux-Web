@@ -86,9 +86,6 @@
                         Location Name
                       </th>
                       <th>
-                        District
-                      </th>
-                      <th>
                       </th>
 
 
@@ -97,9 +94,6 @@
                       <tr *ngFor="let location of locations">
                         <td *ngIf="location.verified != false">
                           {{location.locationName}}
-                        </td>
-                        <td *ngIf="location.verified != false">
-                          {{location.district}}
                         </td>
                         <td *ngIf="location.verified != false">
                           <a class="btn btn-danger" (click)="locationService.removeLocation(location)"> Remove</a>
