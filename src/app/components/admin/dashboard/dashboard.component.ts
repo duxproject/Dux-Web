@@ -9,7 +9,7 @@ import { Router } from "@angular/router";
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
+  title = 'Dux-Web | Admin Dashboard';
   constructor(
     public authService: AuthService,
     public router: Router,

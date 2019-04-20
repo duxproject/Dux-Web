@@ -7,6 +7,7 @@ import { GeocodingService } from "../../common/geocoding.service";
   styleUrls: ["./map.component.css"]
 })
 export class MapoComponent implements OnInit {
+  title = 'Dux-Web | Admin Dashboard';
   address: string;
 
   constructor(

@@ -11,6 +11,7 @@ declare var ol: any;
   styleUrls: ['../../../../assets/css/material-dashboard.css?v=2.1.1']
 })
 export class LocationComponent implements OnInit {
+  title = 'Dux-Web | Admin Dashboard';
   latitude: number = 6;
   longitude: number = 80;
 

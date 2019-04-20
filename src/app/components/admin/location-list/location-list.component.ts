@@ -8,6 +8,7 @@ import { Location } from '../../../shared/services/location/location';
   styleUrls: ['../../../../assets/css/material-dashboard.css?v=2.1.1']
 })
 export class LocationListComponent implements OnInit {
+  title = 'Dux-Web | Admin Dashboard';
   locations: Location[];
 
   constructor(public locationService: LocationService) { }

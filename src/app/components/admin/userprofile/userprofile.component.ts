@@ -10,6 +10,7 @@ import { User } from "../../../shared/services/user/user";
   styleUrls: ['./userprofile.component.css']
 })
 export class UserprofileComponent implements OnInit {
+  title = 'Dux-Web | Admin Dashboard';
   user: User;
 
   constructor(

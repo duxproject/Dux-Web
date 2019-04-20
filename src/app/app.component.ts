@@ -8,7 +8,7 @@ import * as $ from 'jquery';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angularfirebase-authentication';
+  title = 'Dux-Web';
   ngOnInit() {
     $('body').addClass('df');
     }
