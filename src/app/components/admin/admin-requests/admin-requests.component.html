@@ -6,56 +6,56 @@
         Tip 2: you can also add an image using data-image tag
     -->
       <div class="logo">
-        <a href="/" class="simple-text logo-normal">
+        <a [routerLink]="['/']" class="simple-text logo-normal">
           Dux-Web(Admin)
         </a>
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="./dashboard">
+            <a class="nav-link" [routerLink]="['/dashboard']">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./userprofile">
+            <a class="nav-link" [routerLink]="['/userprofile']">
               <i class="material-icons">person</i>
               <p>User Profile</p>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./guide-request">
+            <a class="nav-link" [routerLink]="['/guide-request']">
               <i class="material-icons">content_paste</i>
               <p>Guide Request List</p>
             </a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="./admin-request">
+            <a class="nav-link" [routerLink]="['/admin-request']">
               <i class="material-icons">content_paste</i>
               <p>Admin Request List</p>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./guides">
+            <a class="nav-link" [routerLink]="['/guides']">
               <i class="material-icons">library_books</i>
               <p>Guides</p>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./tourists">
+            <a class="nav-link" [routerLink]="['/tourists']">
               <i class="material-icons">library_books</i>
               <p>Tourists</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./locations">
+            <a class="nav-link" [routerLink]="['/locations']">
               <i class="material-icons">location_ons</i>
               <p>Add Locations</p>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./locations-list">
+            <a class="nav-link" [routerLink]="['/locations-list']">
               <i class="material-icons">location_ons</i>
               <p>Locations</p>
             </a>
@@ -69,7 +69,7 @@
       </div>
     </div>
     <div class="main-panel">
-      
+
       <div class="content">
         <div class="container-fluid">
           <div class="row">
@@ -98,7 +98,7 @@
                             {{user.displayName}}
                           </td>
                           <td *ngIf="user.roles.admin == true && user.emailVerified == false">
-                            {{user.email}} 
+                            {{user.email}}
                           </td>
                           <td *ngIf="user.roles.admin == true && user.emailVerified == false">
                             <button class="btn btn-success" (click)="AuthService.AcceptUserDataAdmin(user)">Confirm</button>
