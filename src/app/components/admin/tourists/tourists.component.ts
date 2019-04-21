@@ -12,7 +12,7 @@ export class TouristsComponent implements OnInit {
   title = 'Dux-Web | Admin Dashboard';
   users: User[];
 
-  constructor(private userService: UserService, private AuthService: AuthService) { }
+  constructor(private userService: UserService, private authService: AuthService) { }
 
   ngOnInit() {
     this.userService.getUser().subscribe( users => {

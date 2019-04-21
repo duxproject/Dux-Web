@@ -54,9 +54,9 @@ export class LocationComponent implements OnInit {
       undefinedHTML: '&nbsp;'
     });
 
-   
+
     this.map = new ol.Map({
-      
+
       target: 'map',
       controls: ol.control.defaults({
         attributionOptions: {
@@ -69,7 +69,7 @@ export class LocationComponent implements OnInit {
         })
       ],
       view: new ol.View({
-        
+
         center: ol.proj.fromLonLat([79.859619140625, 6.930062160235181]),
         zoom: 8
       })
@@ -105,7 +105,7 @@ export class LocationComponent implements OnInit {
 
     this.map.on('click', function (args) {
       var lonlat = ol.proj.transform(args.coordinate, 'EPSG:3857', 'EPSG:4326');
-    
+
       var lon = lonlat[0];
       var lat = lonlat[1];
 
@@ -113,7 +113,7 @@ export class LocationComponent implements OnInit {
       localStorage.setItem('long', JSON.stringify(lon));
     });
 
-    
+
   }
 
   getname(): string {
