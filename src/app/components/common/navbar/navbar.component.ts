@@ -4,7 +4,7 @@ import { UserService } from '../../../shared/services/user/user.service';
 import { User } from "../../../shared/services/user/user";
 
 @Component({
-  selector: newFunction(),
+  selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
@@ -27,8 +27,5 @@ export class NavbarComponent implements OnInit {
     });
   }
 
-}
-function newFunction(): string {
-  return 'app-navbar';
 }
 
