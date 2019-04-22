@@ -1,6 +1,122 @@
-<p>
-  travel-plan works!
-</p>
-<p>
-  map works!
-</p>
+<div class="wrapper ">
+  <div class="sidebar" data-color="azure" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+    <!--
+      Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+      Tip 2: you can also add an image using data-image tag
+  -->
+    <div class="logo">
+      <a href="#" class="simple-text logo-normal">
+        Dux
+      </a>
+    </div>
+    <div class="sidebar-wrapper">
+      <ul class="nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="./travel-plan">
+            <i class="material-icons">dashboard</i>
+            <p>Travel Plan</p>
+          </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="./userprofile">
+            <i class="material-icons">person</i>
+            <p>User Profile</p>
+          </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="./view-packages">
+            <i class="material-icons">content_paste</i>
+            <p>Offers</p>
+          </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="./view-guide-profile">
+            <i class="material-icons">library_books</i>
+            <p>Guide Profile</p>
+          </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="./map">
+            <i class="material-icons">location_ons</i>
+            <p>Track</p>
+          </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="#">
+            <i class="material-icons">notifications</i>
+            <p>Notifications</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="authService.SignOut()">
+            <i class="material-icons">logout</i>Log out
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="main-panel">
+    
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-borderless table-condensed table-hover">
+                    <thead class=" text-primary">
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td> <b>Username:</b>
+                          <input type="text" class="form-control">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><b>Country:</b>
+                          <input type="text" class="form-control">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><b>Tour Date:</b>
+                          <input type="text" class="form-control">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><b>Duration:</b>
+                          <input type="text" class="form-control">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><b>Start Location:</b>
+                          <input type="text" class="form-control">
+                        </td>
+                        <td><b>End Location:</b>
+                          <input type="text" class="form-control">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><b>Budget:</b>
+                          <input type="text" class="form-control">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td> <input type="button" value="Create" class="btn btn-success"> </td>
+                        <td> <input type="button" value="Update" class="btn btn-warning"> </td>
+                        <td> <input type="button" value="Delete" class="btn btn-danger"> </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
