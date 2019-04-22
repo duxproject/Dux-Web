@@ -10,6 +10,7 @@ import { AuthService } from '../../../shared/services/auth.service';
   styleUrls: ['../../../../assets/css/material-dashboard.css?v=2.1.1']
 })
 export class GuidesComponent implements OnInit {
+  title = 'Dux-Web | Admin Dashboard';
   users: User[];
 
   constructor(private userService: UserService, private AuthService: AuthService) { }

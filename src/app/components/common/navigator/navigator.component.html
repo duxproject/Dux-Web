@@ -1,0 +1,16 @@
+<div class="map-navigator box-frame on-map element-row">
+  <form>
+    <div class="address-input">
+      <input #addressInput matInput placeholder="Search Location" [value]="address" type="text">
+    </div>
+  </form>
+  <div class="element-row">
+    <button mat-icon-button
+            disableRipple
+            class="active"
+            matTooltip="go to address"
+            (click)="goto(addressInput.value)">
+      <mat-icon>search</mat-icon>
+    </button>
+  </div>
+</div>

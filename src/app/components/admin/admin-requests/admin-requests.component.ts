@@ -6,10 +6,10 @@ import { AuthService } from '../../../shared/services/auth.service';
 @Component({
   selector: 'app-admin-requests',
   templateUrl: './admin-requests.component.html',
-
   styleUrls: ['../../../../assets/css/material-dashboard.css?v=2.1.1']
 })
 export class AdminRequestsComponent implements OnInit {
+  title = 'Dux-Web | Admin Dashboard';
   users: User[];
 
   constructor(private userService: UserService, 
