@@ -90,7 +90,7 @@
 
 
                     </thead>
-                    <tbody *ngIf="locations?.length > 0; else noLocations">
+                    <tbody *ngIf="locations?.length > 0">
                       <tr *ngFor="let location of locations">
                         <td *ngIf="location.verified != false">
                           {{location.locationName}}

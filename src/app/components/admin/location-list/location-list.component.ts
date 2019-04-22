@@ -12,7 +12,7 @@ export class LocationListComponent implements OnInit {
   title = 'Dux-Web | Admin Dashboard';
   locations: Location[];
 
-  constructor(public locationService: LocationService, private authService: AuthService) { }
+  constructor(public locationService: LocationService, public authService: AuthService) { }
 
   ngOnInit() {
     this.locationService.getLocation().subscribe( locations => {

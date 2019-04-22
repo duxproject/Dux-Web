@@ -13,7 +13,7 @@ export class GuideRequestsComponent implements OnInit {
   users: User[];
 
   constructor(private userService: UserService, 
-              private AuthService: AuthService) { }
+              public AuthService: AuthService) { }
 
   ngOnInit() {
     this.userService.getUser().subscribe( users => {

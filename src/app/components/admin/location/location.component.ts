@@ -35,7 +35,7 @@ export class LocationComponent implements OnInit {
     verified: true
   };
 
-  constructor(private authService : AuthService, private locationService: LocationService) { }
+  constructor(public authService : AuthService, private locationService: LocationService) { }
 
 
   ngOnInit() {
