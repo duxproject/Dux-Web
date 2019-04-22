@@ -6,7 +6,7 @@ import { AuthService } from '../../../shared/services/auth.service';
 @Component({
   selector: 'app-tourists',
   templateUrl: './tourists.component.html',
-  styleUrls: ['./tourists.component.css']
+  styleUrls: ['../../../../assets/css/material-dashboard.min.css']
 })
 export class TouristsComponent implements OnInit {
   title = 'Dux-Web | Admin Dashboard';

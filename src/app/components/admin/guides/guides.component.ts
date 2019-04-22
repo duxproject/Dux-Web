@@ -7,7 +7,7 @@ import { AuthService } from '../../../shared/services/auth.service';
 @Component({
   selector: 'app-guides',
   templateUrl: './guides.component.html',
-  styleUrls: ['../../../../assets/css/material-dashboard.css?v=2.1.1']
+  styleUrls: ['../../../../assets/css/material-dashboard.min.css']
 })
 export class GuidesComponent implements OnInit {
   title = 'Dux-Web | Admin Dashboard';

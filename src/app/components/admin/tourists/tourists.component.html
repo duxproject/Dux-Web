@@ -6,7 +6,7 @@
       Tip 2: you can also add an image using data-image tag
   -->
     <div class="logo">
-      <a href="/" class="simple-text logo-normal">
+      <a [routerLink]="['/']" class="simple-text logo-normal">
         Dux-Web(Admin)
       </a>
     </div>
@@ -89,8 +89,7 @@
                         Email
                       </th>
                       <th>
-
-                        Ratings
+                        Remove
                       </th>
                       <!-- <th>
                         Remove Guide
@@ -105,11 +104,8 @@
                           {{user.email}}
                         </td>
                         <td *ngIf="user.roles.tourist == true && user.emailVerified == true">
-                          None
+                          <button class="btn btn-danger" (click)="authService.RemoveUserDataTourist(user)">Remove</button>
                         </td>
-                        <!-- <td *ngIf="user.roles.tourist == true && user.emailVerified == true">
-                          <button class="btn btn-danger" (click)="AuthService.RemoveUserDataGuide(user)">Remove</button>
-                        </td> -->
                       </tr>
                     </tbody>
                   </table>

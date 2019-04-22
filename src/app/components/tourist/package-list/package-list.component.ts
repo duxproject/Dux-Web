@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-package-list',
   templateUrl: './package-list.component.html',
-  styleUrls: ['./package-list.component.css']
+  styleUrls: ['../../../../assets/css/material-dashboard.min.css']
 })
 export class PackageListComponent implements OnInit {
 

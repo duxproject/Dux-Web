@@ -7,7 +7,7 @@ import { User } from "../../../shared/services/user/user";
 @Component({
   selector: 'app-userprofile',
   templateUrl: './userprofile.component.html',
-  styleUrls: ['./userprofile.component.css']
+  styleUrls: ['../../../../assets/css/material-dashboard.min.css']
 })
 export class UserprofileComponent implements OnInit {
   title = 'Dux-Web | Admin Dashboard';

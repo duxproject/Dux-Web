@@ -6,7 +6,7 @@ import { Router } from "@angular/router";
 @Component({
   selector: 'app-guide-dashboard',
   templateUrl: './guide-dashboard.component.html',
-  styleUrls: ['./guide-dashboard.component.css']
+  styleUrls: ['../../../../assets/css/material-dashboard.min.css']
 })
 export class GuideDashboardComponent implements OnInit {
 

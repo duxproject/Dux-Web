@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-tour-dashboard',
   templateUrl: './tour-dashboard.component.html',
-  styleUrls: ['./tour-dashboard.component.css']
+  styleUrls: ['../../../../assets/css/material-dashboard.min.css']
 })
 export class TourDashboardComponent implements OnInit {
 
