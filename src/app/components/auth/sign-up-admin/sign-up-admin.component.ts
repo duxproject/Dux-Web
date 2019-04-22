@@ -11,7 +11,7 @@ import { AuthService } from '../../../shared/services/auth.service';
 export class SignUpAdminComponent implements OnInit {
 
 
-  constructor(private authService: AuthService) { }
+  constructor(public authService: AuthService) { }
 
 
   ngOnInit() {

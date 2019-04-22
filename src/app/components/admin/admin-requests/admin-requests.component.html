@@ -92,7 +92,7 @@
                           Confirm
                         </th>
                       </thead>
-                      <tbody *ngIf="users?.length > 0; else noUsers">
+                      <tbody *ngIf="users?.length > 0">
                         <tr *ngFor="let user of users">
                           <td *ngIf="user.roles.admin == true && user.emailVerified == false">
                             {{user.displayName}}
