@@ -12,7 +12,7 @@ export class NavbarComponent implements OnInit {
   users: User[];
   user:User;
 
-  constructor(public authService: AuthService, private userService: UserService) { }
+  constructor(public authService: AuthService, public userService: UserService) { }
 
 
   isLogged(): boolean {
@@ -28,4 +28,3 @@ export class NavbarComponent implements OnInit {
   }
 
 }
-
