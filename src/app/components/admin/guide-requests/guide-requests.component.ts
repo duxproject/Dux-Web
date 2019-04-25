@@ -15,9 +15,16 @@ export class GuideRequestsComponent implements OnInit {
   constructor(private userService: UserService, 
               public AuthService: AuthService) { }
 
+  getUsr() {
+    const usr = JSON.parse(localStorage.getItem('users'));
+    this.users = usr; 
+  }
+
   ngOnInit() {
+    this.getUsr();
     this.userService.getUser().subscribe( users => {
       this.users = users;
+      localStorage.setItem('users', JSON.stringify(users));
     });
   }
 
