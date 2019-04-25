@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../../shared/services/user/user.service';
 import { User } from '../../../shared/services/user/user';
 import { AuthService } from '../../../shared/services/auth.service';
+import { getUrlScheme } from '@angular/compiler';
 
 
 @Component({
@@ -15,9 +16,17 @@ export class GuidesComponent implements OnInit {
 
   constructor(private userService: UserService, public AuthService: AuthService) { }
 
+
+  getUsr() {
+    const usr = JSON.parse(localStorage.getItem('users'));
+    this.users = usr; 
+  }
+
   ngOnInit() {
+    this.getUsr();
     this.userService.getUser().subscribe( users => {
       this.users = users;
+      localStorage.setItem('users', JSON.stringify(users));
     });
   }
 
