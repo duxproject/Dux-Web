@@ -135,6 +135,10 @@ input:-moz-placeholder {
   color: #BBBBBB
 }
 
+input.ng-touched.ng-invalid{
+  border-color: #dc3545;
+}
+
 .displayTable .btn {
   width: 100%;
   border: none;
