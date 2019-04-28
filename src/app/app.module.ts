@@ -77,6 +77,10 @@ import { TouristsComponent } from './components/admin/tourists/tourists.componen
 import { LocationListComponent } from './components/admin/location-list/location-list.component';
 
 import 'hammerjs';
+import { TourComponent } from './components/tourist/travel-plan/tour/tour.component';
+import { TourListComponent } from './components/tourist/travel-plan/tour-list/tour-list.component';
+import { TouristService } from './shared/services/tourist/tourist.service';
+
 
 
 @NgModule({
@@ -116,7 +120,9 @@ import 'hammerjs';
     TouristsComponent,
     LocationListComponent,
     NavigatorComponent,
-    MapoComponent
+    MapoComponent,
+    TourComponent,
+    TourListComponent
 
   ],
   imports: [
@@ -134,14 +140,16 @@ import 'hammerjs';
     MatInputModule,
     MatIconModule,
     MatTooltipModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    
   ],
   providers: [
     AuthService,
     UserService,
     PackageService,
     LocationService,
-    GeocodingService
+    GeocodingService,
+    TouristService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,42 @@
+<h1 class="display-4"> <b>Create your Tour!</b> </h1>
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+
+  <div class="form-group">
+    <input name="fullName" #fullName="ngModel" [(ngModel)]="service.formData.fullName" class="form-control" placeholder="Full name" required>
+    <div *ngIf="fullName.invalid && fullName.touched" class="validation">Please fill out this field</div>
+  </div>
+  <div class="form-group">
+    <input name="country" #country="ngModel" [(ngModel)]="service.formData.country" class="form-control" placeholder="Country" required>
+    <div *ngIf="country.invalid && country.touched" class="validation">Please fill out this field</div>
+  </div>
+  <div class="form-group">
+    <input name="startDate" #startDate="ngModel" [(ngModel)]="service.formData.startDate" class="form-control" placeholder="Start Date" required>
+    <div *ngIf="startDate.invalid && startDate.touched" class="validation">Please fill out this field</div>
+  </div>
+  <div class="form-group">
+    <input name="duration" #duration="ngModel" [(ngModel)]="service.formData.duration" class="form-control" placeholder="Duration" required>
+    <div *ngIf="duration.invalid && duration.touched" class="validation">Please fill out this field</div>
+  </div>
+  <div class="form-row">
+      <div class="form-group col-md-6">
+        <input name="startLoc" #startLoc="ngModel" [(ngModel)]="service.formData.startLoc" class="form-control" placeholder="Starting tour at" required>
+        <div *ngIf="startLoc.invalid && startLoc.touched" class="validation">Please fill out this field</div>
+      </div>
+      <div class="form-group col-md-6">
+        <input name="endLoc" #endLoc="ngModel" [(ngModel)]="service.formData.endLoc" class="form-control" placeholder="Ending tour at" required>
+        <div *ngIf="endLoc.invalid && endLoc.touched" class="validation">Please fill out this field</div>
+      </div>
+  </div>
+  <div class="form-group">
+    <input name="budget" #budget="ngModel" [(ngModel)]="service.formData.budget" class="form-control" placeholder="Expected price" required>
+    <div *ngIf="budget.invalid && budget.touched" class="validation">Please fill out this field</div>
+  </div>
+  <div class="form-group">
+    <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-info">CREATE</button>
+  </div>
+  <div class="form-group">
+    <button type="button" class="btn btn-lg btn-block btn-warning" href="./tour-list">Back</button>
+  </div>
+
+
+</form>
