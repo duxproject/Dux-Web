@@ -35,11 +35,16 @@ export class TourComponent implements OnInit {
 
   onSubmit(form: NgForm){
     // data -> variable used to store the infor of a single tour
-    let data = form.value;
+    let data = Object.assign({},form.value);
 
-    // inputting the data into the firestore db
-    this.firestore.collection('users').add(data);
-
+    delete data.id;
+    if(form.value.id == null){
+      // inputting the data into the firestore db
+      this.firestore.collection('tour').add(data);
+    }else{
+      this.firestore.doc('tour/' + form.value.id).update(data);
+    }
+    
     // after submitting the form should reset
     this.resetForm(form);
   }
