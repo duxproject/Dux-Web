@@ -10,7 +10,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class TourComponent implements OnInit {
 
-  constructor(private service: TouristService,
+  constructor(public service: TouristService,
     private firestore:AngularFirestore) { }
 
   ngOnInit() {
