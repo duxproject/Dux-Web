@@ -10,7 +10,7 @@ import { Tourist } from 'src/app/shared/services/tourist/tourist.model';
 export class TourListComponent implements OnInit {
 
   list: Tourist[];
-  constructor(private service:TouristService) { }
+  constructor(public service:TouristService) { }
 
   ngOnInit() {
     this.service.getTour().subscribe(actionArray =>{
