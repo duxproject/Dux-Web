@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TouristService } from 'src/app/shared/services/tourist/tourist.service';
 import { Tourist } from 'src/app/shared/services/tourist/tourist.model';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-tour-list',
@@ -10,7 +11,8 @@ import { Tourist } from 'src/app/shared/services/tourist/tourist.model';
 export class TourListComponent implements OnInit {
 
   list: Tourist[];
-  constructor(public service:TouristService) { }
+  constructor(public service:TouristService,
+    public firestore:AngularFirestore) { }
 
   ngOnInit() {
     this.service.getTour().subscribe(actionArray =>{
@@ -27,6 +29,13 @@ export class TourListComponent implements OnInit {
 
   onEdit(tr:Tourist){
     this.service.formData =Object.assign({},tr);
+  }
+
+  onDelete(id:string){
+    if(confirm("Are you sure?")){
+      this.firestore.doc('tour/'+id).delete();
+
+    }
   }
 
 }
