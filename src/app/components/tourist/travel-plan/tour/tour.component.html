@@ -10,11 +10,11 @@
     <div *ngIf="country.invalid && country.touched" class="validation">Please fill out this field</div>
   </div>
   <div class="form-group">
-    <input name="startDate" #startDate="ngModel" [(ngModel)]="service.formData.startDate" class="form-control" placeholder="Start Date" required>
+    <input type="date" name="startDate" #startDate="ngModel" [(ngModel)]="service.formData.startDate" class="form-control" placeholder="Start Date" required>
     <div *ngIf="startDate.invalid && startDate.touched" class="validation">Please fill out this field</div>
   </div>
   <div class="form-group">
-    <input name="duration" #duration="ngModel" [(ngModel)]="service.formData.duration" class="form-control" placeholder="Duration" required>
+    <input type="number" name="duration" #duration="ngModel" [(ngModel)]="service.formData.duration" class="form-control" placeholder="Duration in days.." required>
     <div *ngIf="duration.invalid && duration.touched" class="validation">Please fill out this field</div>
   </div>
   <div class="form-row">
@@ -32,10 +32,10 @@
     <div *ngIf="budget.invalid && budget.touched" class="validation">Please fill out this field</div>
   </div>
   <div class="form-group">
-    <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-info">CREATE</button>
+    <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-info">SUBMIT</button>
   </div>
   <div class="form-group">
-    <button type="button" class="btn btn-lg btn-block btn-warning" href="./tour-list">Back</button>
+    <a [routerLink]="['/tour-dashboard']" class="nav-link">Back</a>
   </div>
 
 
