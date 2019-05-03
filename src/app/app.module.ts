@@ -80,6 +80,7 @@ import 'hammerjs';
 import { TourComponent } from './components/tourist/travel-plan/tour/tour.component';
 import { TourListComponent } from './components/tourist/travel-plan/tour-list/tour-list.component';
 import { TouristService } from './shared/services/tourist/tourist.service';
+import { AddLocationComponent } from './components/guide/add-location/add-location.component';
 
 
 
@@ -122,7 +123,8 @@ import { TouristService } from './shared/services/tourist/tourist.service';
     NavigatorComponent,
     MapoComponent,
     TourComponent,
-    TourListComponent
+    TourListComponent,
+    AddLocationComponent
 
   ],
   imports: [

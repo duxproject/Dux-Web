@@ -12,7 +12,7 @@
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item ">
+          <li class="nav-item  ">
             <a class="nav-link" href="./guide-dashboard">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
@@ -36,19 +36,19 @@
               <p>Manage-Packages</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item  ">
             <a class="nav-link" href="./rates">
               <i class="material-icons">attach_money</i>
               <p>Add-Rates</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" [routerLink]="['/add-location']">
               <i class="material-icons">map</i>
               <p>Add Locations</p>
             </a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a class="nav-link" href="./tour-request">
               <i class="material-icons">people</i>
               <p>Tour-Request</p>
@@ -60,6 +60,7 @@
               <p>View-Ratings</p>
             </a>
           </li>
+          
           <li class="nav-item">
             <a class="nav-link" (click)="authService.SignOut()">
               <i class="material-icons">logout</i>Log out
