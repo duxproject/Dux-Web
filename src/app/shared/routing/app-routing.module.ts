@@ -32,6 +32,7 @@ import { WrongRouteComponent } from '../../components/common/wrong-route/wrong-r
 import { GuideDashboardComponent } from '../../components/guide/guide-dashboard/guide-dashboard.component';
 import { TouristsComponent } from '../../components/admin/tourists/tourists.component';
 import { TourListComponent } from '../../components/tourist/travel-plan/tour-list/tour-list.component';
+import { AddLocationComponent } from '../../components/guide/add-location/add-location.component';
 
 
 // Import canActivate guard services
@@ -74,6 +75,7 @@ const routes: Routes = [
   { path: 'tour-request', component: TourRequestsComponent, canActivate: [GuideGuard] },
   { path: 'view-ratings', component: ViewRatingComponent, canActivate: [GuideGuard] },
   { path: 'guide-dashboard', component: GuideDashboardComponent,canActivate:[GuideGuard]},
+  { path: 'add-location', component: AddLocationComponent, canActivate:[GuideGuard]},
   
   //tourist routes
   { path: 'tour-dashboard', component: TourDashboardComponent, canActivate: [TouristGuard]},
