@@ -6,44 +6,44 @@
         Tip 2: you can also add an image using data-image tag
     -->
       <div class="logo">
-        <a href="#" class="simple-text logo-normal">
+        <a [routerLink]="['/']" class="simple-text logo-normal">
           DUX
         </a>
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="./travel-plan">
+            <a class="nav-link" [routerLink]="['/travel-plan']">
               <i class="material-icons">dashboard</i>
               <p>Travel Plan</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./userprofile">
+            <a class="nav-link" [routerLink]="['/userprofile']">
               <i class="material-icons">person</i>
               <p>User Profile</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./view-packages">
+            <a class="nav-link" [routerLink]="['/view-packages']">
               <i class="material-icons">content_paste</i>
               <p>Offers</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./view-guide-profile">
+            <a class="nav-link" [routerLink]="['/view-guide-profile']">
               <i class="material-icons">library_books</i>
               <p>Guide Profile</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./map">
+            <a class="nav-link" [routerLink]="['/map']">
               <i class="material-icons">location_ons</i>
               <p>Track</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="#">
+            <a class="nav-link" [routerLink]="['#']">
               <i class="material-icons">notifications</i>
               <p>Notifications</p>
             </a>
