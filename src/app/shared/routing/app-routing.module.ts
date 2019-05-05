@@ -46,7 +46,7 @@ import { LocationListComponent } from 'src/app/components/admin/location-list/lo
 // Include route guard in routes array
 const routes: Routes = [
   { path: '', component: LandingComponent},
-  { path: 'wrong-route', component: WrongRouteComponent},
+  
   //auth routes
   { path: '', redirectTo: '/sign-in', pathMatch: 'full'},
   { path: 'sign-in', component: SignInComponent, canActivate: [SecureInnerPagesGuard]},
@@ -58,14 +58,14 @@ const routes: Routes = [
   { path: 'verify-email-address', component: VerifyEmailComponent, canActivate: [SecureInnerPagesGuard] },
  
   //admin routes
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AdminGuard] },
-  { path: 'guide-request', component: GuideRequestsComponent, canActivate: [AdminGuard] },
-  { path: 'admin-request', component: AdminRequestsComponent, canActivate: [AdminGuard] },
-  { path: 'guides', component: GuidesComponent, canActivate: [AdminGuard] },
-  { path: 'userprofile', component: UserprofileComponent, canActivate: [AdminGuard] },
-  { path: 'locations', component: LocationComponent, canActivate: [AdminGuard] },
-  { path: 'tourists', component: TouristsComponent, canActivate:[AdminGuard] },
-  { path: 'locations-list', component: LocationListComponent, canActivate:[AdminGuard] },
+  { path: 'admin/dashboard', component: DashboardComponent, canActivate: [AdminGuard] },
+  { path: 'admin/guide-request', component: GuideRequestsComponent, canActivate: [AdminGuard] },
+  { path: 'admin/admin-request', component: AdminRequestsComponent, canActivate: [AdminGuard] },
+  { path: 'admin/guides', component: GuidesComponent, canActivate: [AdminGuard] },
+  { path: 'admin/userprofile', component: UserprofileComponent, canActivate: [AdminGuard] },
+  { path: 'admin/locations', component: LocationComponent, canActivate: [AdminGuard] },
+  { path: 'admin/tourists', component: TouristsComponent, canActivate:[AdminGuard] },
+  { path: 'admin/locations-list', component: LocationListComponent, canActivate:[AdminGuard] },
   
   
   //guide routes
@@ -85,7 +85,12 @@ const routes: Routes = [
   { path: 'view-packages', component: ViewPackagesComponent, canActivate: [TouristGuard] },
   { path: 'view-places', component: ViewPlacesComponent, canActivate: [TouristGuard] },
   { path: 'view-rates', component: ViewRatesComponent, canActivate: [TouristGuard] },
-  {path: 'tour-list', component: TourListComponent, canActivate: [TouristGuard]}
+  {path: 'tour-list', component: TourListComponent, canActivate: [TouristGuard]},
+
+
+  //Wrong route
+  { path: 'wrong-route', component: WrongRouteComponent},
+  { path: '**', component: WrongRouteComponent},
 
   
 ];
