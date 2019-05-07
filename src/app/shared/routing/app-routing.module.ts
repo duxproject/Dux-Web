@@ -41,6 +41,7 @@ import { GuideGuard } from "../../shared/guard/guide.guard";
 import { TouristGuard } from "../../shared/guard/tourist.guard";
 import { SecureInnerPagesGuard } from "../../shared/guard/secure-inner-pages.guard";
 import { LocationListComponent } from 'src/app/components/admin/location-list/location-list.component';
+import { EditLocationComponent } from 'src/app/components/admin/edit-location/edit-location.component';
 //import { MapoComponent } from 'src/app/components/common/map/map.component';
 
 // Include route guard in routes array
@@ -66,6 +67,7 @@ const routes: Routes = [
   { path: 'admin/locations', component: LocationComponent, canActivate: [AdminGuard] },
   { path: 'admin/tourists', component: TouristsComponent, canActivate:[AdminGuard] },
   { path: 'admin/locations-list', component: LocationListComponent, canActivate:[AdminGuard] },
+  { path: 'admin/edit-location/:id', component: EditLocationComponent, canActivate:[AdminGuard] },
   
   
   //guide routes
