@@ -36,7 +36,7 @@ import { UserprofileComponent } from './components/admin/userprofile/userprofile
 // Firebase services + enviorment module
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 
 import { UserService } from "./shared/services/user/user.service";
@@ -156,7 +156,8 @@ import { EditLocationComponent } from './components/admin/edit-location/edit-loc
     PackageService,
     LocationService,
     GeocodingService,
-    TouristService
+    TouristService,
+    { provide: FirestoreSettingsToken, useValue: {} }
   ],
   bootstrap: [AppComponent]
 })
