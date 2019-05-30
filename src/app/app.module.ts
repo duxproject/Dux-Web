@@ -75,6 +75,8 @@ import { WrongRouteComponent } from './components/common/wrong-route/wrong-route
 import { GuideDashboardComponent } from './components/guide/guide-dashboard/guide-dashboard.component';
 import { TouristsComponent } from './components/admin/tourists/tourists.component';
 import { LocationListComponent } from './components/admin/location-list/location-list.component';
+import { ChatComponent } from './components/common/chat/chat/chat.component';
+import { ChathomeComponent } from './components/common/chat/chathome/chathome.component';
 
 import 'hammerjs';
 import { TourComponent } from './components/tourist/travel-plan/tour/tour.component';
@@ -129,7 +131,9 @@ import { EditLocationComponent } from './components/admin/edit-location/edit-loc
     TourListComponent,
     SideNavComponent,
     AddLocationComponent,
-    EditLocationComponent
+    EditLocationComponent,
+    ChatComponent,
+    ChathomeComponent
 
   ],
   imports: [

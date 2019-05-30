@@ -9,6 +9,8 @@
             <li><a class="navd" *ngIf="isLogged() && user.roles.admin === true" [routerLink]="['/admin/userprofile']">DASHBOARD</a></li>
             <li><a class="navd" *ngIf="isLogged() && user.roles.guide === true" [routerLink]="['/guide-dashboard']">DASHBOARD</a></li>
             <li><a class="navd" *ngIf="isLogged() && user.roles.tourist === true" [routerLink]="['/tour-dashboard']">DASHBOARD</a></li>
+            <li><a class="navd" *ngIf="isLogged() && user.roles.tourist === true" [routerLink]="['/chats']">CHATS</a></li>
+            <!-- <li><a class="navd" href="">CHATS</a></li> -->
             <li><a class="navd" *ngIf="!isLogged()" [routerLink]="['/sign-in']">SIGN IN</a> </li>
             <li><a class="navd" *ngIf="isLogged()" (click)="authService.SignOut()">LOGOUT</a></li>
         </ul>

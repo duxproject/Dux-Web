@@ -1,0 +1,22 @@
+@import url("https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css");
+
+img {
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+}
+
+button {
+  margin: 10px;
+}
+
+.login {
+  text-align: center;
+}
+
+.chat-list {
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}

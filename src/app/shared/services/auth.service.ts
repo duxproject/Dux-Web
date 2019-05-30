@@ -5,7 +5,7 @@ import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from "@angular/router";
 import { Observable, of} from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, first } from 'rxjs/operators';
 
 
 @Injectable({
@@ -48,6 +48,9 @@ export class AuthService {
 
   getUser() {
     return this.user;
+  }
+  GetUser() {
+    return this.user.pipe(first()).toPromise();
   }
 
   // Sign up with email/password

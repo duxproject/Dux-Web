@@ -1,0 +1,96 @@
+<ng-container *ngIf="(chat$ | async) as chat">
+  <ng-container *ngIf="(auth.user | async) as user">
+    <div class="top">
+      <p *ngIf="!isTopicEditing">
+        <a class="tag" routerLink="/chats">Back</a>
+        <span class="tag is-success">
+          {{ chat.topic }}
+        </span>
+        <span class="tag is-black is-small" (click)="topicEditable()">
+          Edit
+        </span>
+      </p>
+      <div>
+        <div *ngIf="isTopicEditing">
+          <input
+            class="input"
+            [(ngModel)]="topic"
+            placeholder="Topic"
+            autofocus
+            (focusout)="topicNonEditable()"
+            (keydown.enter)="submitTopic(chat.id)"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="chat">
+      <div
+        class="msg animated zoomInUp"
+        *ngFor="let msg of chat.messages; trackBy: trackByCreated"
+      >
+        <div class="user">
+          <img
+            [src]="msg.user?.photoURL || 'assets/unicorn.svg'"
+            width="50px"
+          />
+          <div></div>
+        </div>
+        <div class="msg-content">
+          <span class="tag is-light"
+            >{{ msg.user?.displayName || msg.user?.uid }}
+            <button
+              *ngIf="msg.uid === user.uid"
+              class="delete is-danger is-small"
+              (click)="cs.deleteMessage(chat, msg)"
+            ></button>
+          </span>
+          <p class="msg-text is-size-6">{{ msg.content }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="chat">
+        <div
+          class="msg animated zoomInUp"
+          *ngFor="let msg of chat.messages; trackBy: trackByCreated"
+        >
+          <div class="user">
+            <img
+              [src]="msg.user?.photoURL || 'assets/unicorn.svg'"
+              width="50px"
+            />
+            <div>
+              <span class="tag is-dark"
+                >{{ msg.user?.displayName || msg.user?.uid }}
+                <button
+                  *ngIf="msg.uid === user.uid"
+                  class="delete is-danger is-small"
+                  (click)="cs.deleteMessage(chat, msg)"
+                ></button>
+              </span>
+            </div>
+          </div>
+          <p>hello</p>
+          <p class="is-size-6">{{ msg.content }}</p>
+        </div>
+      </div> -->
+
+    <div class="form">
+      <input
+        class="input"
+        [(ngModel)]="newMsg"
+        maxlength="100"
+        (keydown.enter)="submit(chat.id)"
+      />
+
+      <button
+        (click)="submit(chat.id)"
+        class="button is-info"
+        [disabled]="!newMsg"
+      >
+        Send
+      </button>
+    </div>
+  </ng-container>
+</ng-container>
