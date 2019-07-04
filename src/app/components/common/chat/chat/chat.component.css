@@ -1,5 +1,5 @@
 
-@import url('https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css');
+/* @import url('https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css'); */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css');
 
 .chat {
@@ -41,7 +41,7 @@
 
 .form {
   display: flex;
-  position: fixed;
+  position: sticky;
   bottom: 0;
   left: 0;
   width: 100%;

@@ -1,0 +1,6 @@
+.chatbox {
+    /* position: absolute !important; */
+    overflow-y: scroll !important;
+    height: 400px !important;
+    overflow: hidden;
+}

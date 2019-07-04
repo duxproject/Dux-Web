@@ -47,6 +47,7 @@ import { SecureInnerPagesGuard } from '../../shared/guard/secure-inner-pages.gua
 import { LocationListComponent } from 'src/app/components/admin/location-list/location-list.component';
 import { EditLocationComponent } from 'src/app/components/admin/edit-location/edit-location.component';
 import { ChatGuard } from '../guard/chat.guard';
+import { GuideChatComponent } from '../../components/guide/guide-chat/guide-chat.component';
 // import { MapoComponent } from 'src/app/components/common/map/map.component';
 
 // Include route guard in routes array
@@ -91,6 +92,7 @@ const routes: Routes = [
   { path: 'view-ratings', component: ViewRatingComponent, canActivate: [GuideGuard] },
   { path: 'guide-dashboard', component: GuideDashboardComponent, canActivate: [GuideGuard]},
   { path: 'add-location', component: AddLocationComponent, canActivate: [GuideGuard]},
+  { path: 'guide/chats', component: GuideChatComponent, canActivate: [GuideGuard]},
 
   // tourist routes
   { path: 'tour-dashboard', component: TourDashboardComponent, canActivate: [TouristGuard]},
