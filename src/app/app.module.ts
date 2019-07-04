@@ -1,24 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule }   from '@angular/forms';
-import { HttpClientModule } from "@angular/common/http";
-import { NgModule } from "@angular/core";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { MatButtonModule } from "@angular/material/button";
-import { MatInputModule } from "@angular/material/input";
-import { MatToolbarModule } from "@angular/material/toolbar";
-import { MatTooltipModule } from "@angular/material/tooltip";
-import { MatIconModule } from "@angular/material/icon";
-import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-import { NavigatorComponent } from "../app/components/common/navigator/navigator.component";
-import { MapoComponent } from "./components/admin/map/map.component";
+import { NavigatorComponent } from '../app/components/common/navigator/navigator.component';
+import { MapoComponent } from './components/admin/map/map.component';
 
-import { GeocodingService } from "../app/components/common/geocoding.service";
+import { GeocodingService } from '../app/components/common/geocoding.service';
 
-import "leaflet";
+import 'leaflet';
 
 // Reactive Form
-import { ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from '@angular/forms';
 
 // App routing modules
 import { AppRoutingModule } from './shared/routing/app-routing.module';
@@ -34,15 +34,15 @@ import { VerifyEmailComponent } from './components/auth/verify-email/verify-emai
 import { UserprofileComponent } from './components/admin/userprofile/userprofile.component';
 
 // Firebase services + enviorment module
-import { AngularFireModule } from "@angular/fire";
-import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 
-import { UserService } from "./shared/services/user/user.service";
+import { UserService } from './shared/services/user/user.service';
 
 // Auth service
-import { AuthService } from "./shared/services/auth.service";
+import { AuthService } from './shared/services/auth.service';
 
 
 import { LandingComponent } from './components/common/landing/landing.component';
@@ -152,7 +152,7 @@ import { EditLocationComponent } from './components/admin/edit-location/edit-loc
     MatIconModule,
     MatTooltipModule,
     MatSnackBarModule,
-    
+
   ],
   providers: [
     AuthService,
