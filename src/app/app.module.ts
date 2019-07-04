@@ -86,6 +86,7 @@ import { SideNavComponent } from './components/admin/side-nav/side-nav.component
 import { AddLocationComponent } from './components/guide/add-location/add-location.component';
 import { EditLocationComponent } from './components/admin/edit-location/edit-location.component';
 import { GuideChatComponent } from './components/guide/guide-chat/guide-chat.component';
+import { TouristChatComponent } from './components/tourist/tourist-chat/tourist-chat.component';
 
 
 
@@ -135,7 +136,8 @@ import { GuideChatComponent } from './components/guide/guide-chat/guide-chat.com
     EditLocationComponent,
     ChatComponent,
     ChathomeComponent,
-    GuideChatComponent
+    GuideChatComponent,
+    TouristChatComponent
 
   ],
   imports: [

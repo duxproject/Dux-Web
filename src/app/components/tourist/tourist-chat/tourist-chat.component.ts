@@ -3,14 +3,14 @@ import { AuthService } from '../../../shared/services/auth.service';
 import { ChatService } from '../../../shared/services/chat.service';
 
 @Component({
-  selector: 'app-guide-chat',
-  templateUrl: './guide-chat.component.html',
+  selector: 'app-tourist-chat',
+  templateUrl: './tourist-chat.component.html',
   styleUrls: [
-    '../../../../assets/css/material-dashboard.min.css',
-    'guide-chat.component.css'
-]
+    './tourist-chat.component.css',
+    '../../../../assets/css/material-dashboard.min.css'
+  ]
 })
-export class GuideChatComponent implements OnInit {
+export class TouristChatComponent implements OnInit {
   userChats$;
   currentChat: string;
 
@@ -24,5 +24,6 @@ export class GuideChatComponent implements OnInit {
     console.log(chatId);
     this.currentChat = chatId;
   }
+
 
 }

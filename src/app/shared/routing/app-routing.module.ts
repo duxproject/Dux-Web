@@ -48,6 +48,7 @@ import { LocationListComponent } from 'src/app/components/admin/location-list/lo
 import { EditLocationComponent } from 'src/app/components/admin/edit-location/edit-location.component';
 import { ChatGuard } from '../guard/chat.guard';
 import { GuideChatComponent } from '../../components/guide/guide-chat/guide-chat.component';
+import { TouristChatComponent } from '../../components/tourist/tourist-chat/tourist-chat.component';
 // import { MapoComponent } from 'src/app/components/common/map/map.component';
 
 // Include route guard in routes array
@@ -103,6 +104,7 @@ const routes: Routes = [
   { path: 'view-places', component: ViewPlacesComponent, canActivate: [TouristGuard] },
   { path: 'view-rates', component: ViewRatesComponent, canActivate: [TouristGuard] },
   { path: 'tour-list', component: TourListComponent, canActivate: [TouristGuard] },
+  { path: 'tourist/chats', component: TouristChatComponent, canActivate: [TouristGuard]},
 
   { path: 'chats', component: ChathomeComponent, canActivate: [ChatGuard] },
   { path: 'chats/:id', component: ChatComponent, canActivate: [ChatGuard] },
