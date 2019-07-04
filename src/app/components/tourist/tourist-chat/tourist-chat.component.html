@@ -27,9 +27,17 @@
                 </div>
               </div>
             </div>
+
+            <div *ngIf="guides$">
+              <ul>
+                <li *ngFor="let guide of guides$ | async">
+                  <p (click)="createChat(guide.uid)">{{ guide.displayName }}</p>
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="col-md-9 chatbox">
-            <div *ngIf="currentChat !== 'undefined'">
+            <div *ngIf="currentChat">
               <app-chat [chatId]="currentChat"></app-chat>
             </div>
           </div>

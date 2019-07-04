@@ -29,7 +29,7 @@
           </div>
         </div>
         <div class="col-md-9 chatbox">
-          <div *ngIf="currentChat !== 'undefined'">
+          <div *ngIf="currentChat">
             <app-chat [chatId]="currentChat"></app-chat>
           </div>
         </div>

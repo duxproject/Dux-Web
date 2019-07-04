@@ -5,16 +5,20 @@ import { Router } from '@angular/router';
 import { firestore } from 'firebase/app';
 import { map, switchMap } from 'rxjs/operators';
 import { Observable, combineLatest, of } from 'rxjs';
+import { exists } from 'fs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChatService {
+  currentUserId;
 
   constructor(
     private afs: AngularFirestore,
     private auth: AuthService,
-    private router: Router) { }
+    private router: Router) {
+      this.currentUserId = this.auth.getUser();
+    }
 
   get(chatId) {
     return this.afs
@@ -28,15 +32,37 @@ export class ChatService {
       );
   }
 
+  async getGuideList() {
+    const guideList = [];
+
+    this.afs.collection('users').snapshotChanges().map(actions => {
+      return actions.map(a => {
+        const data = a.payload.doc.data();
+        const id = a.payload.doc.id;
+        return { id, ...data };
+      });
+    }).subscribe((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        if (doc.roles.guide) {
+          guideList.push(doc);
+        }
+      });
+    });
+
+    return guideList;
+  }
+
   getUserChats() {
     if (this.auth.user) {
       console.log(this.auth.user);
     }
     return this.auth.user.pipe(
       switchMap(user => {
+        console.log(user.uid);
         if (!user.roles.guide && user.roles.tourist) {
+          console.log('tourist');
           return this.afs
-            .collection('chats')
+            .collection('chats', ref => ref.where('uid', '==', user.uid))
             .snapshotChanges()
             .pipe(
               map(actions => {
@@ -48,8 +74,9 @@ export class ChatService {
               })
             );
         } else if (user.roles.guide && !user.roles.tourist) {
+          console.log('guide');
           return this.afs
-            .collection('chats', ref => ref.where('uid', '==', user.uid))
+            .collection('chats', ref => ref.where('guideId', '==', user.uid))
             .snapshotChanges()
             .pipe(
               map(actions => {
@@ -65,20 +92,49 @@ export class ChatService {
     );
   }
 
-  async create() {
+  async chatExists(guideId, userId) {
+    return this.afs
+      .collection('chats', ref => ref.where('guideId', '==', guideId))
+      .snapshotChanges()
+      .subscribe(res => {
+        if (res.length > 0) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+  }
+
+  async create(guideId) {
     const { uid } = await this.auth.GetUser();
 
     const data = {
       topic: 'New chat',
       uid,
+      guideId,
       createdAt: Date.now(),
       count: 0,
       messages: []
     };
 
-    const docRef = await this.afs.collection('chats').add(data);
+    return this.afs
+      .collection('chats', ref => ref.where('guideId', '==', guideId).where('uid', '==', uid))
+      .snapshotChanges()
+      .subscribe(res => {
+        if (res.length > 0) {
+          console.log(res[0].payload.doc.id);
+          console.log('exists');
+          return;
+        } else {
+          console.log('not exists');
+          this.afs.collection('chats').add(data);
+          return;
+        }
+      });
 
-    return this.router.navigate(['chats', docRef.id]);
+
+    // return docId;
+    // return this.router.navigate(['chats', docRef.id]);
   }
 
   async sendMessage(chatId, content) {
