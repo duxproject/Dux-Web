@@ -116,24 +116,24 @@ export class ChatService {
       messages: []
     };
 
-    return this.afs
-      .collection('chats', ref => ref.where('guideId', '==', guideId).where('uid', '==', uid))
-      .snapshotChanges()
-      .subscribe(res => {
-        if (res.length > 0) {
-          console.log(res[0].payload.doc.id);
-          console.log('exists');
-          return;
-        } else {
-          console.log('not exists');
-          this.afs.collection('chats').add(data);
-          return;
-        }
-      });
+    // return this.afs
+    //   .collection('chats', ref => ref.where('guideId', '==', guideId).where('uid', '==', uid))
+    //   .snapshotChanges()
+    //   .subscribe(res => {
+    //     if (res.length > 0) {
+    //       console.log(res[0].payload.doc.id);
+    //       console.log('exists');
+    //       return;
+    //     } else {
+    //       console.log('not exists');
+    //       this.afs.collection('chats').add(data);
+    //       return;
+    //     }
+    //   });
 
+    const docRef = await this.afs.collection('chats').add(data);
 
-    // return docId;
-    // return this.router.navigate(['chats', docRef.id]);
+    return docRef.id;
   }
 
   async sendMessage(chatId, content) {

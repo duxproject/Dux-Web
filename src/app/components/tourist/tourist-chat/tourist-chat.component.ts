@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewChecked } from '@angular/core';
 import { AuthService } from '../../../shared/services/auth.service';
 import { ChatService } from '../../../shared/services/chat.service';
 
@@ -11,6 +11,8 @@ import { ChatService } from '../../../shared/services/chat.service';
   ]
 })
 export class TouristChatComponent implements OnInit {
+  @ViewChild('touristChatApp') private touristChatAppContainer: ElementRef;
+
   userChats$;
   currentChat: string;
   guides$;
@@ -31,7 +33,25 @@ export class TouristChatComponent implements OnInit {
   }
 
   createChat(guideId) {
-    this.cs.create(guideId);
+    this.cs.create(guideId).then(res => {
+      this.currentChat = res;
+    });
+  }
+
+  scrollToBottom($event) {
+    console.log('scroll');
+    try {
+      setTimeout(() => {
+        // this.touristChatAppContainer.nativeElement.scrollTop = this.touristChatAppContainer.nativeElement.scrollHeight;
+        this.touristChatAppContainer.nativeElement.scrollTo({
+          left: 0,
+          top: this.touristChatAppContainer.nativeElement.scrollHeight,
+          behavior: 'smooth'
+        });
+      }, 100);
+    } catch (err) {
+      console.log(err);
+    }
   }
 
 

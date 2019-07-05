@@ -38,9 +38,9 @@
               </ul>
             </div>
           </div>
-          <div class="col-md-9 chatbox">
+          <div #touristChatApp class="col-md-9 chatbox">
             <div *ngIf="currentChat">
-              <app-chat [chatId]="currentChat"></app-chat>
+              <app-chat [chatId]="currentChat" (messageEvent)="scrollToBottom($event)"></app-chat>
             </div>
           </div>
         </div>
