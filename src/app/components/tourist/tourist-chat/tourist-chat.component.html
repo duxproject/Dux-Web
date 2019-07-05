@@ -11,6 +11,7 @@
           <div class="col-md-3">
             <div class="login">
               <div *ngIf="auth.user | async as user">
+                <h4>Current Chats</h4>
                 <div class="chat-list">
                   <ul class="menu-list">
                     <li *ngFor="let chat of userChats$ | async">
@@ -29,6 +30,7 @@
             </div>
 
             <div *ngIf="guides$">
+              <h4>Chat with a guide</h4>
               <ul>
                 <li *ngFor="let guide of guides$ | async">
                   <p (click)="createChat(guide.uid)">{{ guide.displayName }}</p>

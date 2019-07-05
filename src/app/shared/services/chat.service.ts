@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 import { firestore } from 'firebase/app';
 import { map, switchMap } from 'rxjs/operators';
 import { Observable, combineLatest, of } from 'rxjs';
-import { exists } from 'fs';
 
 @Injectable({
   providedIn: 'root'
