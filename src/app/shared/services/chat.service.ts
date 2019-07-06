@@ -34,7 +34,7 @@ export class ChatService {
   async getGuideList() {
     const guideList = [];
 
-    this.afs.collection('users').snapshotChanges().map(actions => {
+    this.afs.collection('users', ref => ref.where('roles.guide', '==', true)).snapshotChanges().map(actions => {
       return actions.map(a => {
         const data = a.payload.doc.data();
         const id = a.payload.doc.id;
@@ -42,9 +42,7 @@ export class ChatService {
       });
     }).subscribe((querySnapshot) => {
       querySnapshot.forEach((doc) => {
-        if (doc.roles.guide) {
-          guideList.push(doc);
-        }
+        guideList.push(doc);
       });
     });
 
