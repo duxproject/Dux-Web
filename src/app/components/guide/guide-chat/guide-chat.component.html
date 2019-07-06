@@ -1,3 +1,43 @@
+<div class="container">
+  <!-- Main content -->
+  <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+    <div class="inner-adjust">
+      <div class="pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Chats</h1>
+      </div>
+      <!-- Show user data when logged in -->
+
+      <div class="row">
+        <div class="col-md-3">
+          <div class="login">
+            <div *ngIf="auth.user | async as user">
+              <div class="chat-list">
+                <ul class="menu-list">
+                  <li *ngFor="let chat of userChats$ | async">
+                    <a class="chat-link" (click)="openChat(chat.id)">
+                      <p class="is-normal">
+                        {{ chat.topic }}
+                        <span class="tag">
+                          {{ chat.messages.length }}
+                        </span>
+                      </p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div #guideChatApp class="col-md-9 chatbox">
+          <div *ngIf="currentChat">
+            <app-chat [chatId]="currentChat" (messageEvent)="scrollToBottom($event)"></app-chat>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
 <div class="wrapper">
   <div
     class="sidebar"
@@ -59,7 +99,7 @@
             <p>Tour-Request</p>
           </a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" [routerLink]="['/view-ratings']">
             <i class="material-icons">star_rate</i>
             <p>View-Ratings</p>
@@ -67,7 +107,7 @@
         </li>
 
         <!-- add chat to sidebar -->
-        <li class="nav-item ">
+        <li class="nav-item active">
           <a class="nav-link" [routerLink]="['/guide/chats']">
             <i class="material-icons">message</i>
             <p>Chats</p>
