@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-view-guide-profile',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewGuideProfileComponent implements OnInit {
 
+  imgSrc : string = '/assets/img/cover.jpg';
+
+  formTemplate = new FormGroup({
+    imageUrl: new FormControl('')
+  })
+
   constructor() { }
 
   ngOnInit() {
   }
+
+  
 
 }

@@ -1,6 +1,52 @@
-<p>
-  view-guide-profile works!
-</p>
-<p>
-  map works!
-</p>
+<div class="main-panel">
+  <div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <h1 class="display-4"> <b>Edit Yourself!</b> </h1>
+            <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+              <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
+              <div class="form-group">
+                <input name="fullName" #fullName="ngModel" [(ngModel)]="service.formData.fullName" class="form-control" placeholder="Full name" required>
+                <div *ngIf="fullName.invalid && fullName.touched" class="validation">Please fill out this field</div>
+              </div>
+              <div class="form-group">
+                <input name="country" #country="ngModel" [(ngModel)]="service.formData.country" class="form-control" placeholder="Country" required>
+                <div *ngIf="country.invalid && country.touched" class="validation">Please fill out this field</div>
+              </div>
+              <div class="form-group">
+                <input type="date" name="birthDate" #birthDate="ngModel" [(ngModel)]="service.formData.birthDate" class="form-control" placeholder="BirthDate" required>
+                <div *ngIf="birthDate.invalid && birthDate.touched" class="validation">Please fill out this field</div>
+              </div>
+              <div class="form-group">
+                <input name="gender" #gender="ngModel" [(ngModel)]="service.formData.gender" class="form-control" placeholder="Gender" required>
+                <div *ngIf="country.invalid && country.touched" class="validation">Please fill out this field</div>
+              </div>
+              <div class="form-group">
+                <input name="mNumber" #mNumber="ngModel" [(ngModel)]="service.formData.mNumber" class="form-control" placeholder="Mobile Number" required>
+                <div *ngIf="mNumber.invalid && mNumber.touched" class="validation">Please fill out this field</div>
+              </div>
+              <div class="form-group">
+                <input name="eMail" #eMail="ngModel" [(ngModel)]="service.formData.eMail" class="form-control" placeholder="Email Address" required>
+                <div *ngIf="eMail.invalid && eMail.touched" class="validation">Please fill out this field</div>
+              </div>
+              <form [formGroup] = "formTemplate">
+                <div class="text-left">
+                  <img [src]="imgSrc" width="350px" height="250px">
+                </div>
+                <div class="form-group">
+                  <label>Select your profile image</label>
+                  <input type="file" class="form-control" formControlName="imageUrl" (change)="showPreview($event)">
+                </div>
+              </form>
+              <div class="form-group">
+                <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-info">SUBMIT</button>
+              </div>
+              
+            </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
