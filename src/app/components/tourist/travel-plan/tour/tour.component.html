@@ -2,9 +2,13 @@
 <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
   <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
   <div class="form-group">
-    <input name="fullName" #fullName="ngModel" [(ngModel)]="service.formData.fullName" class="form-control" placeholder="Full name" required>
-    <div *ngIf="fullName.invalid && fullName.touched" class="validation">Please fill out this field</div>
+    <input name="firstName" #firstName="ngModel" [(ngModel)]="service.formData.firstName" class="form-control" placeholder="First name" required>
+    <div *ngIf="firstName.invalid && firstName.touched" class="validation">Please fill out this field</div>
   </div>
+  <div class="form-group">
+      <input name="lastName" #lastName="ngModel" [(ngModel)]="service.formData.lastName" class="form-control" placeholder="Last name" required>
+      <div *ngIf="lastName.invalid && lastName.touched" class="validation">Please fill out this field</div>
+    </div>
   <div class="form-group">
     <input name="country" #country="ngModel" [(ngModel)]="service.formData.country" class="form-control" placeholder="Country" required>
     <div *ngIf="country.invalid && country.touched" class="validation">Please fill out this field</div>
