@@ -85,6 +85,7 @@ import { TouristService } from './shared/services/tourist/tourist.service';
 import { SideNavComponent } from './components/admin/side-nav/side-nav.component';
 import { AddLocationComponent } from './components/guide/add-location/add-location.component';
 import { EditLocationComponent } from './components/admin/edit-location/edit-location.component';
+import { SideBarComponent } from './components/guide/side-bar/side-bar.component';
 
 
 
@@ -133,7 +134,8 @@ import { EditLocationComponent } from './components/admin/edit-location/edit-loc
     AddLocationComponent,
     EditLocationComponent,
     ChatComponent,
-    ChathomeComponent
+    ChathomeComponent,
+    SideBarComponent
 
   ],
   imports: [
