@@ -1,7 +1,8 @@
 export class Tourist {
 
   id: string;
-  fullName: string;
+  firstName: string;
+  lastName:string;
   country: string;
   startDate: string;
   duration: string;
