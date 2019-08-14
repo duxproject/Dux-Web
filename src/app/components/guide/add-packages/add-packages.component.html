@@ -1,72 +1,65 @@
-<div class="wrapper">
-  <div class="sidebar" data-color="orange" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
-      <!--
-        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
-
-        Tip 2: you can also add an image using data-image tag
-    -->
-      <div class="logo">
-        <a href="#" class="simple-text logo-normal">
-          DUX
-        </a>
-      </div>
-      <div class="sidebar-wrapper">
-        <ul class="nav">
-          <li class="nav-item  ">
-            <a class="nav-link" [routerLink]="['/guide-dashboard']">
-              <i class="material-icons">dashboard</i>
-              <p>Dashboard</p>
-            </a>
-          </li> 
-          <!-- <li class="nav-item ">
-            <a class="nav-link" href="./userprofile">
-              <i class="material-icons">person</i>
-              <p>User Profile</p>
-            </a>
-          </li> -->
-          <li class="nav-item active">
-            <a class="nav-link" [routerLink]="['/add-package']">
-              <i class="material-icons">content_paste</i>
-              <p>Add-Packages</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/manage-package']">
-              <i class="material-icons">content_paste</i>
-              <p>Manage-Packages</p>
-            </a>
-          </li>
-          <li class="nav-item  ">
-            <a class="nav-link" [routerLink]="['/rates']">
-              <i class="material-icons">attach_money</i>
-              <p>Add-Rates</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" [routerLink]="['/add-location']">
-              <i class="material-icons">map</i>
-              <p>Add Locations</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" [routerLink]="['/tour-request']">
-              <i class="material-icons">people</i>
-              <p>Tour-Request</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" [routerLink]="['/view-ratings']">
-              <i class="material-icons">star_rate</i>
-              <p>View-Ratings</p>
-            </a>
-          </li>
-          
-          <li class="nav-item">
-            <a class="nav-link" (click)="authService.SignOut()">
-              <i class="material-icons">logout</i>Log out
-            </a>
-          </li>
-        </ul>
-      </div>
-  </div>
+<div class="wrapper ">
+  <app-side-bar></app-side-bar>
+  <div class="main-panel">
+      <div class="content">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header card-header-primary">
+                    <h4 class="card-title ">Create Package</h4>
+                  </div>
+                  <div class="card-body">
+                    <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+                    <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
+                    <div class="form-group">
+                      <input name="firstName" #firstName="ngModel" [(ngModel)]="service.formData.firstName" class="form-control" placeholder="First name" required>
+                      <div *ngIf="firstName.invalid && firstName.touched" class="validation">Please fill out this field</div>
+                    </div>
+                    <div class="form-group">
+                        <input name="lastName" #lastName="ngModel" [(ngModel)]="service.formData.lastName" class="form-control" placeholder="Last name" required>
+                        <div *ngIf="lastName.invalid && lastName.touched" class="validation">Please fill out this field</div>
+                      </div>
+                    <div class="form-group">
+                      <input name="ownerId" #ownerId="ngModel" [(ngModel)]="service.formData.ownerId" class="form-control" placeholder="ownerId" required>
+                      <div *ngIf="ownerId.invalid && ownerId.touched" class="validation">Please fill out this field</div>
+                    </div>
+                    <div class="form-group">
+                        <input name="packageName" #packageName="ngModel" [(ngModel)]="service.formData.packageName" class="form-control" placeholder="packageName" required>
+                        <div *ngIf="packageName.invalid && packageName.touched" class="validation">Please fill out this field</div>
+                      </div>
+                    <div class="form-group">
+                      <input type="number" name="duration" #duration="ngModel" [(ngModel)]="service.formData.duration" class="form-control" placeholder="Duration in days.." required>
+                      <div *ngIf="duration.invalid && duration.touched" class="validation">Please fill out this field</div>
+                    </div>
+                    <div class="form-group">
+                        <input name="description" #description="ngModel" [(ngModel)]="service.formData.description" class="form-control" placeholder="description" required>
+                        <div *ngIf="description.invalid && description.touched" class="validation">Please fill out this field</div>
+                      </div>
+                    
+                    <div class="form-group">
+                      <input name="price" #price="ngModel" [(ngModel)]="service.formData.price" class="form-control" placeholder="Expected price" required>
+                      <div *ngIf="price.invalid && price.touched" class="validation">Please fill out this field</div>
+                    </div>
+                    <div class="form-group">
+                      <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-info">SUBMIT</button>
+                    </div>
+                    <div class="form-group">
+                      <a [routerLink]="['/guide-dashboard']" class="nav-link">Back</a>
+                    </div>
+                  </form>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 </div>
+</div>
+
+
+
+
+
+

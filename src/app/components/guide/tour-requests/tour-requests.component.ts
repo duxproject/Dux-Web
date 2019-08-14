@@ -6,7 +6,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 @Component({
   selector: 'app-tour-requests',
   templateUrl: './tour-requests.component.html',
-  styleUrls: ['../../../../assets/css/material-dashboard.min.css']
+  styleUrls: ['./tour-requests.component.css','../../../../assets/css/material-dashboard.min.css']
 })
 
 export class TourRequestsComponent implements OnInit {
