@@ -10,7 +10,25 @@
                       <h4 class="card-title ">Create Package</h4>
                     </div>
                     <div class="card-body">
-                      
+                        <table class="table table-hover">
+                            <thead>
+                              <th>Package Name</th>
+                              <th>Owner ID</th>
+                              <th>Description</th>
+                              <th>Trip Duration</th>
+                              <th>Price</th>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let tr of list">
+                                <td (click) = "onEdit(tr)">{{tr.packageName}}</td>
+                                <td (click) = "onEdit(tr)">{{tr.ownerId}}</td>
+                                <td (click) = "onEdit(tr)">{{tr.description}}</td>
+                                <td (click) = "onEdit(tr)">{{tr.duration}}</td>
+                                <td (click) = "onEdit(tr)">{{tr.price}}</td>
+                                <td><a class="btn text-danger" (click)="onDelete(tr.id)"><i class="fa fa-trash"></i></a></td>
+                              </tr>
+                            </tbody>
+                          </table>
                       
                     </div>
                   </div>
