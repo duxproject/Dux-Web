@@ -11,3 +11,4 @@ export class Tourist {
   budget: string;
   
 }
+
