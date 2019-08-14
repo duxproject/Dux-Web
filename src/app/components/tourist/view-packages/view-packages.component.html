@@ -1,6 +1,60 @@
-<p>
-  view-packages works!
-</p>
-<p>
-  map works!
-</p>
+<div class="wrapper">
+    <div class="sidebar" data-color="green" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+        <!--
+          Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+  
+          Tip 2: you can also add an image using data-image tag
+      -->
+        <div class="logo">
+          <a [routerLink]="['/']" class="simple-text logo-normal">
+            DUX
+          </a>
+        </div>
+        <div class="sidebar-wrapper">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/travel-plan']">
+                <i class="material-icons">dashboard</i>
+                <p>Travel Plan</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" [routerLink]="['/view-guide-profile']">
+                <i class="material-icons">person</i>
+                <p>Edit Profile</p>
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" [routerLink]="['/view-packages']">
+                <i class="material-icons">content_paste</i>
+                <p>Offers</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" [routerLink]="['/view-guide-profile']">
+                <i class="material-icons">library_books</i>
+                <p>Guide Profile</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" [routerLink]="['/map']">
+                <i class="material-icons">location_ons</i>
+                <p>Track</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" [routerLink]="['#']">
+                <i class="material-icons">notifications</i>
+                <p>Notifications</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="authService.SignOut()">
+                <i class="material-icons">logout</i> <b>Log out</b>
+              </a>
+            </li>
+          </ul>
+        </div>
+    </div>
+  
+  </div>

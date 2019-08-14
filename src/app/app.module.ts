@@ -37,6 +37,7 @@ import { UserprofileComponent } from './components/admin/userprofile/userprofile
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
+import { AngularFireStorage } from '@angular/fire/storage';
 import { environment } from '../environments/environment';
 
 import { UserService } from "./shared/services/user/user.service";
@@ -158,6 +159,7 @@ import { EditLocationComponent } from './components/admin/edit-location/edit-loc
     AuthService,
     UserService,
     PackageService,
+    AngularFireStorage,
     LocationService,
     GeocodingService,
     TouristService,
