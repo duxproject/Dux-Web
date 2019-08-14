@@ -16,3 +16,5 @@ export class TouristService {
     return this.firestore.collection('tour').snapshotChanges();
   }
 }
+
+
