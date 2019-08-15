@@ -1,3 +1,54 @@
+<div class="container">
+    <!-- Main content -->
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <div class="inner-adjust">
+        <div class="pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">Chats</h1>
+        </div>
+        <!-- Show user data when logged in -->
+  
+        <div class="row">
+          <div class="col-md-3">
+            <div class="login">
+              <div *ngIf="auth.user | async as user">
+                <h4>Current Chats</h4>
+                <div class="chat-list">
+                  <ul class="menu-list">
+                    <li *ngFor="let chat of userChats$ | async">
+                      <a class="chat-link" (click)="openChat(chat.id)">
+                        <p class="is-normal">
+                          {{ chat.topic }}
+                          <span class="tag">
+                            {{ chat.messages.length }}
+                          </span>
+                        </p>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="guides$">
+              <h4>Chat with a guide</h4>
+              <ul>
+                <li *ngFor="let guide of guides$ | async">
+                  <p (click)="createChat(guide.uid)">{{ guide.displayName }}</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div #touristChatApp class="col-md-9 chatbox">
+            <div *ngIf="currentChat">
+              <app-chat [chatId]="currentChat" (messageEvent)="scrollToBottom($event)"></app-chat>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+
 <div class="wrapper">
     <div class="sidebar" data-color="azure" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
         <!--
@@ -36,7 +87,7 @@
                 <p>Guide Profile</p>
               </a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item ">
               <a class="nav-link" [routerLink]="['/map']">
                 <i class="material-icons">location_ons</i>
                 <p>Track</p>
@@ -44,7 +95,7 @@
             </li>
   
             <!-- chat -->
-            <li class="nav-item ">
+            <li class="nav-item active">
                 <a class="nav-link" [routerLink]="['/tourist/chats']">
                   <i class="material-icons">message</i>
                   <p>Chats</p>
