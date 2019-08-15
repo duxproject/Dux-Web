@@ -17,7 +17,7 @@ export class TouristChatComponent implements OnInit {
   currentChat: string;
   guides$;
 
-  constructor(public auth: AuthService, public cs: ChatService) { }
+  constructor(public authService:AuthService, public cs: ChatService) { }
 
   ngOnInit() {
     this.userChats$ = this.cs.getUserChats();

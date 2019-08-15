@@ -16,7 +16,7 @@ export class GuideChatComponent implements OnInit {
   userChats$;
   currentChat: string;
 
-  constructor(public auth: AuthService, public cs: ChatService) { }
+  constructor(public authService:AuthService, public cs: ChatService) { }
 
   ngOnInit() {
     this.userChats$ = this.cs.getUserChats();

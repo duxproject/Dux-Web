@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TouristService } from 'src/app/shared/services/tourist/tourist.service';
 import { Tourist } from 'src/app/shared/services/tourist/tourist.model';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-tour-requests',
@@ -13,6 +14,7 @@ export class TourRequestsComponent implements OnInit {
 
   list: Tourist[];
   constructor(public service:TouristService,
+    public authService:AuthService,
     public firestore:AngularFirestore) { }
 
   ngOnInit() {

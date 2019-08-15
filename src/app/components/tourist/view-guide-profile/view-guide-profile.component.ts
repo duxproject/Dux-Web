@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { finalize } from 'rxjs/operators';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 
 @Component({
@@ -19,7 +20,9 @@ export class ViewGuideProfileComponent implements OnInit {
     imageUrl: new FormControl('',Validators.required)
   })
 
-  constructor(private storage:AngularFireStorage) { }
+  constructor(
+    private storage:AngularFireStorage,
+    public authService:AuthService) { }
 
   ngOnInit() {
     this.resetImgUploadForm();

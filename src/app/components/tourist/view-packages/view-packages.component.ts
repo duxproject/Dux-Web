@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PackageService } from 'src/app/shared/services/package/package.service';
 import { Package } from 'src/app/shared/services/package/package';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-view-packages',
@@ -12,6 +13,7 @@ export class ViewPackagesComponent implements OnInit {
 
   list: Package[];
   constructor(public service:PackageService,
+    public authService:AuthService,
     public firestore:AngularFirestore) { }
 
   ngOnInit() {

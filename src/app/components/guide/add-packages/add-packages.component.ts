@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { PackageService } from 'src/app/shared/services/package/package.service';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-add-packages',
@@ -11,7 +12,8 @@ import { PackageService } from 'src/app/shared/services/package/package.service'
 export class AddPackagesComponent implements OnInit {
 
   constructor(public service: PackageService,
-    private firestore:AngularFirestore) { }
+    private firestore:AngularFirestore,
+    public authService:AuthService) { }
 
   ngOnInit() {
     this.resetForm();

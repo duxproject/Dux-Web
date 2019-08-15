@@ -25,7 +25,8 @@
                     <tbody *ngIf="locations?.length > 0">
                       <tr *ngFor="let location of locations">
                         <td *ngIf="location.verified != false">
-                          <a [routerLink]="['/admin/edit-location/'+location.id]">{{location.locationName}}</a>
+                          <!--<a [routerLink]="['/admin/edit-location/'+location.id]">{{location.locationName}}</a>-->
+                          <p>{{location.locationName}}</p>
                         </td>
                         <td *ngIf="location.verified != false">
                           <a class="btn btn-danger" (click)="locationService.removeLocation(location)"> Remove</a>
