@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, ChangeDetectorRef, Input, Output, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ChatService } from 'src/app/shared/services/chat.service';
 import { ActivatedRoute } from '@angular/router';
@@ -10,6 +10,15 @@ import { AuthService } from 'src/app/shared/services/auth.service';
   styleUrls: ['./chat.component.css']
 })
 export class ChatComponent implements OnInit {
+  private _chatId: string;
+
+  @Input() set chatId(value: string) {
+    this._chatId = value;
+    this.ngOnInit();
+  }
+
+  @Output() messageEvent = new EventEmitter<boolean>();
+
   chat$: Observable<any>;
   newMsg: string;
   isTopicEditing: boolean;
@@ -25,10 +34,12 @@ export class ChatComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const chatId = this.route.snapshot.paramMap.get('id');
-    const source = this.cs.get(chatId);
+    // const chatId = this.route.snapshot.paramMap.get('id');
+    const source = this.cs.get(this._chatId);
     this.chat$ = this.cs.joinUsers(source); // .pipe(tap(v => this.scrollBottom(v)));
-    this.scrollBottom();
+    if (this.chat$) {
+      this.scrollBottom();
+    }
   }
 
   submit(chatId) {
@@ -53,7 +64,8 @@ export class ChatComponent implements OnInit {
   }
 
   private scrollBottom() {
-    setTimeout(() => window.scrollTo(0, document.body.scrollHeight), 500);
+    // setTimeout(() => window.scrollTo(0, document.body.scrollHeight), 500);
+    this.messageEvent.emit(true);
   }
 
   topicEditable() {

@@ -1,9 +1,9 @@
 import { Injectable, NgZone } from '@angular/core';
-import { User } from "./user/user";
+import { User } from './user/user';
 import { auth } from 'firebase/app';
-import { AngularFireAuth } from "@angular/fire/auth";
+import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { Router } from "@angular/router";
+import { Router } from '@angular/router';
 import { Observable, of} from 'rxjs';
 import { switchMap, first } from 'rxjs/operators';
 
@@ -43,7 +43,7 @@ export class AuthService {
         });
       }).catch((error) => {
         window.alert('Ooops! something went wrong');
-      })
+      });
   }
 
   getUser() {
@@ -62,8 +62,8 @@ export class AuthService {
         this.SendVerificationMail();
         this.SetUserData(result.user);
       }).catch((error) => {
-        window.alert('Please Enter Valid Details.')
-      })
+        window.alert('Please Enter Valid Details.');
+      });
   }
 
   SignUpGuide(email, password) {
@@ -74,8 +74,8 @@ export class AuthService {
         this.SetUserDataGuide(result.user);
         window.alert('Wait until conformation.');
       }).catch((error) => {
-        window.alert('Please Enter Valid Details.')
-      })
+        window.alert('Please Enter Valid Details.');
+      });
   }
 
   SignUpAdmin(email, password) {
@@ -86,8 +86,8 @@ export class AuthService {
         this.SetUserDataAdmin(result.user);
         window.alert('Wait until conformation.');
       }).catch((error) => {
-        window.alert('Please Enter Valid Details.')
-      })
+        window.alert('Please Enter Valid Details.');
+      });
   }
 
   // Send email verfificaiton when new user sign up
@@ -95,7 +95,7 @@ export class AuthService {
     return this.afAuth.auth.currentUser.sendEmailVerification()
     .then(() => {
       this.router.navigate(['verify-email-address']);
-    })
+    });
   }
 
   // Reset Forggot password
@@ -104,8 +104,8 @@ export class AuthService {
     .then(() => {
       window.alert('Password reset email sent, check your inbox.');
     }).catch((error) => {
-      window.alert(error)
-    })
+      window.alert(error);
+    });
   }
 
   // Returns true when user is looged in and email is verified
@@ -138,10 +138,10 @@ export class AuthService {
        this.ngZone.run(() => {
           this.router.navigate(['/']);
           localStorage.setItem('user', JSON.stringify(result.user));
-        })
+        });
     }).catch((error) => {
-      window.alert(error)
-    })
+      window.alert(error);
+    });
   }
 
   AuthSignUp(provider) {
@@ -150,11 +150,11 @@ export class AuthService {
        this.ngZone.run(() => {
           this.router.navigate(['./sign-in']);
           localStorage.setItem('user', JSON.stringify(result.user));
-        })
-        this.SetUserData(result.user);
+        });
+       this.SetUserData(result.user);
     }).catch((error) => {
-      window.alert(error)
-    })
+      window.alert(error);
+    });
   }
 
   AuthSignUpGuide(provider) {
@@ -162,11 +162,11 @@ export class AuthService {
     .then((result) => {
        this.ngZone.run(() => {
           this.router.navigate(['./sign-in']);
-        })
-        this.SetUserDataGuide(result.user);
+        });
+       this.SetUserDataGuide(result.user);
     }).catch((error) => {
-      window.alert(error)
-    })
+      window.alert(error);
+    });
   }
 
   AuthSignUpAdmin(provider) {
@@ -174,12 +174,12 @@ export class AuthService {
     .then((result) => {
        this.ngZone.run(() => {
           this.router.navigate(['./sign-in']);
-        })
+        });
 
-        this.SetUserDataAdmin(result.user);
+       this.SetUserDataAdmin(result.user);
     }).catch((error) => {
-      window.alert(error)
-    })
+      window.alert(error);
+    });
   }
 
   /* Setting up user data when sign in with username/password,
@@ -196,10 +196,10 @@ export class AuthService {
       roles: {
         tourist: true
       }
-    }
+    };
     return userRef.set(data, {
       merge: true
-    })
+    });
   }
 
 
@@ -214,10 +214,10 @@ export class AuthService {
       roles: {
         guide: true
       }
-    }
+    };
     return userRef.set(data, {
       merge: true
-    })
+    });
   }
 
   AcceptUserDataGuide(user) {
@@ -232,10 +232,10 @@ export class AuthService {
       roles: {
         guide: true
       }
-    }
+    };
     return userRef.set(data, {
       merge: true
-    })
+    });
   }
 
   RemoveUserDataGuide(user) {
@@ -249,10 +249,10 @@ export class AuthService {
       roles: {
         guide: false
       }
-    }
+    };
     return userRef.set(data, {
       merge: true
-    })
+    });
   }
 
   RemoveUserDataTourist(user) {
@@ -266,10 +266,10 @@ export class AuthService {
       roles: {
         tourist: false
       }
-    }
+    };
     return userRef.set(data, {
       merge: true
-    })
+    });
   }
 
   SetUserDataAdmin(user) {
@@ -283,10 +283,10 @@ export class AuthService {
       roles: {
         admin: true
       }
-    }
+    };
     return userRef.set(data, {
       merge: true
-    })
+    });
   }
 
   AcceptUserDataAdmin(user) {
@@ -301,10 +301,10 @@ export class AuthService {
       roles: {
         admin: true
       }
-    }
+    };
     return userRef.set(data, {
       merge: true
-    })
+    });
   }
 
   // Sign out
@@ -312,7 +312,7 @@ export class AuthService {
     return this.afAuth.auth.signOut().then(() => {
       localStorage.removeItem('user');
       this.router.navigate(['sign-in']);
-    })
+    });
   }
 
 }

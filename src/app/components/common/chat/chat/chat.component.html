@@ -1,15 +1,17 @@
 <ng-container *ngIf="(chat$ | async) as chat">
   <ng-container *ngIf="(auth.user | async) as user">
     <div class="top">
-      <p *ngIf="!isTopicEditing">
-        <a class="tag" routerLink="/chats">Back</a>
+      <!-- <p *ngIf="!isTopicEditing">
         <span class="tag is-success">
           {{ chat.topic }}
         </span>
         <span class="tag is-black is-small" (click)="topicEditable()">
           Edit
         </span>
-      </p>
+      </p> -->
+      <div *ngIf="!isTopicEditing">
+        <h3 class="topic" (click)="topicEditable()">{{ chat.topic }}</h3>
+      </div>
       <div>
         <div *ngIf="isTopicEditing">
           <input

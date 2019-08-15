@@ -9,9 +9,8 @@ import * as $ from 'jquery';
 })
 export class AppComponent {
   title = 'Dux-Web';
+  // tslint:disable-next-line:use-life-cycle-interface
   ngOnInit() {
     $('body').addClass('df');
     }
-
-    
 }
