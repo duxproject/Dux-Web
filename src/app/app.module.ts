@@ -37,6 +37,7 @@ import { UserprofileComponent } from './components/admin/userprofile/userprofile
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
+import { AngularFireStorage } from '@angular/fire/storage';
 import { environment } from '../environments/environment';
 
 import { UserService } from './shared/services/user/user.service';
@@ -142,7 +143,10 @@ import { SideBarComponent } from './components/guide/side-bar/side-bar.component
     ChathomeComponent,
     GuideChatComponent,
     TouristChatComponent,
-    SideBarComponent
+    SideBarComponent,
+
+    SideBarComponent,
+    
 
   ],
   imports: [
@@ -167,6 +171,7 @@ import { SideBarComponent } from './components/guide/side-bar/side-bar.component
     AuthService,
     UserService,
     PackageService,
+    AngularFireStorage,
     LocationService,
     GeocodingService,
     TouristService,

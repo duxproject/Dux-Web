@@ -1,5 +1,34 @@
+<div class="container">
+  <!-- Main content -->
+  <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+    <div class="inner-adjust">
+
+      <div class="pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">User Profile</h1>
+      </div>
+      <!-- Show user data when logged in -->
+
+      <div class="row" >
+
+        <div class="col-md-12">
+          <div class="media">
+            <img class="align-self-start mr-3 img-thumbnail rounded-circle" src="{{(user.photoURL) ? user.photoURL : 'https://lh4.googleusercontent.com/-c_f1KooZ0Z4/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rfOrySvw2TA7sTWcWdHx2EFBQvZ1A/mo/photo.jpg'}}"
+              alt="{{user.displayName}}">
+            <div class="media-body">
+              <h1><strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
+              <p>Email: <strong>{{user.email}}</strong></p>
+              <p>Phone:<br> <strong>{{user.phone}}</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
 <div class="wrapper">
-  <div class="sidebar" data-color="azure" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+  <div class="sidebar" data-color="green" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -12,16 +41,16 @@
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" [routerLink]="['/travel-plan']">
               <i class="material-icons">dashboard</i>
               <p>Travel Plan</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" [routerLink]="['/userprofile']">
+            <a class="nav-link" [routerLink]="['/view-guide-profile']">
               <i class="material-icons">person</i>
-              <p>User Profile</p>
+              <p>Edit Profile</p>
             </a>
           </li>
           <li class="nav-item ">
@@ -65,7 +94,11 @@
         </ul>
       </div>
   </div>
+
 </div>
+
+
+
 
 
 
