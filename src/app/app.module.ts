@@ -91,6 +91,7 @@ import { SideBarComponent } from './components/guide/side-bar/side-bar.component
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -136,7 +137,8 @@ import { SideBarComponent } from './components/guide/side-bar/side-bar.component
     EditLocationComponent,
     ChatComponent,
     ChathomeComponent,
-    SideBarComponent
+    SideBarComponent,
+    
 
   ],
   imports: [

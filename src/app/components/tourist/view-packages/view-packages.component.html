@@ -1,5 +1,49 @@
+<div class="main-panel">
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header card-header-primary" >
+                    <h4 class="card-title">Guide Offers</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-hover">
+                        <thead class=" text-primary">
+                          <th>ID</th>
+                          <th>First Name</th>
+                          <th>Last Name</th>
+                          <th>Package name</th>
+                          <th>Price</th>
+                          <th>Duration</th>
+                          <th>Description</th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let tr of list">
+                              <td (click) = "onEdit(tr)">{{tr.ownerId}}</td>
+                              <td (click) = "onEdit(tr)">{{tr.firstName}}</td>
+                              <td (click) = "onEdit(tr)">{{tr.lastName}}</td>
+                              <td (click) = "onEdit(tr)">{{tr.packageName}}</td>
+                              <td (click) = "onEdit(tr)">{{tr.price}}</td>
+                              <td (click) = "onEdit(tr)">{{tr.duration}}</td>
+                              <td (click) = "onEdit(tr)">{{tr.description}}</td>
+                              <td><a href="" class="btn text-primary" (click)="onSelect(tr.id)"><i class="fa fa-smile-o"></i></a></td>  
+                            </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 <div class="wrapper">
-    <div class="sidebar" data-color="green" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+    <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
         <!--
           Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
   
@@ -58,3 +102,7 @@
     </div>
   
   </div>
+
+  
+
+
