@@ -14,3 +14,4 @@ export class TravelPlanComponent implements OnInit {
   }
 
 }
+

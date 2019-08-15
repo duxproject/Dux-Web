@@ -1,3 +1,4 @@
+
 <div class="wrapper">
   <div
     class="sidebar"
@@ -81,5 +82,50 @@
         </li>
       </ul>
     </div>
+
+<div class="wrapper ">
+    <app-side-bar></app-side-bar>
+    <div class="main-panel">
+        <div class="content">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="card-header card-header-primary">
+                      <h4 class="card-title ">Tour Requests</h4>
+                    </div>
+                    <div class="card-body">
+                      <div class="table-responsive">
+                        <table class="table table-hover ">
+                            <thead>
+                              <th>FirstName</th>
+                              <th>LastName</th>
+                              <th>Date</th>
+                              <th>Start</th>
+                              <th>End</th>
+                              <th>Duration</th>
+                              <th>Budget</th>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let tr of list">
+                                <td (click) = "onEdit(tr)">{{tr.firstName}}</td>
+                                <td (click) = "onEdit(tr)">{{tr.lastName}}</td>
+                                <td (click) = "onEdit(tr)">{{tr.startDate}}</td>
+                                <td (click) = "onEdit(tr)">{{tr.startLoc}}</td>
+                                <td (click) = "onEdit(tr)">{{tr.endLoc}}</td>
+                                <td (click) = "onEdit(tr)">{{tr.duration}}</td>
+                                <td (click) = "onEdit(tr)">{{tr.budget}}</td>
+                                <td><a class="btn text-danger" (click)="onDelete(tr.id)"><i class="fa fa-trash"></i></a></td>
+                              </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
   </div>
 </div>

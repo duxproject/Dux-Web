@@ -1,14 +1,68 @@
-<div class="wrapper">
-  <div class="sidebar" data-color="orange" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
-      <!--
-        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
-
-        Tip 2: you can also add an image using data-image tag
-    -->
-      <div class="logo">
-        <a href="#" class="simple-text logo-normal">
-          DUX
-        </a>
+<div class="wrapper ">
+    <app-side-bar></app-side-bar>
+    <div class="main-panel">
+      <div class="content">
+  
+        <div id="addloc" class="content">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header card-header-primary">
+                    <h4 class="card-title ">Add Location</h4>
+                  </div>
+                  <div class="card-body">
+                    <form (ngSubmit)="onSubmit()">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <app-mapo></app-mapo>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Name of the Location</label>
+                            <input type="text" placeholder="locationName" [(ngModel)]="location.locationName"
+                              value="{{getname()}}" ng-model-options="{ getterSetter: true }" name="locationName"
+                              required>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Description</label>
+                            <input type="text" placeholder="description" [(ngModel)]="location.description"
+                              name="description" required>
+                          </div>
+                        </div>
+                        <div class="container row">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="bmd-label-floating">Latitude</label>
+                              <input type="text" placeholder="latitude" [(ngModel)]="location.loc.latitude"
+                                value="{{getlat()}}" ng-model-options="{ getterSetter: true }" name="langitude" required>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="bmd-label-floating">Longitude</label>
+                              <input type="text" placeholder="longitude" [(ngModel)]="location.loc.longitude"
+                                value="{{getlong()}}" ng-model-options="{ getterSetter: true }" name="langitude" required>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <input type="submit" value="Submit" class="btn btn-success">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+        </div>
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
@@ -81,3 +135,6 @@
 </div>
 
 
+
+    </div>
+  </div>

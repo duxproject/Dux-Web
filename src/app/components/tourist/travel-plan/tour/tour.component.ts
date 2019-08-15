@@ -23,7 +23,8 @@ export class TourComponent implements OnInit {
     }
     this.service.formData = {
       id: null,
-      fullName: '',
+      firstName: '',
+      lastName:'',
       country: '',
       startDate: '',
       duration: '',
