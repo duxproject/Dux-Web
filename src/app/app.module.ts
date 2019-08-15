@@ -141,7 +141,7 @@ import { SideBarComponent } from './components/guide/side-bar/side-bar.component
     ChatComponent,
     ChathomeComponent,
     GuideChatComponent,
-    TouristChatComponent
+    TouristChatComponent,
     SideBarComponent
 
   ],
