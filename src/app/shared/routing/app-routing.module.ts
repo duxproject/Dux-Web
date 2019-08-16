@@ -33,7 +33,6 @@ import { GuideDashboardComponent } from '../../components/guide/guide-dashboard/
 import { TouristsComponent } from '../../components/admin/tourists/tourists.component';
 import { TourListComponent } from '../../components/tourist/travel-plan/tour-list/tour-list.component';
 import { AddLocationComponent } from '../../components/guide/add-location/add-location.component';
-import { NotificationsComponent } from '../../components/tourist/notifications/notifications.component';
 
 // chat components
 import { ChatComponent } from '../../components/common/chat/chat/chat.component';
@@ -109,6 +108,7 @@ const routes: Routes = [
   { path: 'tourist/chats', component: TouristChatComponent, canActivate: [TouristGuard]},
   { path: 'notifications', component: NotificationsComponent, canActivate: [TouristGuard]},
   { path: 'guideprofile/0xiRY2AO2AOdzeLvpeaq7xbOgQj1', component: GuideProfileComponent, canActivate: [TouristGuard]},
+
 
   { path: 'chats', component: ChathomeComponent, canActivate: [ChatGuard] },
   { path: 'chats/:id', component: ChatComponent, canActivate: [ChatGuard] },

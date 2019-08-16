@@ -91,8 +91,10 @@ import { GuideChatComponent } from './components/guide/guide-chat/guide-chat.com
 import { TouristChatComponent } from './components/tourist/tourist-chat/tourist-chat.component';
 
 import { SideBarComponent } from './components/guide/side-bar/side-bar.component';
+
 import { NotificationsComponent } from './components/tourist/notifications/notifications.component';
 import { GuideProfileComponent } from './components/tourist/guide-profile/guide-profile.component';
+
 
 
 
@@ -152,6 +154,7 @@ import { GuideProfileComponent } from './components/tourist/guide-profile/guide-
     NotificationsComponent,
 
     GuideProfileComponent,
+
     
 
   ],
