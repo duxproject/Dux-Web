@@ -1,47 +1,39 @@
+<!-- notification area -->
 <div class="main-panel">
   <div class="content">
     <div class="container-fluid">
-      <div class="row">
-          <div class="col-md-12">
-              <div class="card">
-                <div class="card-header card-header-primary" >
-                  <h4 class="card-title">Guide Offers</h4>
-                </div>
-                <div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table table-hover">
-                      <thead class=" text-primary">
-                        <th>ID</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Package name</th>
-                        <th>Price</th>
-                        <th>Duration</th>
-                        <th>Description</th>
-                        <th>Confirm</th>
-                      </thead>
-                      <tbody>
-                          <tr *ngFor="let tr of list">
-                            <td (click) = "onEdit(tr)">{{tr.ownerId}}</td>
-                            <td (click) = "onEdit(tr)">{{tr.firstName}}</td>
-                            <td (click) = "onEdit(tr)">{{tr.lastName}}</td>
-                            <td (click) = "onEdit(tr)">{{tr.packageName}}</td>
-                            <td (click) = "onEdit(tr)">{{tr.price}}</td>
-                            <td (click) = "onEdit(tr)">{{tr.duration}}</td>
-                            <td (click) = "onEdit(tr)">{{tr.description}}</td>
-                            <td><button class="btn btn-success" (click)="onClick()">Confirm</button></td>  
-                          </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
+      <div class="card">
+        <div class="card-header card-header-primary">
+          <h3 class="card-title">Notifications</h3>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="alert alert-success alert-with-icon" data-notify="container">
+                <i class="material-icons" data-notify="icon">add_alert</i>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <i class="material-icons">close</i>
+                </button>
+                <span data-notify="message">Your selection was notified!</span>
               </div>
             </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="alert alert-danger alert-with-icon" data-notify="container">
+                <i class="material-icons" data-notify="icon">add_alert</i>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <i class="material-icons">close</i>
+                </button>
+                <span data-notify="message">Your selection was cancelled! The Guide was not available.</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
 
 <div class="wrapper">
   <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
@@ -57,7 +49,7 @@
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item">
+          <li class="nav-item ">
             <a class="nav-link" [routerLink]="['/travel-plan']">
               <i class="material-icons">dashboard</i>
               <p>Travel Plan</p>
@@ -69,7 +61,7 @@
               <p>Edit Profile</p>
             </a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a class="nav-link" [routerLink]="['/view-packages']">
               <i class="material-icons">content_paste</i>
               <p>Offers</p>
@@ -84,10 +76,10 @@
           <li class="nav-item ">
             <a class="nav-link" [routerLink]="['/map']">
               <i class="material-icons">location_ons</i>
-              <p>Track</p>
+              <p>Map</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item active ">
             <a class="nav-link" [routerLink]="['/notifications']">
               <i class="material-icons">notifications</i>
               <p>Notifications</p>
@@ -103,6 +95,7 @@
   </div>
 
 </div>
+
 
 
 
