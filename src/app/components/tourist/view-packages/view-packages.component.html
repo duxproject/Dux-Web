@@ -1,109 +1,108 @@
 <div class="main-panel">
-  <div class="content">
-    <div class="container-fluid">
-      <div class="row">
-          <div class="col-md-12">
-              <div class="card">
-                <div class="card-header card-header-primary" >
-                  <h4 class="card-title">Guide Offers</h4>
-                </div>
-                <div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table table-hover">
-                      <thead class=" text-primary">
-                        <th>ID</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Package name</th>
-                        <th>Price</th>
-                        <th>Duration</th>
-                        <th>Description</th>
-                        <th>Confirm</th>
-                      </thead>
-                      <tbody>
-                          <tr *ngFor="let tr of list">
-                            <td (click) = "onEdit(tr)">{{tr.ownerId}}</td>
-                            <td (click) = "onEdit(tr)">{{tr.firstName}}</td>
-                            <td (click) = "onEdit(tr)">{{tr.lastName}}</td>
-                            <td (click) = "onEdit(tr)">{{tr.packageName}}</td>
-                            <td (click) = "onEdit(tr)">{{tr.price}}</td>
-                            <td (click) = "onEdit(tr)">{{tr.duration}}</td>
-                            <td (click) = "onEdit(tr)">{{tr.description}}</td>
-                            <td><button class="btn btn-success" (click)="onClick()">Confirm</button></td>  
-                          </tr>
-                      </tbody>
-                    </table>
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header card-header-primary" >
+                    <h4 class="card-title">Guide Offers</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-hover">
+                        <thead class=" text-primary">
+                          <th>ID</th>
+                          <th>First Name</th>
+                          <th>Last Name</th>
+                          <th>Package name</th>
+                          <th>Price</th>
+                          <th>Duration</th>
+                          <th>Description</th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let tr of list">
+                              <td (click) = "onEdit(tr)">{{tr.ownerId}}</td>
+                              <td (click) = "onEdit(tr)">{{tr.firstName}}</td>
+                              <td (click) = "onEdit(tr)">{{tr.lastName}}</td>
+                              <td (click) = "onEdit(tr)">{{tr.packageName}}</td>
+                              <td (click) = "onEdit(tr)">{{tr.price}}</td>
+                              <td (click) = "onEdit(tr)">{{tr.duration}}</td>
+                              <td (click) = "onEdit(tr)">{{tr.description}}</td>
+                              <td><a href="" class="btn text-primary" (click)="onSelect(tr.id)"><i class="fa fa-smile-o"></i></a></td>  
+                            </tr>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 
 <div class="wrapper">
-  <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
-      <!--
-        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
-
-        Tip 2: you can also add an image using data-image tag
-    -->
-      <div class="logo">
-        <a [routerLink]="['/']" class="simple-text logo-normal">
-          DUX
-        </a>
-      </div>
-      <div class="sidebar-wrapper">
-        <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/travel-plan']">
-              <i class="material-icons">dashboard</i>
-              <p>Travel Plan</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" [routerLink]="['/view-guide-profile']">
-              <i class="material-icons">person</i>
-              <p>Edit Profile</p>
-            </a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" [routerLink]="['/view-packages']">
-              <i class="material-icons">content_paste</i>
-              <p>Offers</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" [routerLink]="['/view-guide-profile']">
-              <i class="material-icons">library_books</i>
-              <p>Guide Profile</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" [routerLink]="['/map']">
-              <i class="material-icons">location_ons</i>
-              <p>Track</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" [routerLink]="['/notifications']">
-              <i class="material-icons">notifications</i>
-              <p>Notifications</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" (click)="authService.SignOut()">
-              <i class="material-icons">logout</i> <b>Log out</b>
-            </a>
-          </li>
-        </ul>
-      </div>
+    <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+        <!--
+          Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+  
+          Tip 2: you can also add an image using data-image tag
+      -->
+        <div class="logo">
+          <a [routerLink]="['/']" class="simple-text logo-normal">
+            DUX
+          </a>
+        </div>
+        <div class="sidebar-wrapper">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/travel-plan']">
+                <i class="material-icons">dashboard</i>
+                <p>Travel Plan</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" [routerLink]="['/view-guide-profile']">
+                <i class="material-icons">person</i>
+                <p>Edit Profile</p>
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" [routerLink]="['/view-packages']">
+                <i class="material-icons">content_paste</i>
+                <p>Offers</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" [routerLink]="['/view-guide-profile']">
+                <i class="material-icons">library_books</i>
+                <p>Guide Profile</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" [routerLink]="['/map']">
+                <i class="material-icons">location_ons</i>
+                <p>Track</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" [routerLink]="['#']">
+                <i class="material-icons">notifications</i>
+                <p>Notifications</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="authService.SignOut()">
+                <i class="material-icons">logout</i> <b>Log out</b>
+              </a>
+            </li>
+          </ul>
+        </div>
+    </div>
+  
   </div>
 
-</div>
-
-
+  
 
 

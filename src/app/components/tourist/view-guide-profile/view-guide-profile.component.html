@@ -1,117 +1,167 @@
 <!-- dashboard -->
 <div class="wrapper ">
-  <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
-    <!--
-      Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+    <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
-      Tip 2: you can also add an image using data-image tag
-  -->
-    <div class="logo">
-      <a [routerLink]="['/']" class="simple-text logo-normal">
-        DUX
-      </a>
-    </div>
-    <div class="sidebar-wrapper">
-      <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/travel-plan']">
-            <i class="material-icons">dashboard</i>
-            <p>Travel Plan</p>
-          </a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" [routerLink]="['/view-guide-profile']">
-            <i class="material-icons">person</i>
-            <p>Edit Profile</p>
-          </a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" [routerLink]="['/view-packages']">
-            <i class="material-icons">content_paste</i>
-            <p>Offers</p>
-          </a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" [routerLink]="['/view-guide-profile']">
-            <i class="material-icons">library_books</i>
-            <p>Guide Profile</p>
-          </a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" [routerLink]="['/map']">
-            <i class="material-icons">location_ons</i>
-            <p>Track</p>
-          </a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" [routerLink]="['/notifications']">
-            <i class="material-icons">notifications</i>
-            <p>Notifications</p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" (click)="authService.SignOut()">
-            <i class="material-icons">logout</i> <b>Log out</b>
-          </a>
-        </li>
-      </ul>
-    </div>
-</div>
-<!-- dashboard end -->
+        Tip 2: you can also add an image using data-image tag
+    -->
+      <div class="logo">
+        <a [routerLink]="['/']" class="simple-text logo-normal">
+          DUX
+        </a>
+      </div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/travel-plan']">
+              <i class="material-icons">dashboard</i>
+              <p>Travel Plan</p>
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" [routerLink]="['/view-guide-profile']">
+              <i class="material-icons">person</i>
+              <p>Edit Profile</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" [routerLink]="['/view-packages']">
+              <i class="material-icons">content_paste</i>
+              <p>Offers</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" [routerLink]="['/view-guide-profile']">
+              <i class="material-icons">library_books</i>
+              <p>Guide Profile</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" [routerLink]="['/map']">
+              <i class="material-icons">location_ons</i>
+              <p>Track</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" [routerLink]="['#']">
+              <i class="material-icons">notifications</i>
+              <p>Notifications</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="authService.SignOut()">
+              <i class="material-icons">logout</i> <b>Log out</b>
+            </a>
+          </li>
+        </ul>
+      </div>
+  </div>
+  <!-- dashboard end -->
 
-  <div class="main-panel">
-    
-    <div class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-8">
-            <div class="card">
-              <div class="card-header card-header-primary">
-                <h4 class="card-title">Edit Profile</h4>
-              </div>
-              <div class="card-body">
-                <!-- <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)"> -->
-                  <!-- <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id"> -->
-                  <div class="row">
-                    <div class="col-md-6">
-                        <label class="bmd-label-floating">Display Name</label>
-                        <input name="displayName" #userdisplayName="ngModel" [(ngModel)]="user.displayName"  placeholder="" 
-                        required>
-                    </div>
-                    <div class="col-md-6">
-                        <label class="bmd-label-floating">Email Address</label>
-                        <input name="email" #useremail="ngModel" [(ngModel)]="user.email" placeholder="" required>
-                    </div>
-                    <!-- <div class="col-md-8">
-                      <div class="form-group">
-                        <label class="bmd-label-floating">Country</label>
-                        <input name="country" #country="ngModel" [(ngModel)]="service.formData.country" class="form-control" placeholder="" required>
-                        <div *ngIf="country.invalid && country.touched" class="validation">Please fill out this field</div>
+    <div class="main-panel">
+      
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Edit Profile</h4>
+                </div>
+                <div class="card-body">
+                  <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+                    <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">First Name</label>
+                          <input name="firstName" #firstName="ngModel" [(ngModel)]="service.formData.firstName" class="form-control" placeholder="" required>
+                          <div *ngIf="firstName.invalid && firstName.touched" class="validation">Please fill out this field</div>
+                        </div>
                       </div>
-                    </div> -->
-                  <div >
-                    <button type="submit" class="btn btn-primary pull-right" (click)="this.editProfile(userdisplayName.value, useremail.value)">Update Profile</button>
-                  </div>
-                  <div class="clearfix"></div>
-                <!-- </form> -->
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Last Name</label>
+                          <input name="lastName" #lastName="ngModel" [(ngModel)]="service.formData.lastName" class="form-control" placeholder="" required>
+                          <div *ngIf="lastName.invalid && lastName.touched" class="validation">Please fill out this field</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Email address</label>
+                            <input name="eMail" #eMail="ngModel" [(ngModel)]="service.formData.eMail" class="form-control" placeholder="" required>
+                            <div *ngIf="eMail.invalid && eMail.touched" class="validation">Please fill out this field</div>
+                          </div>
+                        </div>
+                      </div>
+                    <div class="row">
+                      <div class="col-md-8">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Mobile Number</label>
+                          <input name="mNumber" #mNumber="ngModel" [(ngModel)]="service.formData.mNumber" class="form-control" placeholder="" required>
+                          <div *ngIf="mNumber.invalid && mNumber.touched" class="validation">Please fill out this field</div>  
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-8">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Age</label>
+                          <input type="number" input name="mNumber" #mNumber="ngModel" [(ngModel)]="service.formData.mNumber" class="form-control" placeholder="" required>
+                          <div *ngIf="mNumber.invalid && mNumber.touched" class="validation">Please fill out this field</div>  
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">City</label>
+                          <input name="city" #city="ngModel" [(ngModel)]="service.formData.city" class="form-control" placeholder="" required>
+                          <div *ngIf="city.invalid && city.touched" class="validation">Please fill out this field</div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Country</label>
+                          <input name="country" #country="ngModel" [(ngModel)]="service.formData.country" class="form-control" placeholder="" required>
+                          <div *ngIf="country.invalid && country.touched" class="validation">Please fill out this field</div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Gender</label>
+                          <input name="gender" #gender="ngModel" [(ngModel)]="service.formData.gender" class="form-control" placeholder="" required>
+                          <div *ngIf="country.invalid && country.touched" class="validation">Please fill out this field</div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-primary pull-right">Update Profile</button>
+                    </div>
+                    <div class="clearfix"></div>
+                  </form>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card card-profile">
-              <div class="card-body">
-                <form [formGroup]="formTemplate" (submit)="onSubmitImg(formTemplate.value)">
-                  <!-- <img [src]="imgSrc" width="200px" height="200px" (click)="fileUploader.click()"/> -->
-                  <h6 class="card-category text-gray">Profile Image</h6>
-                  <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="imageUrl" (change)="showPreview($event)">
-                  <div class="text-danger" *ngIf="isSubmitted && formControls.imageUrl.errors?.required">This field is required</div>
-                  <div class="form-group">
-                      <button type="submit" class="btn btn-primary btn-round">Update</button>
-                  </div>
-                </form>
+            <div class="col-md-4">
+              <div class="card card-profile">
+                <div class="card-body">
+                  <form [formGroup]="formTemplate" (submit)="onSubmitImg(formTemplate.value)">
+                    <!-- <img [src]="imgSrc" width="200px" height="200px" (click)="fileUploader.click()"/> -->
+                    <h6 class="card-category text-gray">Profile Image</h6>
+                    <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="imageUrl" (change)="showPreview($event)">
+                    <div class="text-danger" *ngIf="isSubmitted && formControls.imageUrl.errors?.required">This field is required</div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-round">Update</button>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
