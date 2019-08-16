@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TouristService } from 'src/app/shared/services/tourist/tourist.service';
 import { NgForm } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-tour',
@@ -11,6 +12,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class TourComponent implements OnInit {
 
   constructor(public service: TouristService,
+    public authService:AuthService,
     private firestore:AngularFirestore) { }
 
   ngOnInit() {

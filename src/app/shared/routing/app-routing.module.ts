@@ -33,6 +33,7 @@ import { GuideDashboardComponent } from '../../components/guide/guide-dashboard/
 import { TouristsComponent } from '../../components/admin/tourists/tourists.component';
 import { TourListComponent } from '../../components/tourist/travel-plan/tour-list/tour-list.component';
 import { AddLocationComponent } from '../../components/guide/add-location/add-location.component';
+import { NotificationsComponent } from '../../components/tourist/notifications/notifications.component';
 
 // chat components
 import { ChatComponent } from '../../components/common/chat/chat/chat.component';
@@ -40,51 +41,62 @@ import { ChathomeComponent } from '../../components/common/chat/chathome/chathom
 
 
 // Import canActivate guard services
-import { AdminGuard } from "../../shared/guard/admin.guard";
-import { GuideGuard } from "../../shared/guard/guide.guard";
-import { TouristGuard } from "../../shared/guard/tourist.guard";
-import { SecureInnerPagesGuard } from "../../shared/guard/secure-inner-pages.guard";
+import { AdminGuard } from '../../shared/guard/admin.guard';
+import { GuideGuard } from '../../shared/guard/guide.guard';
+import { TouristGuard } from '../../shared/guard/tourist.guard';
+import { SecureInnerPagesGuard } from '../../shared/guard/secure-inner-pages.guard';
 import { LocationListComponent } from 'src/app/components/admin/location-list/location-list.component';
 import { EditLocationComponent } from 'src/app/components/admin/edit-location/edit-location.component';
 import { ChatGuard } from '../guard/chat.guard';
-//import { MapoComponent } from 'src/app/components/common/map/map.component';
+import { GuideChatComponent } from '../../components/guide/guide-chat/guide-chat.component';
+import { TouristChatComponent } from '../../components/tourist/tourist-chat/tourist-chat.component';
+// import { MapoComponent } from 'src/app/components/common/map/map.component';
 
 // Include route guard in routes array
 const routes: Routes = [
   { path: '', component: LandingComponent},
-  
-  //auth routes
-  { path: '', redirectTo: '/sign-in', pathMatch: 'full'},
-  { path: 'sign-in', component: SignInComponent, canActivate: [SecureInnerPagesGuard]},
-  { path: 'register-guide', component: SignUpGuideComponent, canActivate: [SecureInnerPagesGuard]},
-  { path: 'register-admin', component: SignUpAdminComponent, canActivate: [SecureInnerPagesGuard]},
-  { path: 'register-tourist', component: SignUpComponent, canActivate: [SecureInnerPagesGuard]},
-  { path: 'register-user', component: SignUpScComponent, canActivate: [SecureInnerPagesGuard]},
-  { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [SecureInnerPagesGuard] },
-  { path: 'verify-email-address', component: VerifyEmailComponent, canActivate: [SecureInnerPagesGuard] },
- 
-  //admin routes
+
+  // auth routes
+  // { path: '', redirectTo: '/sign-in', pathMatch: 'full'},
+  // { path: 'sign-in', component: SignInComponent, canActivate: [SecureInnerPagesGuard]},
+  // { path: 'register-guide', component: SignUpGuideComponent, canActivate: [SecureInnerPagesGuard]},
+  // { path: 'register-admin', component: SignUpAdminComponent, canActivate: [SecureInnerPagesGuard]},
+  // { path: 'register-tourist', component: SignUpComponent, canActivate: [SecureInnerPagesGuard]},
+  // { path: 'register-user', component: SignUpScComponent, canActivate: [SecureInnerPagesGuard]},
+  // { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [SecureInnerPagesGuard] },
+  // { path: 'verify-email-address', component: VerifyEmailComponent, canActivate: [SecureInnerPagesGuard] },
+
+  { path: 'sign-in', component: SignInComponent },
+  { path: 'register-guide', component: SignUpGuideComponent },
+  { path: 'register-admin', component: SignUpAdminComponent },
+  { path: 'register-tourist', component: SignUpComponent },
+  { path: 'register-user', component: SignUpScComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'verify-email-address', component: VerifyEmailComponent },
+
+  // admin routes
   { path: 'admin/dashboard', component: DashboardComponent, canActivate: [AdminGuard] },
   { path: 'admin/guide-request', component: GuideRequestsComponent, canActivate: [AdminGuard] },
   { path: 'admin/admin-request', component: AdminRequestsComponent, canActivate: [AdminGuard] },
   { path: 'admin/guides', component: GuidesComponent, canActivate: [AdminGuard] },
   { path: 'admin/userprofile', component: UserprofileComponent, canActivate: [AdminGuard] },
   { path: 'admin/locations', component: LocationComponent, canActivate: [AdminGuard] },
-  { path: 'admin/tourists', component: TouristsComponent, canActivate:[AdminGuard] },
-  { path: 'admin/locations-list', component: LocationListComponent, canActivate:[AdminGuard] },
-  { path: 'admin/edit-location/:id', component: EditLocationComponent, canActivate:[AdminGuard] },
-  
-  
-  //guide routes
+  { path: 'admin/tourists', component: TouristsComponent, canActivate: [AdminGuard] },
+  { path: 'admin/locations-list', component: LocationListComponent, canActivate: [AdminGuard] },
+  { path: 'admin/edit-location/:id', component: EditLocationComponent, canActivate: [AdminGuard] },
+
+
+  // guide routes
   { path: 'add-package', component: AddPackagesComponent, canActivate: [GuideGuard] },
   { path: 'manage-package', component: ManagePackagesComponent, canActivate: [GuideGuard] },
   { path: 'rates', component: AddRatesComponent, canActivate: [GuideGuard] },
   { path: 'tour-request', component: TourRequestsComponent, canActivate: [GuideGuard] },
   { path: 'view-ratings', component: ViewRatingComponent, canActivate: [GuideGuard] },
-  { path: 'guide-dashboard', component: GuideDashboardComponent,canActivate:[GuideGuard]},
-  { path: 'add-location', component: AddLocationComponent, canActivate:[GuideGuard]},
-  
-  //tourist routes
+  { path: 'guide-dashboard', component: GuideDashboardComponent, canActivate: [GuideGuard]},
+  { path: 'add-location', component: AddLocationComponent, canActivate: [GuideGuard]},
+  { path: 'guide/chats', component: GuideChatComponent, canActivate: [GuideGuard]},
+
+  // tourist routes
   { path: 'tour-dashboard', component: TourDashboardComponent, canActivate: [TouristGuard]},
   { path: 'map', component: MapComponent, canActivate: [TouristGuard] },
   { path: 'travel-plan', component: TravelPlanComponent, canActivate: [TouristGuard] },
@@ -92,17 +104,19 @@ const routes: Routes = [
   { path: 'view-packages', component: ViewPackagesComponent, canActivate: [TouristGuard] },
   { path: 'view-places', component: ViewPlacesComponent, canActivate: [TouristGuard] },
   { path: 'view-rates', component: ViewRatesComponent, canActivate: [TouristGuard] },
-  {path: 'tour-list', component: TourListComponent, canActivate: [TouristGuard]},
+  { path: 'tour-list', component: TourListComponent, canActivate: [TouristGuard] },
+  { path: 'tourist/chats', component: TouristChatComponent, canActivate: [TouristGuard]},
+  { path: 'notifications', component: NotificationsComponent, canActivate: [TouristGuard]},
 
   { path: 'chats', component: ChathomeComponent, canActivate: [ChatGuard] },
   { path: 'chats/:id', component: ChatComponent, canActivate: [ChatGuard] },
 
 
-  //Wrong route
+  // Wrong route
   { path: 'wrong-route', component: WrongRouteComponent},
   { path: '**', component: WrongRouteComponent},
 
-  
+
 ];
 
 @NgModule({

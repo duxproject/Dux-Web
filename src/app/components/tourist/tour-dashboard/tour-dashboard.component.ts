@@ -1,6 +1,7 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { Router } from '@angular/router';
+import { User } from "../../../shared/services/user/user";
 
 @Component({
   selector: 'app-tour-dashboard',
@@ -9,6 +10,9 @@ import { Router } from '@angular/router';
 })
 export class TourDashboardComponent implements OnInit {
 
+  title = 'Dux-Web | tour-dashboard';
+  user:User;
+
   constructor(
     public authService: AuthService,
     public router: Router,
@@ -16,6 +20,9 @@ export class TourDashboardComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.authService.getUser().subscribe( user => {
+      this.user = user;
+    });
   }
 
 }

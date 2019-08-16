@@ -8,24 +8,24 @@
       <div class="">
           <!-- Continue as Guide -->
         <div class="formGroup col-md-6">
-          <a class="btn btn-primary" href="register-tourist">Tourist</a>
+          <a class="btn btn-primary" [routerLink]="['/register-tourist']">Tourist</a>
         </div>
 
         <!-- Continue as Guide -->
         <div class="formGroup col-md-6">
-          <a class="btn btn-default" href="/register-guide">Guide</a>
+          <a class="btn btn-default" [routerLink]="['/register-guide']">Guide</a>
         </div>
       </div>
       <hr>
 
       <div class="">
-        <a class="btn btn-danger" href="/">Cancel</a>
+        <a class="btn btn-danger" [routerLink]="['/']">Cancel</a>
       </div>
       
     </div>
 
     <div class="redirectToLogin">
-      <span>Already have an account? <span class="redirect" routerLink="/sign-in">Log In</span></span>
+      <span>Already have an account? <span class="redirect" [routerLink]="['/sign-in']">Log In</span></span>
     </div>
   </div>
 

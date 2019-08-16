@@ -8,4 +8,3 @@ export interface Package {
     description: string;
     price: string;
  }
-
