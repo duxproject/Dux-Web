@@ -11,7 +11,8 @@ import { User } from "../../../shared/services/user/user";
 export class TourDashboardComponent implements OnInit {
 
   title = 'Dux-Web | tour-dashboard';
-  user:User;
+  user:User; 
+  userId = "0xiRY2AO2AOdzeLvpeaq7xbOgQj1";
 
   constructor(
     public authService: AuthService,

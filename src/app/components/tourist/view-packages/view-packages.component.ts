@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { PackageService } from 'src/app/shared/services/package/package.service';
 import { Package } from 'src/app/shared/services/package/package';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { User } from "../../../shared/services/user/user";
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
+
 
 @Component({
   selector: 'app-view-packages',
@@ -12,9 +15,14 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 export class ViewPackagesComponent implements OnInit {
 
   list: Package[];
+  userId = "0xiRY2AO2AOdzeLvpeaq7xbOgQj1";
+
   constructor(public service:PackageService,
-    public authService:AuthService,
-    public firestore:AngularFirestore) { }
+
+    public firestore:AngularFirestore,
+    public router: Router,
+    public authService:AuthService) { }
+
 
   ngOnInit() {
     this.service.getPackage().subscribe(actionArray =>{
@@ -37,7 +45,11 @@ export class ViewPackagesComponent implements OnInit {
     if(confirm("Are you pretty sure?")){
       this.firestore.doc('tour/'+id).delete();
 
-    }
-  }
 
+  onlick(){
+    window.alert('Are you sure?');
+    this.router.navigate(['/guideprofile/0xiRY2AO2AOdzeLvpeaq7xbOgQj1']);
+  }
+  //id:string
+  //0xiRY2AO2AOdzeLvpeaq7xbOgQj1
 }
