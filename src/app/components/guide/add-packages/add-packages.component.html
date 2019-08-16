@@ -1,15 +1,15 @@
 <div class="wrapper ">
-  <app-side-bar></app-side-bar>
+  
   <div class="main-panel">
-      <div class="content">
-          <div class="container-fluid">
+      <div class="content" style="background-repeat: no-repeat;">
+          <div class="container-fluid" style="background-repeat: no-repeat;">
             <div class="row">
               <div class="col-md-12">
-                <div class="card">
+                <div class="card" style="background-repeat: no-repeat;">
                   <div class="card-header card-header-primary">
                     <h4 class="card-title ">Create Package</h4>
                   </div>
-                  <div class="card-body">
+                  <div class="card-body" style="background-repeat: no-repeat;">
                     <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
                     <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
                     <div class="form-group">
@@ -56,6 +56,7 @@
           </div>
         </div>
 </div>
+<app-side-bar></app-side-bar>
 </div>
 
 
