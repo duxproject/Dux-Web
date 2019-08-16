@@ -50,6 +50,7 @@ import { EditLocationComponent } from 'src/app/components/admin/edit-location/ed
 import { ChatGuard } from '../guard/chat.guard';
 import { GuideChatComponent } from '../../components/guide/guide-chat/guide-chat.component';
 import { TouristChatComponent } from '../../components/tourist/tourist-chat/tourist-chat.component';
+import { GuideProfileComponent } from 'src/app/components/tourist/guide-profile/guide-profile.component';
 // import { MapoComponent } from 'src/app/components/common/map/map.component';
 
 // Include route guard in routes array
@@ -107,6 +108,7 @@ const routes: Routes = [
   { path: 'tour-list', component: TourListComponent, canActivate: [TouristGuard] },
   { path: 'tourist/chats', component: TouristChatComponent, canActivate: [TouristGuard]},
   { path: 'notifications', component: NotificationsComponent, canActivate: [TouristGuard]},
+  { path: 'guideprofile/0xiRY2AO2AOdzeLvpeaq7xbOgQj1', component: GuideProfileComponent, canActivate: [TouristGuard]},
 
   { path: 'chats', component: ChathomeComponent, canActivate: [ChatGuard] },
   { path: 'chats/:id', component: ChatComponent, canActivate: [ChatGuard] },

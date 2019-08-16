@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { PackageService } from 'src/app/shared/services/package/package.service';
 import { Package } from 'src/app/shared/services/package/package';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { User } from "../../../shared/services/user/user";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-packages',
@@ -11,8 +13,11 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class ViewPackagesComponent implements OnInit {
 
   list: Package[];
+  userId = "0xiRY2AO2AOdzeLvpeaq7xbOgQj1";
+
   constructor(public service:PackageService,
-    public firestore:AngularFirestore) { }
+    public firestore:AngularFirestore,
+    public router: Router) { }
 
   ngOnInit() {
     this.service.getPackage().subscribe(actionArray =>{
@@ -31,9 +36,10 @@ export class ViewPackagesComponent implements OnInit {
   //   this.service.formData =Object.assign({},tr);
   // }
 
-  onClick(){
-    alert("Are you sure?");
+  onlick(){
+    window.alert('Are you sure?');
+    this.router.navigate(['/guideprofile/0xiRY2AO2AOdzeLvpeaq7xbOgQj1']);
   }
   //id:string
-
+  //0xiRY2AO2AOdzeLvpeaq7xbOgQj1
 }

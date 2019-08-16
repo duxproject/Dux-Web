@@ -5,7 +5,7 @@
             <div class="col-md-12">
                 <div class="card">
                   <div class="card-header card-header-primary" >
-                    <h4 class="card-title">Tours</h4>
+                    <h4 class="card-title">Created Tours</h4>
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
@@ -22,7 +22,10 @@
                                 <td (click) = "onEdit(tr)">{{tr.startLoc}}</td>
                                 <td (click) = "onEdit(tr)">{{tr.endLoc}}</td>
                                 <td (click) = "onEdit(tr)">{{tr.budget}}</td>
-                                <td><a class="btn text-danger" (click)="onDelete(tr.id)"><i class="fa fa-trash"></i></a></td>
+                                <td>
+                                  <button class="btn btn-success"
+                                    (click)="onlick()">Confirm</button>
+                                </td>
                               </tr>
                         </tbody>
                       </table>

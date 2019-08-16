@@ -92,6 +92,7 @@ import { TouristChatComponent } from './components/tourist/tourist-chat/tourist-
 
 import { SideBarComponent } from './components/guide/side-bar/side-bar.component';
 import { NotificationsComponent } from './components/tourist/notifications/notifications.component';
+import { GuideProfileComponent } from './components/tourist/guide-profile/guide-profile.component';
 
 
 
@@ -149,6 +150,8 @@ import { NotificationsComponent } from './components/tourist/notifications/notif
     SideBarComponent,
 
     NotificationsComponent,
+
+    GuideProfileComponent,
     
 
   ],
