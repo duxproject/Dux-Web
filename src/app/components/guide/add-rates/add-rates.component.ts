@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-add-rates',
@@ -8,7 +7,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 })
 export class AddRatesComponent implements OnInit {
 
-  constructor(public authService:AuthService) { }
+  constructor() { }
 
   ngOnInit() {
   }
